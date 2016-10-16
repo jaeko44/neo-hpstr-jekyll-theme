@@ -17,7 +17,7 @@ This tutorial will guide you in creating an account with MegamAfrica.
 
 You can access MegamAfrica by clicking on https://console.megamafrica.com.
 
-![](http://devcenter.megam.io/content/images/2016/05/s1-1.png)
+![](https://devcenter.megam.io/content/images/2016/05/s1-1.png)
 
 #### 1. Create an account
 
@@ -25,26 +25,26 @@ You can access MegamAfrica by clicking on https://console.megamafrica.com.
 
 Click the `create new account` link, it shows like below.
 
-![](http://devcenter.megam.io/content/images/2016/05/s2.png)
+![](https://devcenter.megam.io/content/images/2016/05/s2.png)
 
 Enter your email-id, password, and mobile number then click verify button the `OTP` will be sent to your mobile.
 
-![](http://devcenter.megam.io/content/images/2016/05/s3.png)
+![](https://devcenter.megam.io/content/images/2016/05/s3.png)
 
 Pop-up window will be open enter the `OTP` then click the verify button.
 
 It will verify your OTP.
-![](http://devcenter.megam.io/content/images/2016/05/s5.png)
+![](https://devcenter.megam.io/content/images/2016/05/s5.png)
 
 Finally click the Create Account. You have successfully created an account. Now, you will see the dashboard page.
 
-![](http://devcenter.megam.io/content/images/2016/05/s6.png)
+![](https://devcenter.megam.io/content/images/2016/05/s6.png)
 
 #### 2. Use OAuth - Facebook
 
 You will be see the facebook icon at the bottom of the page. click that icon it shows like below
 
-![](http://devcenter.megam.io/content/images/2016/05/s1-1-1-1.png)
+![](https://devcenter.megam.io/content/images/2016/05/s1-1-1-1.png)
 
 Enter your credentials and then click the login button.
 
@@ -57,7 +57,7 @@ We are create an default password
  for your account, hence reset it.
 
  You have to reset your password.
-![](http://devcenter.megam.io/content/images/2016/05/profile.jpg)
+![](https://devcenter.megam.io/content/images/2016/05/profile.jpg)
 
 Click the `Profile` link in MegamAfrica a pop-up window will open, there you can change your password.
 
@@ -65,7 +65,7 @@ Click the `Profile` link in MegamAfrica a pop-up window will open, there you can
 
 You wiil be see the google+ icon at the bottom of the page in our website. click that icon it shows like below
 
-![](http://devcenter.megam.io/content/images/2016/05/signin.jpg)
+![](https://devcenter.megam.io/content/images/2016/05/signin.jpg)
 
 Enter your credentials and then click the login button.
 
@@ -85,7 +85,7 @@ We are create an default password
 
 You wiil be see the github icon at the bottom of the page in our website. click that icon it shows like below
 
-![](http://devcenter.megam.io/content/images/2016/05/s1-3.png)
+![](https://devcenter.megam.io/content/images/2016/05/s1-3.png)
 
 Enter your credentials and then click the login button.
 

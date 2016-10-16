@@ -26,7 +26,7 @@ description: Building your own VM Image (Dockerfile for VMs)
 
  Next step download the base Isoimage like ubuntu
 
-   wget http://cloud-images.ubuntu.com/releases/14.04/release/ubuntu-14.04-server-cloudimg-amd64-disk1.img
+   wget https://cloud-images.ubuntu.com/releases/14.04/release/ubuntu-14.04-server-cloudimg-amd64-disk1.img
 
 
 #### Install Onecontext

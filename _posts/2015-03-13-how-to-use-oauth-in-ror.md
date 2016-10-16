@@ -73,7 +73,7 @@ Open your app/controllers/sessions_controller.rb file and write the create metho
       render :text => auth_hash.inspect
 	end
 
-This is used to make sure everything is working. Point your browser to [localhost:3000/auth/provider](http://) and you’ll be redirected to provider page so you can authorize your app. Authorize it, and you will be redirected back to your app and see a hash with some information.
+This is used to make sure everything is working. Point your browser to [localhost:3000/auth/provider](https://) and you’ll be redirected to provider page so you can authorize your app. Authorize it, and you will be redirected back to your app and see a hash with some information.
 
 ####Step 5: Creating the User Model
 
@@ -102,7 +102,7 @@ Let’s add some code to our sessions controller so that it logs a user in or si
 We check whether an authorization exists for that provider and that email. If one exists, we welcome our user back.
 
 If no authorization exists, we sign the user up. We create a new user with the name and email that the provider gives us, and we associate an authorization with the provider.
-Give it a test! Go to [localhost:3000/auth/provider](http://) and you should see “You’ve signed up”. If you refresh the page, you should now see “Welcome back”.
+Give it a test! Go to [localhost:3000/auth/provider](https://) and you should see “You’ve signed up”. If you refresh the page, you should now see “Welcome back”.
 
 ####Step 7: Create html
 

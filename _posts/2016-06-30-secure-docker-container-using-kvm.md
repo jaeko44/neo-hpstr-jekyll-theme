@@ -47,7 +47,7 @@ We will use KVM here. Supose your server doesn't have the any hypervisor you nee
 
 Now the install hypercontainer on your server,
 
-     wget http://hyper-install.s3.amazonaws.com/hyper-latest.tgz
+     wget https://hyper-install.s3.amazonaws.com/hyper-latest.tgz
      tar -xvzf hyper-latest.tgz
 
 

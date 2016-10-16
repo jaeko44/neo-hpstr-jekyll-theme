@@ -5,7 +5,7 @@ og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
 description: "Ceph in a single node cluster"
 ---
 
-[Ceph](http://ceph.com) is one of the most interesting distributed storage systems available, with a very active development and a complete set of features that make it a valuable candidate for cloud storage services
+[Ceph](https://ceph.com) is one of the most interesting distributed storage systems available, with a very active development and a complete set of features that make it a valuable candidate for cloud storage services
 
 ###### Assumptions
 
@@ -34,7 +34,7 @@ The ceph-deploy tool must only be installed on the admin node. Access to the oth
 
 Add Ceph repository to your apt configuration
 
-	echo deb http://ceph.com/debian-giant/ $(lsb_release -sc) main | sudo tee /etc/apt/sources.list.d/ceph.list
+	echo deb https://ceph.com/debian-giant/ $(lsb_release -sc) main | sudo tee /etc/apt/sources.list.d/ceph.list
 
 Install the trusted key with
 

@@ -23,7 +23,7 @@ This tutorial will guide you in launching a J2EE web application () in MegamAfri
 
 * You have an account on GitHub, which is a Git repository host.
 
-* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](http://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
+* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
 
 You have to install openssh-server for ssh access.
 
@@ -90,22 +90,22 @@ Java's default build pack get's going by kicking of maven. We plan to support `a
 
 
 ### **Step-3 Open Your Web browser**
-  You can access your web page using `http://IP_ADDRESS:8080`
+  You can access your web page using `https://IP_ADDRESS:8080`
 
 Then the below UI will be open
 
-![](http://devcenter.megam.io/content/images/2016/05/1-2.png)
+![](https://devcenter.megam.io/content/images/2016/05/1-2.png)
 
 Select the Manager App.It asks User Name and Password
 `Username and password is "megam"`
 
-![](http://devcenter.megam.io/content/images/2016/05/j2.png)
+![](https://devcenter.megam.io/content/images/2016/05/j2.png)
 
 Here you will click the `jenkins` link.
 * (or) the url to launch jenkins
-`http://IP_ADDRESS:8080/jenkins`
+`https://IP_ADDRESS:8080/jenkins`
 
-![](http://devcenter.megam.io/content/images/2016/05/j3.png)
+![](https://devcenter.megam.io/content/images/2016/05/j3.png)
 
 
 ### Conclusion

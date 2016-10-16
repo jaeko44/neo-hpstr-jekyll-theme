@@ -14,31 +14,31 @@ This tutorial will guide you creating atharva storage  in MegamAfrica.
 
 ### Prerequisites
 
-* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](http://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/).
+* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/).
 
 ### Create Atharva storage in MegamAfrica
 
 * First, ensure the user can login to https://console.megamafrica.com.
 
 * Upon successful signin, look for the icon
-![](http://devcenter.megam.io/content/images/2016/06/storage-1.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/storage-1.jpg)
  at the top right hand corner named `Storage`
-![](http://devcenter.megam.io/content/images/2016/06/atharva-1.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/atharva-1.jpg)
 
 * Click the `create storage` box. A window will pop up and ask for Bucket Name. You can type a name for the bucket.
 
 * Bucket is successfully created and also its created the `access-key` and `secret-key` for your account.
 
 * You can see your Access-key and Secret-key from your profile page in MegamAfrica (https://console.megamafrica.com).
-![](http://devcenter.megam.io/content/images/2016/06/storage-keys.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/storage-keys.jpg)
 
 * Now, You can upload a files in `Atharva Storage` using your Access-key and Secret-key.
 
 * Upload a files using windows and ubuntu using following guide.
 
-[How to upload a files from windows to MegamAfrica](http://devcenter.megam.io/2016/06/16/atharva-ceph-windows/).
+[How to upload a files from windows to MegamAfrica](https://devcenter.megam.io/2016/06/16/atharva-ceph-windows/).
 
-[How to deploy private docker registry in MegamAfrica](http://devcenter.megam.io/2016/06/10/private-registry-along-with-ceph/).
+[How to deploy private docker registry in MegamAfrica](https://devcenter.megam.io/2016/06/10/private-registry-along-with-ceph/).
 
 * Let us verify if the files is uploaded
 

@@ -15,9 +15,9 @@ S3 Browser is a freeware Windows client for Amazon S3. Amazon S3 provides a simp
 **Atharva Storage** - MegamAfrica is a "Cloud object storage, low latency and (S3 - AWS Signature v2) compatible API  built on top of ceph - jewel.".
 
 Upon successful signin to https://console.megamafrica.com, look for the icon
-![](http://devcenter.megam.io/content/images/2016/06/storage-1.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/storage-1.jpg)
  at the top right hand corner named `Storage`
-![](http://devcenter.megam.io/content/images/2016/06/atharva-1.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/atharva-1.jpg)
 
 
 This tutorial will guide you in setting up a **S3 Browser windows client on your windows 7+/10 workstation** and connecting it to manage your atharva storage account in MegamAfrica.
@@ -28,9 +28,9 @@ This tutorial will guide you in setting up a **S3 Browser windows client on your
 
 * You are running Windows 7 or later version. This was tested on Windows 10.
 
-* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](http://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/).
+* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/).
 
-* You have to create an atharva storage account with MegamAfrica. [How to create an atharva account with MegamAfrica](http://devcenter.megam.io/2016/06/17/getting-started-atharva-storage-in-megamafrica/).
+* You have to create an atharva storage account with MegamAfrica. [How to create an atharva account with MegamAfrica](https://devcenter.megam.io/2016/06/17/getting-started-atharva-storage-in-megamafrica/).
 
 
 ### Connecting  S3 Browser  with Atharva (Ceph object storage) MegamAfrica
@@ -39,9 +39,9 @@ This initial section contains everything you need to setup S3 Browser windows na
 
 ##### Step-1 Download S3 Browser for windows
 
-* Go to this link. <a href="http://s3browser.com/" target="_blank">S3 browser</a>.
+* Go to this link. <a href="https://s3browser.com/" target="_blank">S3 browser</a>.
 
-* Click `Download S3 Browser` in <a href="http://s3browser.com/" target="_blank">www.s3browser.com</a> to start your download.
+* Click `Download S3 Browser` in <a href="https://s3browser.com/" target="_blank">www.s3browser.com</a> to start your download.
 
 * Right-click the download file and install it in your windows system.
 
@@ -77,7 +77,7 @@ You can see your `Access-key` and `Secret-key` from your `profile page` in Megam
 
 * Choose the one or multiple files to upload/choose an upload folder if you want to upload a whole folder or whole drive.
 
-![](http://devcenter.megam.io/content/images/2016/06/upload-folder-button.png)
+![](https://devcenter.megam.io/content/images/2016/06/upload-folder-button.png)
 
 *  Select the files you want to upload or select the folder to upload. The upload process will begin. You can track the progress on the Tasks tab.
 

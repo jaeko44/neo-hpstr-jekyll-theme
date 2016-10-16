@@ -29,10 +29,10 @@ On Ubuntu Ubuntu 14.04, multiverse needs to be enabled in the package resource l
 
 uncomment the following lines in /etc/apt/sources.list:
 
-	# deb http://archive.ubuntu.com/ubuntu trusty multiverse
-	# deb-src http://archive.ubuntu.com/ubuntu trusty multiverse
-	# deb http://archive.ubuntu.com/ubuntu trusty-updates multiverse
-	# deb-src http://archive.ubuntu.com/ubuntu trusty-updates multiverse
+	# deb https://archive.ubuntu.com/ubuntu trusty multiverse
+	# deb-src https://archive.ubuntu.com/ubuntu trusty multiverse
+	# deb https://archive.ubuntu.com/ubuntu trusty-updates multiverse
+	# deb-src https://archive.ubuntu.com/ubuntu trusty-updates multiverse
 
 Update the package resource list:
 

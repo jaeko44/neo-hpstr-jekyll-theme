@@ -62,9 +62,9 @@ successfully launched the vm.
 
 ### Step-3 Open Your Web browser
 
-You can access your web page using http://localhost:5984/
+You can access your web page using https://localhost:5984/
 
-![](http://devcenter.megam.io/content/images/2016/05/s2-2.jpg)
+![](https://devcenter.megam.io/content/images/2016/05/s2-2.jpg)
 
 ### Conclusion
 

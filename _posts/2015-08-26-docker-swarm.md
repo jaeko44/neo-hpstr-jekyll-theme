@@ -11,9 +11,9 @@ The market largely is about 4 kinds + emerging **unikernel** owing to some of th
 
 * **Containers in a Virtual machine (VM)**. Everybody uses a fancy terminology, and [we](https://www.megam.io) call it a `DockerBox`. The is by far the easiest to do, since you have isolation handled already inside a  VM.
 
-* **Improvements to containers** like [Rocket](https://coreos.com/blog/rocket/), [Flockport](https://flockport.com),[RancherOS](https://github.com/rancherio/os), [Kurma](https://github.com/apcera/kurma), [Jetpack FreeBSD](https://github.com/3ofcoins/jetpack), [systemd-nspawn](http://www.freedesktop.org/software/systemd/man/systemd-nspawn.html) using **LXC** or **systemd-nspawn** or custom build.
+* **Improvements to containers** like [Rocket](https://coreos.com/blog/rocket/), [Flockport](https://flockport.com),[RancherOS](https://github.com/rancherio/os), [Kurma](https://github.com/apcera/kurma), [Jetpack FreeBSD](https://github.com/3ofcoins/jetpack), [systemd-nspawn](https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html) using **LXC** or **systemd-nspawn** or custom build.
 
-* **Container OS** like [Project atomic](http://www.projectatomic.io/), [CoreOS](https://coreos.com), [Snappy](https://developer.ubuntu.com/en/snappy/), [Nano server - Guess who?](https://channel9.msdn.com/Events/Ignite/2015/BRK2461), [photon ? VWware uggh!](https://github.com/vmware/photon) which helps to run containers inside it.
+* **Container OS** like [Project atomic](https://www.projectatomic.io/), [CoreOS](https://coreos.com), [Snappy](https://developer.ubuntu.com/en/snappy/), [Nano server - Guess who?](https://channel9.msdn.com/Events/Ignite/2015/BRK2461), [photon ? VWware uggh!](https://github.com/vmware/photon) which helps to run containers inside it.
 
 
 * **Containers in baremetal** Install and run containers on bare metal as this provides profound performance.
@@ -43,7 +43,7 @@ The emerging one are the **Unikernel or library kernel** which run just one app 
     </tr>
     <tr>
         <td>Panamax by centurylink</td>
-        <td><a href="http://panamax.io/" target="_blank">Panamax</a></td>
+        <td><a href="https://panamax.io/" target="_blank">Panamax</a></td>
         <td>CoreOS</td>
     </tr>
     <tr>
@@ -73,7 +73,7 @@ The emerging one are the **Unikernel or library kernel** which run just one app 
     </tr>
     <tr>
         <td>Shipyard</td>
-        <td><a href="http://shipyard-project.com/" target="_blank">Shipyard</a></td>
+        <td><a href="https://shipyard-project.com/" target="_blank">Shipyard</a></td>
         <td>Onpremise bare metal</td>
     </tr>
     <tr>
@@ -83,7 +83,7 @@ The emerging one are the **Unikernel or library kernel** which run just one app 
     </tr>
     <tr>
         <td>Openshift</td>
-        <td><a href="http://www.openshift.org/" target="_blank">Atomic</a></td>
+        <td><a href="https://www.openshift.org/" target="_blank">Atomic</a></td>
         <td>VM</td>
     </tr>
      <tr>
@@ -139,7 +139,7 @@ Stay with me, Yes we are warming up with the problem now
 
 A picture is worth a 1000 words.
 
-![Megam docker](http://devcenter.megam.io/content/images/2015/08/megam_baremetal_docker.png)
+![Megam docker](https://devcenter.megam.io/content/images/2015/08/megam_baremetal_docker.png)
 
 
 To do that we need schedulers that can orchestarte and compose containers. We use the term micro service and containers in an interchangeable way, they both mean the same.
@@ -195,7 +195,7 @@ In a unanimous way most companies choose
 
 Most vendor use the containter orchestration using **Docker compose [fig]** or **Kubernetes**.
 
-Well at [Megam](https://github.com/megamsy) as seen from the picture we have own omni scheduler built using [golang](http://golang.org)
+Well at [Megam](https://github.com/megamsy) as seen from the picture we have own omni scheduler built using [golang](https://golang.org)
 
 <table border="1">
     <tr>
@@ -227,7 +227,7 @@ Why ? Since if you visit our architecture, we had **docker engines** running in 
 
 `Eg:`
 
-* As a developer0 lets say i submitted the first container from [our public beta developer edition - console.megam.io](https://console.megam.io] - Oh yeah you have an [onpremise edition](http://docs.megam.io/docs/what-is-megam-cloud-platform-do)  from a marketplace
+* As a developer0 lets say i submitted the first container from [our public beta developer edition - console.megam.io](https://console.megam.io] - Oh yeah you have an [onpremise edition](https://docs.megam.io/docs/what-is-megam-cloud-platform-do)  from a marketplace
 * Similarly developer1 - developer2 submit concurrently to the swarm cluster
 * swarm needs to spread and schedule/load balance the containers on all the hosts equally.
 
@@ -250,4 +250,4 @@ Once we fixed the above code and packaged swarm, it worked like a charm.
 
 We believe Docker doesn't want to open up its default scheduler but force people to use Mesos. We at Megam are allegic to Java (JVM) as it bloats too much memory and we use judicially.
 
-[Setup and give it a try](http://docs.megam.io).
+[Setup and give it a try](https://docs.megam.io).

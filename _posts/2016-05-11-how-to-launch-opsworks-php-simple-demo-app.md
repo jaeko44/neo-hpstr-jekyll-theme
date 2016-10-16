@@ -20,7 +20,7 @@ This tutorial will guide you in launching a php web application (OpsWorks) in Me
 
 * You have an account on GitHub, which is a Git repository host.
 
-* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](http://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
+* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
 
 * You have to install openssh-server for ssh access.
 
@@ -88,10 +88,10 @@ The buildpack for PHP
 
 
 ### **Step-3 Open Your Web browser**
-You can access your web page using http://IP_ADDRESS/current
+You can access your web page using https://IP_ADDRESS/current
 
 
-{<1>}![](http://devcenter.megam.io/content/images/2016/05/ops.png)
+{<1>}![](https://devcenter.megam.io/content/images/2016/05/ops.png)
 
 ### Conclusion
 

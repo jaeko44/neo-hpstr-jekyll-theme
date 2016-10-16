@@ -5,7 +5,7 @@ og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
 description: Getting started with spark-jobserver
 ---
 
-[Spark-jobserver](https://github.com/spark-jobserver/spark-jobserver) is a really cool RESTful interface for submitting and managing Apache Spark jobs, jars, and job contexts. At [megam](http://www.megam.io) our analytics platform [Meglytics](http://www.meglytics.com) is powered by apache spark and we leverage spark-jobserver to execute spark jobs. This blog post we will see how to get started with apache spark jobserver. Before we go ahead, a big thanks to the Ooyala folks for making the spark-jobserver opensource.
+[Spark-jobserver](https://github.com/spark-jobserver/spark-jobserver) is a really cool RESTful interface for submitting and managing Apache Spark jobs, jars, and job contexts. At [megam](https://www.megam.io) our analytics platform [Meglytics](https://www.meglytics.com) is powered by apache spark and we leverage spark-jobserver to execute spark jobs. This blog post we will see how to get started with apache spark jobserver. Before we go ahead, a big thanks to the Ooyala folks for making the spark-jobserver opensource.
 Lets get started.
 
 ***Note: Make sure you have spark installed locally***

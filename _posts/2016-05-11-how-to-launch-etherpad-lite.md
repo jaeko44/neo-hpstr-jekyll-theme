@@ -23,7 +23,7 @@ This tutorial will guide you in launching a Nodejs web application (etherpad-lit
 
 * You have an account on GitHub, which is a Git repository host.
 
-* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](http://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
+* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
 
 * You have to install openssh-server for ssh access in your worstation.
 
@@ -71,10 +71,10 @@ ensure that your git repository have the start script file as follows.
 
 
 ### **Step-3 Open Your Web browser**
-You can access your web page using http://IP_ADDRESS/9001
+You can access your web page using https://IP_ADDRESS/9001
 
 
-![](http://devcenter.megam.io/content/images/2016/05/node.png)
+![](https://devcenter.megam.io/content/images/2016/05/node.png)
 
 ###Conclusion
 

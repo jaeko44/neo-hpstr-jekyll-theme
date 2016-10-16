@@ -13,7 +13,7 @@ We have tried single publisher to reuse socket connection but [RabbitMQ](https:/
 
 We set out to cleanup our code and hunt for a new pub sub guy.
 
-No wonder several players in the cloud market invent their own queue system, choices like [nats](http://nats.io/) pioneered by [apcera](https://www.apcera.com), [zeromq](http://zeromq.org/), [nsq.io](https://nsqio) by [bit.ly](https://bit.ly)
+No wonder several players in the cloud market invent their own queue system, choices like [nats](https://nats.io/) pioneered by [apcera](https://www.apcera.com), [zeromq](https://zeromq.org/), [nsq.io](https://nsqio) by [bit.ly](https://bit.ly)
 
 We choose [nsq](nsq.io) for it distributed realtime platform with no single point of failure (SPOF), it has its own service discovery mechanism and its written in [golang](https://golang.org), has drivers for every language.
 
@@ -37,7 +37,7 @@ Upon untarring ensure that the ~/bin folder has all the files named *nsq_*
 
     $ nsqadmin --lookupd-http-address=127.0.0.1:4161
 
-    $ curl -d 'hello world 1' 'http://127.0.0.1:4151/put?topic=test'
+    $ curl -d 'hello world 1' 'https://127.0.0.1:4151/put?topic=test'
 
 **Watch topic 'test'**
 
@@ -56,7 +56,7 @@ We have built packages to handle them `megamnsqd`.
 The topology we will use is a service discovery daemon `nsqlookupd` clustered using mutiple `nsqd`
 
 ## Machine 1
-Do the due deligence by adding [get.megam.io](http://get.megam.io) repo.
+Do the due deligence by adding [get.megam.io](https://get.megam.io) repo.
 
      $ apt-get install megamnsqd
 
@@ -81,11 +81,11 @@ You can even run `nsqadmin` poiting to the `lookupd` address from  your local la
 
     $ nsqadmin --lookupd-http-address=<MACHINE1_IP:4161>
 
-Type [http://MACHINE1_IP:4171](http://MACHINE1_IP:4171) for the web ui.
+Type [https://MACHINE1_IP:4171](https://MACHINE1_IP:4171) for the web ui.
 
 
 ## Machine 2
-Do the due deligence by adding [get.megam.io](http://get.megam.io) repo.
+Do the due deligence by adding [get.megam.io](https://get.megam.io) repo.
 
      $ apt-get install megamnsqd
 
@@ -106,7 +106,7 @@ Start the daemon
 As a webui is optional, there is not upstart or systemd file for it.
 
 
-Type [http://MACHINE1_IP:4171](http://MACHINE1_IP:4171) for the web ui in your local machine.
+Type [https://MACHINE1_IP:4171](https://MACHINE1_IP:4171) for the web ui in your local machine.
 
 You will see two machines in the UI.
 

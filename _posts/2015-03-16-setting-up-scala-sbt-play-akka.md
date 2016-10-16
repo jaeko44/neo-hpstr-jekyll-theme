@@ -37,10 +37,10 @@ Install the scala-ide eclipse plugin for Eclipse Mars.
 
 Help > Install New Software >
 
-Add the correct link from herehttp://scala-ide.org/download/nightly.html
+Add the correct link from herehttps://scala-ide.org/download/nightly.html
 
-You can install typesafe stack and download templates from here. http://typesafe.com/stack/download#template
-http://typesafe.com/resources/typesafe-stack/downloading-installing.html
+You can install typesafe stack and download templates from here. https://typesafe.com/stack/download#template
+https://typesafe.com/resources/typesafe-stack/downloading-installing.html
 
 - Create a new project in eclipse.
 Scala – Worksheet allows you to play around with REPL inside eclipse editor. or use command line, to use REPL
@@ -73,16 +73,16 @@ If you created a project from command line then run sbt > eclipse to eclipsify a
 
 ### 3. If you with to use akka
 
-A sample akka source code for the Typesafe Stack (http://typesafe.com/stack). http://typesafe.com/resources/tutorials/getting-started-with-akka-scala.html From your akka code type sbt run:
+A sample akka source code for the Typesafe Stack (https://typesafe.com/stack). https://typesafe.com/resources/tutorials/getting-started-with-akka-scala.html From your akka code type sbt run:
 
     ram@rammegam:~/code/megam/workspace/megam_akka$ sbt run
     [info] Loading project definition from /home/ram/code/megam/workspace/megam_akka/project
     [info] Set current project to nilam (in build     file:/home/ram/code/megam/workspace/megam_akka/)
     [info] Updating {file:/home/ram/code/megam/workspace/megam_akka/}nilam...
     [info] Resolving com.typesafe#config;0.3.1 ...
-    [info] downloading http://repo.typesafe.com/typesafe/releases/com/typesafe/akka/akka-actor/2.0.3/akka-actor-2.0.3.jar ...
+    [info] downloading https://repo.typesafe.com/typesafe/releases/com/typesafe/akka/akka-actor/2.0.3/akka-actor-2.0.3.jar ...
     [info]     [SUCCESSFUL ] com.typesafe.akka#akka-actor;2.0.3!akka-actor.jar (9117ms)
-    [info] downloading http://repo.typesafe.com/typesafe/releases/com/typesafe/config/0.3.1/config-0.3.1.jar ...
+    [info] downloading https://repo.typesafe.com/typesafe/releases/com/typesafe/config/0.3.1/config-0.3.1.jar ...
     [info]     [SUCCESSFUL ] com.typesafe#config;0.3.1!config.jar(bundle) (3345ms)
     [info] Done updating.
     [info] Compiling 1 Scala source to /home/ram/code/megam/workspace/megam_akka/target/scala-2.9.2/classes...
@@ -107,7 +107,7 @@ Let us create a project titled megam_play which will use external dependencies l
 
       val organization = "Megam Systems"
 
-      val homepage = Some(url("http://www.megam.co"))
+      val homepage = Some(url("https://www.megam.co"))
 
       val startYear = Some(2013)
 
@@ -135,12 +135,12 @@ Let us create a project titled megam_play which will use external dependencies l
 
       val main = play.Project(appName, appVersion, appDependencies).settings(
     sbt.Keys.resolvers += "Sonatype Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots",
-    sbt.Keys.resolvers += "Typesafe Snapshots" at "http://repo.typesafe.com/typesafe/snapshots/",
-    sbt.Keys.resolvers += "Scala-Tools Maven2 Snapshots Repository" at "http://scala-tools.org/repo-snapshots",
-    sbt.Keys.resolvers += "Twitter Repo" at "http://maven.twttr.com", // finagle
-    sbt.Keys.resolvers += "spray repo" at "http://repo.spray.io", //spray client used in newman.
-    sbt.Keys.resolvers += "spray nightly" at "http://nightlies.spray.io", //spray client nighly used in newman (0.23.0).
-    sbt.Keys.resolvers += "Spy Repository" at "http://files.couchbase.com/maven2" // required to resolve `spymemcached`, the plugin's dependency.
+    sbt.Keys.resolvers += "Typesafe Snapshots" at "https://repo.typesafe.com/typesafe/snapshots/",
+    sbt.Keys.resolvers += "Scala-Tools Maven2 Snapshots Repository" at "https://scala-tools.org/repo-snapshots",
+    sbt.Keys.resolvers += "Twitter Repo" at "https://maven.twttr.com", // finagle
+    sbt.Keys.resolvers += "spray repo" at "https://repo.spray.io", //spray client used in newman.
+    sbt.Keys.resolvers += "spray nightly" at "https://nightlies.spray.io", //spray client nighly used in newman (0.23.0).
+    sbt.Keys.resolvers += "Spy Repository" at "https://files.couchbase.com/maven2" // required to resolve `spymemcached`, the plugin's dependency.
     )
 
     }
@@ -255,10 +255,10 @@ We package debs, hence build.sbt contains the required statements
     logLevel := Level.Warn
 
     // The Typesafe repository
-    resolvers += "Typesafe repository" at     "http://repo.typesafe.com/typesafe/releases/"
+    resolvers += "Typesafe repository" at     "https://repo.typesafe.com/typesafe/releases/"
 
     // Typesafe snapshots
-    resolvers += "Typesafe Snapshots" at    "http://repo.typesafe.com/typesafe/snapshots/"
+    resolvers += "Typesafe Snapshots" at    "https://repo.typesafe.com/typesafe/snapshots/"
 
     // Use the Play sbt plugin for Play projects
 
@@ -269,7 +269,7 @@ project/build.properties
 
 `sbt.version=0.13.0`
 
-We built our own AMQP based on scalaz, and is available in http://github.com/indykish/megam_common. Now build and publish megam_common jars using the process as described in this link into https://oss.sonatype.org/content/repositories/snapshots/com/github/indykish/megam_common_2.10/0.1.0-SNAPSHOT/.
+We built our own AMQP based on scalaz, and is available in https://github.com/indykish/megam_common. Now build and publish megam_common jars using the process as described in this link into https://oss.sonatype.org/content/repositories/snapshots/com/github/indykish/megam_common_2.10/0.1.0-SNAPSHOT/.
 
 `sbt publish`
 
@@ -287,7 +287,7 @@ Run the play project megam_play
      |  __/|_|___|__ /
      |_|          |__/
 
-    play 2.2.0 built with Scala 2.10.2 (running Java 1.7.0_25), http://www.playframework.com
+    play 2.2.0 built with Scala 2.10.2 (running Java 1.7.0_25), https://www.playframework.com
 
     > Type "help play" or "license" for more information.
     > Type "exit" or use Ctrl+D to leave this console.

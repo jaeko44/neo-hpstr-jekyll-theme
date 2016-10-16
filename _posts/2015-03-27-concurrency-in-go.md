@@ -118,10 +118,10 @@ goroutines are light-weight, other languages like java, uses threads.
 Creating a goroutine hardly takes 2kb of stackspace(it was 8kb till go 1.3) where as a thread consumes 1MB per stack space.
 
 
-I recommend all of you reading this to watch [Go Concurrency Patterns](http://www.youtube.com/watch?v=f6kdp27TYZs) by Rob Pike
+I recommend all of you reading this to watch [Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs) by Rob Pike
 
 Few Links:
 
 [Fundamentals of concurrent programming](https://www.nada.kth.se/~snilsson/concurrency/)
 
-[Concurreny goroutines and GOMAXPROCS](http://www.goinggo.net/2014/01/concurrency-goroutines-and-gomaxprocs.html)
+[Concurreny goroutines and GOMAXPROCS](https://www.goinggo.net/2014/01/concurrency-goroutines-and-gomaxprocs.html)

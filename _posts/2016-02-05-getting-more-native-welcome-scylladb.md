@@ -14,7 +14,7 @@ In this blog post we will focus on how to setup scylla and how the data modellin
 
 #### 1. Setting it up:
 
-This article [here](http://www.scylladb.com/doc/getting-started-ubuntu/) gives the steps in downloading and setting it up.
+This article [here](https://www.scylladb.com/doc/getting-started-ubuntu/) gives the steps in downloading and setting it up.
 
 Few things to note is, all the configuration setups and changes should be done in the yaml file which is in `/var/lib/conf/scylla.yml'
 

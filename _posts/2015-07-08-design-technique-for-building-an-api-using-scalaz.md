@@ -5,7 +5,7 @@ og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
 description: Design technique for building an API using scalaz
 ---
 
-In [Part1](http://devcenter.megam.io/2015/03/18/rest_api_playframework/) we looked at how does the general RESTful API design for the input request look like.
+In [Part1](https://devcenter.megam.io/2015/03/18/rest_api_playframework/) we looked at how does the general RESTful API design for the input request look like.
 
 We will use functional programming design technique - scalaz library and apply it to the design we have so far.
 
@@ -22,7 +22,7 @@ Break programs in to partitioned computations
 
 Just play with plain old data structures instead of fancy polymorphism types  like *AbstractBufferedToddlerReadyPlaySchool*.
 
-We will not cover scalaz here, however you can refer a tutorial to [learn scalaz](http://eed3si9n.com/learning-scalaz/).
+We will not cover scalaz here, however you can refer a tutorial to [learn scalaz](https://eed3si9n.com/learning-scalaz/).
 
 Some of the libraries that we will use are
 
@@ -168,7 +168,7 @@ We are going to proceed further and explore calling our model a bunch of times a
 ### ValidationNel put to use
 
 Let us take a scenario where in our case when an user clicks the button **Marketplaces** we want to talk to the [gateway - REST API server](https://github.com/megamsys/megam_gateway.git)
-![](http://devcenter.megam.io/content/images/2015/06/megam_marketplaces.png)
+![](https://devcenter.megam.io/content/images/2015/06/megam_marketplaces.png)
 
 to display the Marketplaces screen
 ![](/content/images/2015/06/megam_marketplaces1.png)
@@ -300,4 +300,4 @@ I suppose we have given you an overall perspective of just 3 things in the **sca
 
 We had applied the same in how this was used in our awesome `api server` [https://github.com/megamsys](https://github.com/megamsys).
 
-#### If you guys want to learn more then `press a few likes here` [functional conf](http://confengine.com/functional-conf-2015/proposal/1321/building-a-rest-api-with-scalaz)
+#### If you guys want to learn more then `press a few likes here` [functional conf](https://confengine.com/functional-conf-2015/proposal/1321/building-a-rest-api-with-scalaz)

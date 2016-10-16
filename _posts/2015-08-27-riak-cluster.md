@@ -26,7 +26,7 @@ Riak cluster needs atleast two servers. My servers are
 ###### Install Riak :
 Riak installation in pretty easy. Just wget the debian package from site and dpkg it.
 
-    $ wget http://s3.amazonaws.com/downloads.basho.com/riak/2.1/2.1.1/ubuntu/trusty/riak_2.1.1-1_amd64.deb
+    $ wget https://s3.amazonaws.com/downloads.basho.com/riak/2.1/2.1.1/ubuntu/trusty/riak_2.1.1-1_amd64.deb
     $ sudo dpkg -i riak_2.1.1-1_amd64.deb
 
 After installing riak, we need to start it manually. Before starting riak, let's change the riak configuration.

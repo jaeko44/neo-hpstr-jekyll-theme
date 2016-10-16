@@ -15,7 +15,7 @@ Here we will look at installing gradle and setting up a scala project and publis
 
 #### Download grade
 
-Dowload and untar the zip [gradle](http://gradle.org/gradle-download/)
+Dowload and untar the zip [gradle](https://gradle.org/gradle-download/)
 
 
 ### Environment variable
@@ -62,7 +62,7 @@ repositories {
     }
 
     maven {
-      url 'http://dl.bintray.com/megamsys/scala'
+      url 'https://dl.bintray.com/megamsys/scala'
     }
 
     mavenCentral()
@@ -102,7 +102,7 @@ repositories {
     }
 
     maven {
-      url 'http://dl.bintray.com/megamsys/scala'
+      url 'https://dl.bintray.com/megamsys/scala'
     }
 
     mavenCentral()
@@ -229,7 +229,7 @@ gradle test
 
 ```
 
-![Megam spec passes](http://devcenter.megam.io/content/images/2015/12/megam_spec_pass.png)
+![Megam spec passes](https://devcenter.megam.io/content/images/2015/12/megam_spec_pass.png)
 
 ### Publishing to bintray
 

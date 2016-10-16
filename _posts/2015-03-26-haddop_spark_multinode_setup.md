@@ -32,12 +32,12 @@ Install java
 
 Install cloudera repo package
 
-    wget http://archive.cloudera.com/cdh5/one-click-install/trusty/amd64/cdh5-repository_1.0_all.deb
+    wget https://archive.cloudera.com/cdh5/one-click-install/trusty/amd64/cdh5-repository_1.0_all.deb
     sudo dpkg -i cdh5-repository_1.0_all.deb
     sudo apt-get -y update
 
 
-For those of you folks from [Ceph](http://www.ceph.com) background, The Hadoop namenode is like Ceph MDS (Metadata server) which just stores pointer to data/additional info about the data.
+For those of you folks from [Ceph](https://www.ceph.com) background, The Hadoop namenode is like Ceph MDS (Metadata server) which just stores pointer to data/additional info about the data.
 
 There is a research project we will look at to see how Ceph can be natively used with Apache Spark. Why do you want do that, well Ceph is native (ugly Java can be gotten rid of)
 
@@ -57,7 +57,7 @@ Edit /etc/hadoop/conf/core-site.xml with the $FIRST_NODE_IP_ADDR  to `ip address
 	<?xml version="1.0"?>
 	<!--
 	Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright ownership.
-	The ASF licenses this file to You under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance withthe License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.See the License for the specific language governing permissions and limitations under the License.
+	The ASF licenses this file to You under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance withthe License. You may obtain a copy of the License at https://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.See the License for the specific language governing permissions and limitations under the License.
 	-->
 	<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 	<configuration>
@@ -132,7 +132,7 @@ Edit /etc/hadoop/conf/core-site.xml
 	<?xml version="1.0"?>
 	<!--
 	Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright ownership.
-	The ASF licenses this file to You under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance withthe License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.See the License for the specific language governing permissions and limitations under the License.
+	The ASF licenses this file to You under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance withthe License. You may obtain a copy of the License at https://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.See the License for the specific language governing permissions and limitations under the License.
 	-->
 	<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 	<configuration>

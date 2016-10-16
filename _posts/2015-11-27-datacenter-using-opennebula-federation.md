@@ -9,7 +9,7 @@ The federation is performed by OpenNebula platform. The OpenNebula is an Open-so
 
 Here we are federating two already replicated Master Slave servers. to know how to replicate two servers refer the following article
 
-    http://devcenter.megam.io/2015/09/08/mysql-master-slave-replication/
+    https://devcenter.megam.io/2015/09/08/mysql-master-slave-replication/
 
 
 ###### Installing OpenNebula
@@ -43,9 +43,9 @@ Before install
 
 Install Opennebula
 
-	wget -q -O- http://downloads.opennebula.org/repo/Ubuntu/repo.key | apt-key add -
+	wget -q -O- https://downloads.opennebula.org/repo/Ubuntu/repo.key | apt-key add -
 
-	echo "deb http://downloads.opennebula.org/repo/4.12/Ubuntu/14.04 stable opennebula" > /etc/apt/sources.list.d/opennebula.list
+	echo "deb https://downloads.opennebula.org/repo/4.12/Ubuntu/14.04 stable opennebula" > /etc/apt/sources.list.d/opennebula.list
 
 	apt-get -y update
 
@@ -153,14 +153,14 @@ Edit the local (master) Zone Endpoint by using the onezone command. You can also
 
 	$ onezone update 0
 
-    ENDPOINT = http://<192.168.1.12>:2633/RPC2
+    ENDPOINT = https://<192.168.1.12>:2633/RPC2
 
 Create a Zone for each one of the slaves, and note down the new Zone ID.
 
 $ nano /tmp/zone.tmpl
 
         NAME          = slave-one13
-		ENDPOINT 	  = http://<192.168.1.13>:2633/RPC2
+		ENDPOINT 	  = https://<192.168.1.13>:2633/RPC2
 
 create your slave zone id by zone template file using blow command
 
@@ -204,7 +204,7 @@ Configure OpenNebula to act as a federation slave. Don't forget to use the Zone 
 	FEDERATION = [
     	MODE = "SLAVE",
     	ZONE_ID = 100,
-    MASTER_ONED = "http://<192.168.1.12>:2633/RPC2"
+    MASTER_ONED = "https://<192.168.1.12>:2633/RPC2"
 		]
 
 Copy the directory /var/lib/one/.one from the master host server to the slave host server. This directory and its contents must have oneadmin as owner. The directory should contain these files:

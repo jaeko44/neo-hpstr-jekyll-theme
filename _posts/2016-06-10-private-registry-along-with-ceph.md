@@ -31,16 +31,16 @@ This tutorial will guide you in setting up a **Private docker registry** in Mega
 
 * An account on GitHub, which is a Git repository host.
 
-* You have to create a valid credential for accessing https://console.megamafrica.com.[How to create an account with MegamAfrica](http://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/).
+* You have to create a valid credential for accessing https://console.megamafrica.com.[How to create an account with MegamAfrica](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/).
 
 #### Introducing Atharva Storage - MegamAfrica
 
 **Atharva Storage** - MegamAfrica is a "Cloud object storage, low latency and (S3 - AWS Signature v2) compatible API  built on top of ceph - jewel.".
 
 Upon successful signin to https://console.megamafrica.com, look for the icon
-![](http://devcenter.megam.io/content/images/2016/06/storage-1.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/storage-1.jpg)
  at the top right hand corner named `Storage`
-![](http://devcenter.megam.io/content/images/2016/06/atharva-1.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/atharva-1.jpg)
 
 ### To Deploy Private Docker Registry
 
@@ -67,7 +67,7 @@ This initial section contains everything you need to set private registry on you
 * Click the create storage button. it will open one pop-up window. You can create a bucket.
 
 * Let us provide our bucket name as `docker-registry`.
-![](http://devcenter.megam.io/content/images/2016/06/one.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/one.jpg)
 
 ##### Step-3 Installing Docker
 
@@ -122,14 +122,14 @@ Enter this command in your virtual machine
 
 		sudo docker pull <imagename>
         eg: sudo docker pull hello-world
-![](http://devcenter.megam.io/content/images/2016/06/p1-1.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/p1-1.jpg)
 
 *  Check if the image is downloaded in the VM
 
 		docker images
 
 
-![](http://devcenter.megam.io/content/images/2016/06/p3.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/p3.jpg)
 
 * Push downloaded docker image to your private registry.
 
@@ -139,20 +139,20 @@ As you are inside the VM, the private registry is running under `127.0.0.1:5000`
 	sudo docker push 127.0.0.1:5000/hello-world
 
 
-![](http://devcenter.megam.io/content/images/2016/06/p2-1.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/p2-1.jpg)
 
 * Let us verify if the image is stored
 
 Logon https://console.megamafrica.com goto storage place. You can see the docker images in file structure order.
 
-![](http://devcenter.megam.io/content/images/2016/06/docker-1.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/docker-1.jpg)
 
 * Grab the private regitry's ipaddress
 
     	ifconfig
 
 
-![](http://devcenter.megam.io/content/images/2016/06/p4.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/p4.jpg)
 
 In our case the docker registry is running at 138.201.98.3.
 
@@ -175,7 +175,7 @@ In our case the docker registry is running at 138.201.98.3.
 
     	docker pull 138.201.98.3:5000/hello-world
 
-![](http://devcenter.megam.io/content/images/2016/06/p5.jpg)
+![](https://devcenter.megam.io/content/images/2016/06/p5.jpg)
 ### Conclusion
 
 These are the very simple steps to create vm, utilize our atharva storage.

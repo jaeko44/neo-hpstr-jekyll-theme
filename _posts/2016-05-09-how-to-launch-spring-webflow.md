@@ -22,7 +22,7 @@ This tutorial will guide you in launching a J2EE web application (spring-webflow
 
 * You have an account on GitHub, which is a Git repository host.
 
-* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](http://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
+* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
 
 You have to install openssh-server for ssh access.
 
@@ -90,10 +90,10 @@ Java's default build pack get's going by kicking of maven. We plan to support `a
 	start java
 
 ###**Step-3 Open Your Web browser**
-  You can access your web page using `http://IP_ADDRESS:8080`
+  You can access your web page using `https://IP_ADDRESS:8080`
 
 You will show the below UI
-![](http://devcenter.megam.io/content/images/2016/05/1-1.png)
+![](https://devcenter.megam.io/content/images/2016/05/1-1.png)
 
 Select the Manager App.It asks User Name and Password
 `Username and password is "megam"`
@@ -102,9 +102,9 @@ Then the below UI will be open
 
 Here you will click the webflow show case link.
 
-![](http://devcenter.megam.io/content/images/2016/05/2.png)
+![](https://devcenter.megam.io/content/images/2016/05/2.png)
 
-![](http://devcenter.megam.io/content/images/2016/05/3-1.png)
+![](https://devcenter.megam.io/content/images/2016/05/3-1.png)
 
 
 

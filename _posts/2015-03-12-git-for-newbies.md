@@ -19,7 +19,7 @@ Now let's get started! Now that you know what is the difference between Git and 
 
 #### How to setup Git tool:
 ##### STEP 1:
->http://git-scm.com/downloads.
+>https://git-scm.com/downloads.
 
 >**Download the latest version of Git** from the link mentioned above.
 

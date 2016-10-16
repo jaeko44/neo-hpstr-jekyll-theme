@@ -50,7 +50,7 @@ sample conf yaml file:
 # tsuru/config Introduction
 Config is a Go package to manage yaml configuration files.
 
-For usage information, read tsuru package documentation: http://godoc.org/github.com/tsuru/config.
+For usage information, read tsuru package documentation: https://godoc.org/github.com/tsuru/config.
 
 ## Usage
 

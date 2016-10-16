@@ -9,7 +9,7 @@ We are going to build a beautiful REST API based on a modern [playframework](www
 Let us start by understanding the concept of REST in a simpler sense.
 
 ## RESTful API
-[REST](http://en.wikipedia.org/wiki/Representational_state_transfer) came from Roy Fieldings desertation in claiming to make web stateles again based on designing your system using nouns. So some of the examples are
+[REST](https://en.wikipedia.org/wiki/Representational_state_transfer) came from Roy Fieldings desertation in claiming to make web stateles again based on designing your system using nouns. So some of the examples are
 
 * accounts
 * users
@@ -18,13 +18,13 @@ Let us start by understanding the concept of REST in a simpler sense.
 * assemblies
 * apps
 
-You no longer need the clugy [SOAP](http://en.wikipedia.org/wiki/SOAP) heavyweight XML, but rather a nimble JSON using fundamental HTTP will do.
+You no longer need the clugy [SOAP](https://en.wikipedia.org/wiki/SOAP) heavyweight XML, but rather a nimble JSON using fundamental HTTP will do.
 
-How do you arrive on a design for the RESTful approach for your system is beyond the scope of this article. However we recommend you to read about [apigees REST API Design](http://apigee.com/about/resources/webcasts/restful-api-design-second-edition), which talks about the same.
+How do you arrive on a design for the RESTful approach for your system is beyond the scope of this article. However we recommend you to read about [apigees REST API Design](https://apigee.com/about/resources/webcasts/restful-api-design-second-edition), which talks about the same.
 
 The RESTful API's transport mechanism is pure [HTTP](https://www.ietf.org/rfc/rfc2616.txt)
 
-We will use [HMAC](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code) to encrypt the payload sent across from a client.
+We will use [HMAC](https://en.wikipedia.org/wiki/Hash-based_message_authentication_code) to encrypt the payload sent across from a client.
 
 The client code we will use in our usecase will be Ruby or Scala.
 

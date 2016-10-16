@@ -11,7 +11,7 @@ Assumption: Ruby installed
 # Server Installation
 The Chef server acts as a hub for configuration data. The Chef server stores cookbooks, the policies that are applied to nodes, and metadata that describes each registered node that is being managed by the chef-client. Nodes use the chef-client to ask the Chef server for configuration details, such as recipes, templates, and file distributions. The chef-client then does as much of the configuration work as possible on the nodes themselves (and not on the Chef server). This scalable approach distributes the configuration effort throughout the organization.
 
-Download chef-server package from here [http://downloads.chef.io/chef-server/](http://downloads.chef.io/chef-server/)
+Download chef-server package from here [https://downloads.chef.io/chef-server/](https://downloads.chef.io/chef-server/)
 
 	$ wget https://web-dl.packagecloud.io/chef/stable/packages/ubuntu/trusty/chef-server-core_12.0.1-1_amd64.deb
 
@@ -51,7 +51,7 @@ Install chef using rubygems
 
 We should setup a file structure that will help us organise our various Chef files. Opscode, the makers of Chef provide one. They call it simply the Chef Repository.
 
-	$ wget http://github.com/opscode/chef-repo/tarball/master
+	$ wget https://github.com/opscode/chef-repo/tarball/master
 	$ tar -zxf master
 	$ mv opscode-chef-repo* chef-repo
 	$ rm master

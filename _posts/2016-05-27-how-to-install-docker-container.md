@@ -25,7 +25,7 @@ This tutorial we will need to setup the docker container.
    Now, on your master which is soon going to be swarm master, install megamswarm
 
 
-    apt-add-repository "deb [arch=amd64  http://get.megam.io/1.0/ubuntu/14.04/ trusty testing"
+    apt-add-repository "deb [arch=amd64  https://get.megam.io/1.0/ubuntu/14.04/ trusty testing"
 
     apt-key adv --keyserver keyserver.ubuntu.com --recv B3E0C1B7
 
@@ -145,7 +145,7 @@ Hopefully you have configured our engine vertice engine, if not this is needed f
 
     nano /usr/share/megam/megamd/megamd.conf
     swarm:
-       host: http://<swarm_master_ip>:2375
+       host: https://<swarm_master_ip>:2375
 
  Voila! Go ahead and launch multiple docker containers through  vertice.
 

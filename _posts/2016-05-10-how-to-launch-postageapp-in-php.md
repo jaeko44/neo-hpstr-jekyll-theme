@@ -22,7 +22,7 @@ This tutorial will guide you in launching a php web application (PostageApp) in 
 
 * You have an account on GitHub, which is a Git repository host.
 
-* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](http://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
+* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
 
  * You have to install openssh-server for ssh access in your local system.
 
@@ -87,9 +87,9 @@ We use a default PHP build pack using our super cool chef-repo.
 
 #### Step - 3 Open Your Web Browser
 
-You can access your web page using http://IP_ADDRESS/current
+You can access your web page using https://IP_ADDRESS/current
 
-![](http://devcenter.megam.io/content/images/2016/05/postage4.png)
+![](https://devcenter.megam.io/content/images/2016/05/postage4.png)
 
 
 Voila ! Your App is up to date.

@@ -26,7 +26,7 @@ Go, also commonly referred to as golang, is a programming language initially dev
 >
 • boring (to some)
 
-[http://golang.org](http://golang.org)
+[https://golang.org](https://golang.org)
 
 #### Setup
 

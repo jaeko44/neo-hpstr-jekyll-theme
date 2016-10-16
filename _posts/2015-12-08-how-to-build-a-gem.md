@@ -41,7 +41,7 @@ To begin to create a gem using Bundler named **[megam_api](https://github.com/me
 
     bundle gem megam_api
 
-![create gem megam_api](http://devcenter.megam.io/content/images/2015/12/bundler_gem_megam.png)
+![create gem megam_api](https://devcenter.megam.io/content/images/2015/12/bundler_gem_megam.png)
 
 **We call our gem megam_api** because this gem is going to do a couple of things around [Megam cloud platfom](https://www.megam.io) such as magically launch an app in cloud or "suck in cloud!".
 
