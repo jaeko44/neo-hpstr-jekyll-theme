@@ -12,7 +12,7 @@ Ubuntu is a Debian-based Linux operating system and distribution for personal co
 This tutorial will guide you in setting up a Ubuntu 14.04 VM in MegamAfrica.
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 
 
 ### Prerequisites
 
@@ -74,4 +74,4 @@ These are the very simple steps to launch Ubuntu virtual machine. This is a good
 ### Deploy your Ubuntu VM now
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 

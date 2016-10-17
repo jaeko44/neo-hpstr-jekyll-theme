@@ -12,7 +12,7 @@ description: How to launch SDK for C/C++/Python in MegamAfrica
  This tutorial will set up launching sdk using c/c++, python.
 
  <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 
 
 #### Prerequisites
 

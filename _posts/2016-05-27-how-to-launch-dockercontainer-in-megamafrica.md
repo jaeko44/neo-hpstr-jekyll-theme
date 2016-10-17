@@ -12,7 +12,7 @@ Docker containers wrap up a piece of software in a complete filesystem that cont
 This tutorial will guide you launching a Docker Container in MegamAfrica.
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 
 
 
 #### Prerequisites
@@ -76,4 +76,4 @@ Finally These are the steps in launched the docker container in successfully.
 
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 

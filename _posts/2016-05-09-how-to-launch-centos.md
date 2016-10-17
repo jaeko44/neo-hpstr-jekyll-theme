@@ -11,7 +11,7 @@ The CentOS Linux distribution is a stable, predictable, manageable and reproduci
 This tutorial will guide you in setting up a CentOS VM in MegamAfrica.
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 
 
 ###Prerequisites
 
@@ -73,4 +73,4 @@ These are the very simple steps to launch CentOS in virtual machine. This is a g
 ###Deploy your CentOS VM now
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 

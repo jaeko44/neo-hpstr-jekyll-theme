@@ -20,7 +20,7 @@ Upon successful signin to https://console.megamafrica.com, look for the icon
 
 This tutorial will guide you in setting up a **Cloudberry backup tool for windows client on your windows 7+/10 workstation** and connecting it to manage your atharva storage account in MegamAfrica.
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 
 
 ### Prerequisites
 
@@ -90,4 +90,4 @@ This is a good head-start for using Cloudberry  & our Athava ceph based object s
 ### Start uploading to our storage - MegamAfrica
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 
