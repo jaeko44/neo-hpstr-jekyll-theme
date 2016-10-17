@@ -21,7 +21,7 @@ You should use the Registry if you want to:
 This tutorial will guide you in setting up a **Private docker registry** in MegamAfrica.
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 
 
 ### Prerequisites
 
@@ -185,4 +185,4 @@ This is a good head-start for deploy a private docker-registry in MegamAfrica.
 ### Deploy your Private Docker Registry now
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 

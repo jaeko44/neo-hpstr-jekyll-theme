@@ -12,7 +12,7 @@ MegamAfrica is an end-to-end open source cloud management platform offered as a 
 This tutorial will guide you in creating an account with MegamAfrica.
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 
 
 
 You can access MegamAfrica by clicking on https://console.megamafrica.com.
@@ -109,4 +109,4 @@ These are the very simple steps to create an account with MegamAfrica. MegamAfri
 ###### Deploy a VM or Container now
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 

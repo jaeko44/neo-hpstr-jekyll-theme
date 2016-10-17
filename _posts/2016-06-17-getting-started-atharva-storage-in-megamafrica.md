@@ -10,7 +10,7 @@ description: Getting started Atharva storage in MegamAfrica
 
 This tutorial will guide you creating atharva storage  in MegamAfrica.
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 
 
 ### Prerequisites
 
@@ -51,4 +51,4 @@ These are the very simple steps to create an atharva storage in MegamAfrica. Meg
 ###### Deploy a Atharva storage now
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 

@@ -12,7 +12,7 @@ Etherpad is a really-real time collaborative editor maintained by the Etherpad C
 This tutorial will guide you in launching a Nodejs web application (etherpad-lite) in MegamAfrica.
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 
 
 ### Prerequisites
 
@@ -82,4 +82,4 @@ These are the very simple steps to launch a Nodejs web app (etherpad-lite) using
 
 ### Deploy Nodejs app now
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 

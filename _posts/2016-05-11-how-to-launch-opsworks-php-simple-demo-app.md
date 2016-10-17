@@ -11,7 +11,7 @@ AWS OpsWorks PHP is a simple demo app that can help you get started using your f
 This tutorial will guide you in launching a php web application (OpsWorks) in MegamAfrica.
 
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 
 
 ### Prerequisites
 * You are running Ubuntu 14.04 or Linux workstation.
@@ -99,4 +99,4 @@ These are the very simple steps to launch a php web app (OpsWorks PHP Simple Dem
 
 ###Deploy PHP app now
 <a href="https://console.megamafrica.com" target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png" alt="wordpres button" /></a>
+ 
