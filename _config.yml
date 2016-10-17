@@ -28,7 +28,7 @@ menu:
       - title: 'Ubuntu'
         url: '/page-index'
       - title: 'CentOS'
-         url: '/how-to-launch-centos'
+        url: '/how-to-launch-centos'
 
 # Owner/author information
 owner:
