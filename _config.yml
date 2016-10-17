@@ -8,7 +8,7 @@ logo:             images/logo.png # logo visible in the topbar
 # Your site's domain goes here (eg: //mmistakes.github.io, https://mademistakes.com, etc)
 # When testing locally leave blank or use https://localhost:4000
 
-url: https://virtengine-devcenter.netlify.com
+url: https://blog.virtengine.com
 
 # draw your top menu here
 # each item must have a title and a url.
@@ -26,9 +26,9 @@ menu:
     url: '#'
     submenu:
       - title: 'Ubuntu'
-        url: '/intro/code-highlighting-post/'
+        url: '/page-index'
       - title: 'CentOS'
-        url: '/intro/sample-post/'
+         url: '/how-to-launch-centos'
 
 # Owner/author information
 owner:
