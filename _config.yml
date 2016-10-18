@@ -17,7 +17,7 @@ url: https://blog.virtengine.com
 # See the example
 menu:
   - title: 'Home'
-    url: '/'
+    url: 'https://virtengine.com'
   - title: 'Fork'
     url: 'https://github.com/DET-io/VirtEngine'
   - title: 'Documentation'
@@ -26,21 +26,21 @@ menu:
     url: '#'
     submenu:
       - title: 'Ubuntu'
-        url: '/page-index'
+        url: '/launching-virtengine-ubuntu'
       - title: 'CentOS'
-        url: '/how-to-launch-centos'
+        url: '/launching-virtengine-centos'
 
 # Owner/author information
 owner:
   name:           Jonathan Philipos
-  site:           //virtengine.com
+  site:           https://virtengine.com
   avatar:         images/avatar.jpg
   bio:            "I am Jonathan Philipos, founder of DET.io - we specialize in Virtualization & Computing.."
   email:          jonathan@det.io
   # Twitter nick for use in Twitter cards and follow button.
   twitter: VirtEngine # if no twitter in this config, the twitter follow button will be removed
   # GitHub nick for use in follow button in author block.
-  github: DET-io
+  github: VirtEngine
 
 # Twitter account associated with the site if different from owner/author twitter account.
 # Used in Twitter cards.
@@ -49,9 +49,9 @@ twitter:
 # Social networking links used in author block underneath posts. Update and remove as you like.
 social:
   - title: "github"
-    url: "//github.com/DET-IO/"
+    url: "https://github.com/VirtEngine"
   - title: "linkedin"
-    url: "//www.linkedin.com/in/det-io"
+    url: "https://www.linkedin.com/in/det-io"
   - title: "youtube"
     url: "https://www.youtube.com/channel/UCT68VXnWJU17fgdOy1TQFaA"
 # Background image to be tiled on all pages
