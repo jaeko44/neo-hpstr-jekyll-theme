@@ -1,7 +1,7 @@
 ---
 title: Installing VirtEngine on CentOS
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/images/bg-intro.png"
 description: How to launch CouchDB in megamafrica.com
 ---
 ## Introduction
@@ -12,15 +12,15 @@ This tutorial will help you set up VirtEngine.
 
 ## Prerequisites
 
-###OpenJDK8
+### OpenJDK8
 
 > su -c "yum install java-1.8.0-openjdk"
 
-###Cassandra 3.x 
+### Cassandra 3.x 
 
 [Cassandra Installation](http://docs.datastax.com/en/cassandra/3.x/cassandra/install/installRHEL.html)
 
-###Install VirtEngine
+### Install VirtEngine
 
 > sudo yum update  
 >  
