@@ -21,16 +21,21 @@ This tutorial will guide you creating atharva storage  in VirtEngine.
 * First, ensure the user can login to https://console.VirtEngine.com.
 
 * Upon successful signin, look for the icon
-![](https://devcenter.megam.io/content/images/2016/06/storage-1.jpg)
+![](https://blog.virtengine.com/content/images/2016/06/storage-1.jpg)
  at the top right hand corner named `Storage`
-![](https://devcenter.megam.io/content/images/2016/06/atharva-1.jpg)
+![](https://blog.virtengine.com/content/images/2016/06/atharva-1.jpg)
 
 * Click the `create storage` box. A window will pop up and ask for Bucket Name. You can type a name for the bucket.
 
 * Bucket is successfully created and also its created the `access-key` and `secret-key` for your account.
 
+<<<<<<< HEAD
+* You can see your Access-key and Secret-key from your profile page in MegamAfrica (https://console.megamafrica.com).
+![](https://blog.virtengine.com/content/images/2016/06/storage-keys.jpg)
+=======
 * You can see your Access-key and Secret-key from your profile page in VirtEngine (https://console.VirtEngine.com).
 ![](https://devcenter.megam.io/content/images/2016/06/storage-keys.jpg)
+>>>>>>> edd09ed781f1d9a6cf21e54fb8fa40454fe5e504
 
 * Now, You can upload a files in `Atharva Storage` using your Access-key and Secret-key.
 

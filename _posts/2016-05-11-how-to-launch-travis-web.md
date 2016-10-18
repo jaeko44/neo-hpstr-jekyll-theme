@@ -70,18 +70,11 @@ VirtEngine will look for a start script named `start as follows.
 ### **Step-3 Open Your Web browser**
 You can access your web page using https://IP_ADDRESS/4200
 
-![](https://devcenter.megam.io/content/images/2016/05/Screenshot-from-2016-05-27-15-16-35.png)
-
-
-
-
-
-
-
+![](https://blog.virtengine.com/content/images/2016/05/Screenshot-from-2016-05-27-15-16-35.png)
 
 ### Conclusion
 
 These are the very simple steps to launch Nodejs using travis-web. Finally using github repository and launched the travis-web to run successfully.
 
 ### To deploy your App 
-[![img](https://devcenter.megam.io/content/images/2016/05/DEPLOY-TO-MEGAM-AFRICA-BIG1-4.png)](https://console.VirtEngine.com)
+[![img](https://blog.virtengine.com/content/images/2016/05/DEPLOY-TO-MEGAM-AFRICA-BIG1-4.png)](https://console.megamafrica.com)

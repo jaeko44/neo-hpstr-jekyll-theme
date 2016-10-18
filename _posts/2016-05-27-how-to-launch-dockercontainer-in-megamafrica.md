@@ -68,7 +68,7 @@ You can access your web page using https://IP_ADDRESS:8080
 
 
 
-![](https://devcenter.megam.io/content/images/2016/05/jenkins1.png)
+![](https://blog.virtengine.com/content/images/2016/05/jenkins1.png)
 
 #### Conclusion
 

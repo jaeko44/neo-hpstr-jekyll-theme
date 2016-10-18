@@ -93,7 +93,7 @@ Java's default build pack get's going by kicking of maven. We plan to support `a
   You can access your web page using `https://IP_ADDRESS:8080`
 
 You will show the below UI
-![](https://devcenter.megam.io/content/images/2016/05/1-1.png)
+![](https://blog.virtengine.com/content/images/2016/05/1-1.png)
 
 Select the Manager App.It asks User Name and Password
 `Username and password is "megam"`
@@ -102,9 +102,9 @@ Then the below UI will be open
 
 Here you will click the webflow show case link.
 
-![](https://devcenter.megam.io/content/images/2016/05/2.png)
+![](https://blog.virtengine.com/content/images/2016/05/2.png)
 
-![](https://devcenter.megam.io/content/images/2016/05/3-1.png)
+![](https://blog.virtengine.com/content/images/2016/05/3-1.png)
 
 
 

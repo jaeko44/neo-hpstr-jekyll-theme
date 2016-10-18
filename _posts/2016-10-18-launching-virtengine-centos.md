@@ -6,6 +6,8 @@ description: How to launch CouchDB in VirtEngine.com
 ---
 ## Introduction
 
+[![img](https://blog.virtengine.com/images/bg-intro.png)]
+
 Before we begin, lets install OpenJDK8 and cassandra.
 
 This tutorial will help you set up VirtEngine.

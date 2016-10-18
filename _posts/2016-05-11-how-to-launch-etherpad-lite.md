@@ -74,7 +74,7 @@ ensure that your git repository have the start script file as follows.
 You can access your web page using https://IP_ADDRESS/9001
 
 
-![](https://devcenter.megam.io/content/images/2016/05/node.png)
+![](https://blog.virtengine.com/content/images/2016/05/node.png)
 
 ###Conclusion
 

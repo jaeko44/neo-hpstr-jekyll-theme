@@ -13,10 +13,10 @@ Cloudberry backup desktop client can be used to backups files and folders on you
 
 **Atharva Storage** - VirtEngine is a "Cloud object storage, low latency and (S3 - AWS Signature v2) compatible API  built on top of ceph - jewel.".
 
+![](https://blog.virtengine.com/content/images/2016/06/storage-1.jpg)
 Upon successful signin to https://console.VirtEngine.com, look for the icon
-![](https://devcenter.megam.io/content/images/2016/06/storage-1.jpg)
  at the top right hand corner named `Storage`
-![](https://devcenter.megam.io/content/images/2016/06/atharva-1.jpg)
+![](https://blog.virtengine.com/content/images/2016/06/atharva-1.jpg)
 
 This tutorial will guide you in setting up a **Cloudberry backup tool for windows client on your windows 7+/10 workstation** and connecting it to manage your atharva storage account in VirtEngine.
 <a href="https://console.VirtEngine.com" target="_blank">
@@ -57,15 +57,15 @@ This initial section contains everything you need to setup cloudberry backup too
     	Display Name : Type a name for the account
 		Access key
 		Secret key
-* You can see your `Access-key` and `Secret-key` from your `profile page` in VirtEngine. (https://console.VirtEngine.com)
-![](https://devcenter.megam.io/content/images/2016/06/cloudberry-aws-s3-account-info.png)
+* You can see your `Access-key` and `Secret-key` from your `profile page` in MegamAfrica. (https://console.megamafrica.com)
+![](https://blog.virtengine.com/content/images/2016/06/cloudberry-aws-s3-account-info.png)
 
 * Click the "Advance Settings" and uncheck `Use SSL` link. Now you can see your bucket in `Bucket name` box. choose one of the bucket  you want to backup.
 
 * Next you’ll want to select your `backup mode` as Simple.
 
-* On the next page you’ll want to select your `Backup Source`. Select your folder to connect with VirtEngine storage
-![](https://devcenter.megam.io/content/images/2016/06/cloudberry-backup-wizard-backup-source.png)
+* On the next page you’ll want to select your `Backup Source`. Select your folder to connect with MegamAfrica storage
+![](https://blog.virtengine.com/content/images/2016/06/cloudberry-backup-wizard-backup-source.png)
 
 * Once you see that your `Backup Plan` is successfully created, press "Finish" leaving the "Run backup now" box checked, to test your newly configured backup.
 

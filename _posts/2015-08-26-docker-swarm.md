@@ -139,7 +139,7 @@ Stay with me, Yes we are warming up with the problem now
 
 A picture is worth a 1000 words.
 
-![Megam docker](https://devcenter.megam.io/content/images/2015/08/megam_baremetal_docker.png)
+![Megam docker](https://blog.virtengine.com/content/images/2015/08/megam_baremetal_docker.png)
 
 
 To do that we need schedulers that can orchestarte and compose containers. We use the term micro service and containers in an interchangeable way, they both mean the same.
