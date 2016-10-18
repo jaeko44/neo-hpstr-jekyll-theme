@@ -1,8 +1,8 @@
 ---
-title: How to launch CouchDB in megamafrica.com
+title: How to launch CouchDB in VirtEngine.com
 layout: post
 og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
-description: How to launch CouchDB in megamafrica.com
+description: How to launch CouchDB in VirtEngine.com
 ---
 ### Introduction
 
@@ -10,13 +10,13 @@ Apache CouchDB, commonly referred to as CouchDB, is open source database softwar
 
 This tutorial will set up launching CouchDB.
 
-[![img](https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png)](https://console.megamafrica.com)
+[![img](#)](https://console.VirtEngine.com)
 
 ### Prerequisites
 
 To follow this tutorial :
 
-You have to create a valid credential for access https://console.megamafrica.com.
+You have to create a valid credential for access https://console.VirtEngine.com.
 
 You have to install openssh-server in your linux machine for ssh access.
 
@@ -30,7 +30,7 @@ To check the ssh is properly installed in our system
 
 This initial section contains everything you need to get CouchDB and running on your server.
 
-* First, ensure the user can login to our console.megamafrica.com
+* First, ensure the user can login to our console.VirtEngine.com
 
 * Go to the Market Places.
 
@@ -68,9 +68,9 @@ You can access your web page using https://localhost:5984/
 
 ### Conclusion
 
-These are the very simple steps to launch CouchDB in virtual machine. Creating vm is faster, so it takes only less time. This is a good head-start for launching CouchDB in MegamAfrica.
+These are the very simple steps to launch CouchDB in virtual machine. Creating vm is faster, so it takes only less time. This is a good head-start for launching CouchDB in VirtEngine.
 
 ### To Deploy your app
 
 
-[![img](https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png)](https://console.megamafrica.com)
+[![img](#)](https://console.VirtEngine.com)

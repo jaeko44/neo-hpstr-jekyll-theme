@@ -1,8 +1,8 @@
 ---
 title: Installing VirtEngine on CentOS
 layout: post
-og_image_url: ""
-description: How to launch CouchDB in megamafrica.com
+og_image_url: "https://blog.virtengine.com/images/bg-intro.png"
+description: How to launch CouchDB in VirtEngine.com
 ---
 ## Introduction
 

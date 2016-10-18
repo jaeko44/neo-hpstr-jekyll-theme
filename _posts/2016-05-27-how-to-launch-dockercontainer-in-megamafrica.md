@@ -1,17 +1,17 @@
 ---
-title: How to launch DockerContainer in MegamAfrica
+title: How to launch DockerContainer in VirtEngine
 layout: post
 og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
-description: How to launch DockerContainer in MegamAfrica
+description: How to launch DockerContainer in VirtEngine
 ---
 
 
 #### Introduction
 Docker containers wrap up a piece of software in a complete filesystem that contains everything it needs to run: code, runtime, system tools, system libraries – anything you can install on a server. This guarantees that it will always run the same, regardless of the environment it is running in.
 
-This tutorial will guide you launching a Docker Container in MegamAfrica.
+This tutorial will guide you launching a Docker Container in VirtEngine.
 
-<a href="https://console.megamafrica.com" target="_blank">
+<a href="https://console.VirtEngine.com" target="_blank">
  
 
 
@@ -23,7 +23,7 @@ This tutorial will guide you launching a Docker Container in MegamAfrica.
 
 *  You have an account on GitHub, which is a Git repository host.
 
-* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
+* You have to create a valid credential for accessing https://console.VirtEngine.com. [How to create an account with VirtEngine](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
 
 * You have to install openssh-server for ssh access.
 
@@ -37,9 +37,9 @@ This tutorial will guide you launching a Docker Container in MegamAfrica.
 
  This initial section contains everything you need to get  docker container and running on your server.
 
- * Go to your MegamAfrica Dashboard.
+ * Go to your VirtEngine Dashboard.
 
- * Click Marketplace on the top bar.Marketplace contains all the linux distros, applications, services and microservices which megamafrica supports.
+ * Click Marketplace on the top bar.Marketplace contains all the linux distros, applications, services and microservices which VirtEngine supports.
 
  * Click DockerContainer Icon.
 
@@ -75,5 +75,5 @@ You can access your web page using https://IP_ADDRESS:8080
 Finally These are the steps in launched the docker container in successfully.
 
 
-<a href="https://console.megamafrica.com" target="_blank">
+<a href="https://console.VirtEngine.com" target="_blank">
  
