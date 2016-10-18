@@ -72,13 +72,6 @@ You can access your web page using https://IP_ADDRESS/4200
 
 ![](https://blog.virtengine.com/content/images/2016/05/Screenshot-from-2016-05-27-15-16-35.png)
 
-
-
-
-
-
-
-
 ### Conclusion
 
 These are the very simple steps to launch Nodejs using travis-web. Finally using github repository and launched the travis-web to run successfully.

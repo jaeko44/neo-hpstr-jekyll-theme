@@ -57,25 +57,15 @@ This initial section contains everything you need to setup cloudberry backup too
     	Display Name : Type a name for the account
 		Access key
 		Secret key
-<<<<<<< HEAD
 * You can see your `Access-key` and `Secret-key` from your `profile page` in MegamAfrica. (https://console.megamafrica.com)
 ![](https://blog.virtengine.com/content/images/2016/06/cloudberry-aws-s3-account-info.png)
-=======
-* You can see your `Access-key` and `Secret-key` from your `profile page` in VirtEngine. (https://console.VirtEngine.com)
-![](https://devcenter.megam.io/content/images/2016/06/cloudberry-aws-s3-account-info.png)
->>>>>>> edd09ed781f1d9a6cf21e54fb8fa40454fe5e504
 
 * Click the "Advance Settings" and uncheck `Use SSL` link. Now you can see your bucket in `Bucket name` box. choose one of the bucket  you want to backup.
 
 * Next you’ll want to select your `backup mode` as Simple.
 
-<<<<<<< HEAD
 * On the next page you’ll want to select your `Backup Source`. Select your folder to connect with MegamAfrica storage
 ![](https://blog.virtengine.com/content/images/2016/06/cloudberry-backup-wizard-backup-source.png)
-=======
-* On the next page you’ll want to select your `Backup Source`. Select your folder to connect with VirtEngine storage
-![](https://devcenter.megam.io/content/images/2016/06/cloudberry-backup-wizard-backup-source.png)
->>>>>>> edd09ed781f1d9a6cf21e54fb8fa40454fe5e504
 
 * Once you see that your `Backup Plan` is successfully created, press "Finish" leaving the "Run backup now" box checked, to test your newly configured backup.
 
