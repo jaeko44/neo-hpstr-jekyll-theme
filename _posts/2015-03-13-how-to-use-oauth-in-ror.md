@@ -1,7 +1,7 @@
 ---
 title: How to use Oauth in ROR
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: How to use Oauth in ROR
 ---
 I hate signing up for websites. I’ve already signed up for so many, using different usernames, that going back to one of them and trying to remember my credentials is sometimes impossible. These days, most sites have begun offering alternative ways to sign up, by allowing you to use your Facebook, Twitter or even your Google account. Creating such an integration sometimes feels like a long task. But fear not, Oauth is here to help.

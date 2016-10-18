@@ -1,13 +1,13 @@
 ---
 title: How to launch travis-web in VirtEngine
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: How to launch travis-web in VirtEngine
 ---
 ### Introduction
 In software development, Travis-web is an open-source hosted, distributed continuous integration service used to build and test projects hosted at GitHub. Travis CI is configured by adding a file named .travis.yml, which is a YAML format text file, to the root directory of the GitHub repository.
 
-[![img](https://devcenter.megam.io/content/images/2016/05/DEPLOY-TO-MEGAM-AFRICA-BIG1-4.png)](https://console.VirtEngine.com)
+[![img](https://blog.virtengine.com/content/images/2016/05/DEPLOY-TO-MEGAM-AFRICA-BIG1-4.png)](https://console.VirtEngine.com)
 
 
 ### Prerequisites

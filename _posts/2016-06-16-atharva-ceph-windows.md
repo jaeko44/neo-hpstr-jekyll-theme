@@ -1,7 +1,7 @@
 ---
 title: Use Windows client  S3 Browser to connect with VirtEngine Storage (ceph)
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Use Windows client  S3 Browser to connect with VirtEngine Storage (ceph)
 ---
 
@@ -28,9 +28,9 @@ This tutorial will guide you in setting up a **S3 Browser windows client on your
 
 * You are running Windows 7 or later version. This was tested on Windows 10.
 
-* You have to create a valid credential for accessing https://console.VirtEngine.com. [How to create an account with VirtEngine](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/).
+* You have to create a valid credential for accessing https://console.VirtEngine.com. [How to create an account with VirtEngine](https://blog.virtengine.com/2016/05/27/how-to-launch-ubuntu/).
 
-* You have to create an atharva storage account with VirtEngine. [How to create an atharva account with VirtEngine](https://devcenter.megam.io/2016/06/17/getting-started-atharva-storage-in-VirtEngine/).
+* You have to create an atharva storage account with VirtEngine. [How to create an atharva account with VirtEngine](https://blog.virtengine.com/2016/06/17/getting-started-atharva-storage-in-VirtEngine/).
 
 
 ### Connecting  S3 Browser  with Atharva (Ceph object storage) VirtEngine

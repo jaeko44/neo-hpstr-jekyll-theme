@@ -1,7 +1,7 @@
 ---
 title: Getting started Atharva storage in VirtEngine
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Getting started Atharva storage in VirtEngine
 ---
 
@@ -14,7 +14,7 @@ This tutorial will guide you creating atharva storage  in VirtEngine.
 
 ### Prerequisites
 
-* You have to create a valid credential for accessing https://console.VirtEngine.com. [How to create an account with VirtEngine](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/).
+* You have to create a valid credential for accessing https://console.VirtEngine.com. [How to create an account with VirtEngine](https://blog.virtengine.com/2016/05/27/how-to-launch-ubuntu/).
 
 ### Create Atharva storage in VirtEngine
 
@@ -34,16 +34,16 @@ This tutorial will guide you creating atharva storage  in VirtEngine.
 ![](https://blog.virtengine.com/content/images/2016/06/storage-keys.jpg)
 =======
 * You can see your Access-key and Secret-key from your profile page in VirtEngine (https://console.VirtEngine.com).
-![](https://devcenter.megam.io/content/images/2016/06/storage-keys.jpg)
+![](https://blog.virtengine.com/content/images/2016/06/storage-keys.jpg)
 >>>>>>> edd09ed781f1d9a6cf21e54fb8fa40454fe5e504
 
 * Now, You can upload a files in `Atharva Storage` using your Access-key and Secret-key.
 
 * Upload a files using windows and ubuntu using following guide.
 
-[How to upload a files from windows to VirtEngine](https://devcenter.megam.io/2016/06/16/atharva-ceph-windows/).
+[How to upload a files from windows to VirtEngine](https://blog.virtengine.com/2016/06/16/atharva-ceph-windows/).
 
-[How to deploy private docker registry in VirtEngine](https://devcenter.megam.io/2016/06/10/private-registry-along-with-ceph/).
+[How to deploy private docker registry in VirtEngine](https://blog.virtengine.com/2016/06/10/private-registry-along-with-ceph/).
 
 * Let us verify if the files is uploaded
 

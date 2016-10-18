@@ -3,7 +3,7 @@ title: Hetzner networking in ubuntu opennebula host
 layout: post
 # Author.
 author: vijaykanth
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Hetzner networking in ubuntu opennebula host
 ---
 Our need is to setup `opennebula` in `hetzner`, so we have two servers, one is for opennebula-frontend and another one is for opennebula-host. We don't face any problem in opennebula front-end.

@@ -1,7 +1,7 @@
 ---
 title: Install Ruby 2.2.2
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Install Ruby 2.2.2
 ---
 

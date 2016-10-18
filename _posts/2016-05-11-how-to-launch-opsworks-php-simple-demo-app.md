@@ -1,7 +1,7 @@
 ---
 title: How to launch PHP - OpsWorks   in VirtEngine
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: How to launch PHP - OpsWorks   in VirtEngine
 ---
 
@@ -20,7 +20,7 @@ This tutorial will guide you in launching a php web application (OpsWorks) in Vi
 
 * You have an account on GitHub, which is a Git repository host.
 
-* You have to create a valid credential for accessing https://console.VirtEngine.com. [How to create an account with VirtEngine](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
+* You have to create a valid credential for accessing https://console.VirtEngine.com. [How to create an account with VirtEngine](https://blog.virtengine.com/2016/05/27/how-to-launch-ubuntu/)
 
 * You have to install openssh-server for ssh access.
 
