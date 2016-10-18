@@ -1,7 +1,7 @@
 ---
 title: Setting up Scala, SBT, Play, Akka
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Setting up Scala, SBT, Play, Akka
 ---
 ### Part 1 : Setting up Scala, SBT, Play, Akka

@@ -1,7 +1,7 @@
 ---
 title: How to launch CouchDB in VirtEngine.com
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: How to launch CouchDB in VirtEngine.com
 ---
 ### Introduction

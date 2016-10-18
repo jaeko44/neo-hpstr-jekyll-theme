@@ -1,7 +1,7 @@
 ---
 title: Getting started in VirtEngine - Open source cloud hosting
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Getting started in VirtEngine - Open source cloud hosting
 ---
 

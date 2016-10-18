@@ -2,7 +2,7 @@
 
 title: Solving keyboard interrupt error in CentOS7.0
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Solving keyboard interrupt error in CentOS7.0
 ---
 

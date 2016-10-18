@@ -1,7 +1,7 @@
 ---
 title: Chef-Setup
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Chef-Setup
 ---
 Chef is a configuration management and automation platform from [Opscode](https://www.chef.io/). Chef helps you describe your infrastructure with code. Because your infrastructure is managed with code, it can be automated, tested and reproduced with ease.

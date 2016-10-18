@@ -1,7 +1,7 @@
 ---
 title: Data Center using OpenNebula Federation
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Data Center using OpenNebula Federation
 ---
 
@@ -9,7 +9,7 @@ The federation is performed by OpenNebula platform. The OpenNebula is an Open-so
 
 Here we are federating two already replicated Master Slave servers. to know how to replicate two servers refer the following article
 
-    https://devcenter.megam.io/2015/09/08/mysql-master-slave-replication/
+    https://blog.virtengine.com/2015/09/08/mysql-master-slave-replication/
 
 
 ###### Installing OpenNebula

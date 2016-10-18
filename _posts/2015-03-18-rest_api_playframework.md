@@ -1,7 +1,7 @@
 ---
 title: Beautiful API using Scala based Playframework
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Beautiful API using Scala based Playframework
 ---
 We are going to build a beautiful REST API based on a modern [playframework](www.playframework.com) using [Scala](scala-lang.org) in a functional way.

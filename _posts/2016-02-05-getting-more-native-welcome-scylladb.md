@@ -1,7 +1,7 @@
 ---
 title: Getting more native, welcome scyllaDB
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Getting more native, welcome scyllaDB
 ---
 Is it not an uncommon fact that cassandra is the defacto NoSQL database that is being used in the bigdata world at the moment. It is known for its ease and performance, and the constant push that is being given by DataStax in building the community. But there is this new kid in town, a very powerful kid, he is like one of those kids from spykids. Yes, scyllaDB

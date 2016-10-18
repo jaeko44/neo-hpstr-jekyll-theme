@@ -1,7 +1,7 @@
 ---
 title: How to contribute to a Git Repository
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: How to contribute to a Git Repository
 ---
 Now that you know the little gists on creating a forking and cloning a repository,let's move on and learn about how to contribute to a Git repository.

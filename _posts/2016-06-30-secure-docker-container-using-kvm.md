@@ -1,7 +1,7 @@
 ---
 title: Hyperizing Docker Containers with rock solid security
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Hyperizing Docker Containers with rock solid security
 ---
 

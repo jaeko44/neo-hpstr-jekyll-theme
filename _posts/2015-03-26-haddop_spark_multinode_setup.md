@@ -1,7 +1,7 @@
 ---
 title: Hadoop/Spark multi-node setup
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Hadoop/Spark multi-node setup
 ---
 This is an installation guide for Apache Hadoop and Apache Spark on a multi node setup. We will use  Cloudera v5 as it has the packages for debian. You are free to use Hortonworks ,MapR (or) straight up zips from [Hadoop](hadoop.apache.org), [Spark](spark.apache.org).

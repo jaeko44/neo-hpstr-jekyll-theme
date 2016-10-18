@@ -2,7 +2,7 @@
 title: "Cassandra Replication - HA"
 layout: post
 author: "rajesh"
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: "Cassandra Replication - HA"
 ---
 

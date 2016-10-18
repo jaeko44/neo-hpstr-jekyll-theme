@@ -1,7 +1,7 @@
 ---
 title: Package Upgrading in Trusty
 layout: post
-og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
+og_image_url: "https://blog.virtengine.com/res/gotalk-intro.png"
 description: Package Upgrading in Trusty
 ---
  Upgrading is new versioning of an existing model that add or modify the modules of an already defined package. Here we upgrading the Ubuntu Trusty to a newer version.
