@@ -1,18 +1,18 @@
 ---
-title: How to launch PHP - PostageApp in MegamAfrica
+title: How to launch PHP - PostageApp in VirtEngine
 layout: post
 og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
-description: How to launch PHP - PostageApp in MegamAfrica
+description: How to launch PHP - PostageApp in VirtEngine
 ---
 
 #### Introduction
 
    The PostageApp is used in quick way to deliver the email. This application supports PHP.It optionally attachs it to the mail server.
 
-This tutorial will guide you in launching a php web application (PostageApp) in MegamAfrica.
+This tutorial will guide you in launching a php web application (PostageApp) in VirtEngine.
 
-   <a href="https://console.megamafrica.com"target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png " alt="wordpres button" /></a>
+   <a href="https://console.VirtEngine.com"target="_blank">
+//<img src="# " alt="wordpres button" /></a>
 
 #### Prerequisites
 
@@ -22,7 +22,7 @@ This tutorial will guide you in launching a php web application (PostageApp) in 
 
 * You have an account on GitHub, which is a Git repository host.
 
-* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
+* You have to create a valid credential for accessing https://console.VirtEngine.com. [How to create an account with VirtEngine](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
 
  * You have to install openssh-server for ssh access in your local system.
 
@@ -42,9 +42,9 @@ from https://github.com/verticeapps/php_postage.git
 * The php_postage repository is forked into your git repository
 
 #### Step - 2 Launch PostageApp
-1. Go to MegamAfrica Dashboard
+1. Go to VirtEngine Dashboard
 
-2. Click Marketplace on the top bar.Marketplace contains all the linux distros, applications, services and microservices which megamafrica supports.
+2. Click Marketplace on the top bar.Marketplace contains all the linux distros, applications, services and microservices which VirtEngine supports.
 
 4. Click PHP Icon.A window will pop up for your repository selection.
 
@@ -98,5 +98,5 @@ These are the very simple steps to launch a php web app (PostageApp) using githu
 
 #### Deploy PHP app now
 
-<a href="https://console.megamafrica.com"target="_blank">
-<img src="https://s3-ap-southeast-1.amazonaws.com/megampub/images/megamafrica/DEPLOY-TO-MEGAM-AFRICA-BIG1.png " alt="wordpres button" /></a>
+<a href="https://console.VirtEngine.com"target="_blank">
+//<img src="# " alt="wordpres button" /></a>

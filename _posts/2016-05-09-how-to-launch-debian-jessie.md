@@ -1,17 +1,17 @@
 ---
-title: How to Launch Debian Jessie in MegamAfrica
+title: How to Launch Debian Jessie in VirtEngine
 layout: post
 og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
-description: How to Launch Debian Jessie in MegamAfrica
+description: How to Launch Debian Jessie in VirtEngine
 ---
 
 ### Introduction
 
 Debian is a Unix-like computer operating system that is composed entirely of free software, most of which is under the GNU General Public License, and packaged by a group of individuals known as the Debian. Three main branches are offered: Stable, Testing and Unstable.
 
-This tutorial will guide you in launching Debian Jessie in MegamAfrica.
+This tutorial will guide you in launching Debian Jessie in VirtEngine.
 
-<a href="https://console.megamafrica.com" target="_blank">
+<a href="https://console.VirtEngine.com" target="_blank">
  
 
 ###Prerequisites
@@ -23,7 +23,7 @@ This tutorial will guide you in launching Debian Jessie in MegamAfrica.
 * An account on GitHub, which is a Git repository host.
 To follow this tutorial :
 
-* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
+* You have to create a valid credential for accessing https://console.VirtEngine.com. [How to create an account with VirtEngine](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
 
 You have to install openssh-server for ssh access.
 
@@ -37,7 +37,7 @@ To check the ssh is properly installed in our system
 
 This initial section contains everything you need to get Debian Jessie and running on your server.
 
-First, ensure the user can login to https://console.megamafrica.com.  
+First, ensure the user can login to https://console.VirtEngine.com.  
 
 * Go to the Market Place.
 
@@ -70,9 +70,9 @@ Next, Go to the Dashboard and click the domain name a new window will open.
 
 ###Conclusion
 
-These are the very simple steps to launch Debian Jessie virtual machine. This is a good head-start for launching a Debian Jessie in MegamAfrica.
+These are the very simple steps to launch Debian Jessie virtual machine. This is a good head-start for launching a Debian Jessie in VirtEngine.
 
 ###Deploy debian jessie now
 
-<a href="https://console.megamafrica.com" target="_blank">
+<a href="https://console.VirtEngine.com" target="_blank">
  

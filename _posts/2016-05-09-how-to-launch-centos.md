@@ -1,16 +1,16 @@
 ---
-title: How to Launch CentOS 7.2 in MegamAfrica
+title: How to Launch CentOS 7.2 in VirtEngine
 layout: post
 og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
-description: How to Launch CentOS 7.2 in MegamAfrica
+description: How to Launch CentOS 7.2 in VirtEngine
 ---
 ### Introduction
 
 The CentOS Linux distribution is a stable, predictable, manageable and reproducible platform derived from the sources of Red Hat Enterprise Linux (RHEL). CentOS Linux is developed by a small but growing team of core developers. In turn the core developers are supported by an active user community including system administrators, network administrators, managers, core Linux contributors, and Linux enthusiasts from around the world.
 
-This tutorial will guide you in setting up a CentOS VM in MegamAfrica.
+This tutorial will guide you in setting up a CentOS VM in VirtEngine.
 
-<a href="https://console.megamafrica.com" target="_blank">
+<a href="https://console.VirtEngine.com" target="_blank">
  
 
 ###Prerequisites
@@ -22,7 +22,7 @@ This tutorial will guide you in setting up a CentOS VM in MegamAfrica.
 * An account on GitHub, which is a Git repository host.
 To follow this tutorial :
 
-* You have to create a valid credential for accessing https://console.megamafrica.com. [How to create an account with MegamAfrica](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
+* You have to create a valid credential for accessing https://console.VirtEngine.com. [How to create an account with VirtEngine](https://devcenter.megam.io/2016/05/27/how-to-launch-ubuntu/)
 
 You have to install openssh-server for ssh access.
 
@@ -36,7 +36,7 @@ To check the ssh is properly installed in our system
 
 This initial section contains everything you need to get CentOS and running on your server.
 
-First, ensure the user can login to https://console.megamafrica.com.
+First, ensure the user can login to https://console.VirtEngine.com.
 
 * Go to the Market Places.
 
@@ -68,9 +68,9 @@ Next, Go to the Dashboard and click the domain name a new window will open.
 
 ###Conclusion
 
-These are the very simple steps to launch CentOS in virtual machine. This is a good head-start for launching  CentOS in MegamAfrica.
+These are the very simple steps to launch CentOS in virtual machine. This is a good head-start for launching  CentOS in VirtEngine.
 
 ###Deploy your CentOS VM now
 
-<a href="https://console.megamafrica.com" target="_blank">
+<a href="https://console.VirtEngine.com" target="_blank">
  
