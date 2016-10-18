@@ -1,13 +1,13 @@
 ---
-title: How to launch travis-web in MegamAfrica
+title: How to launch travis-web in VirtEngine
 layout: post
 og_image_url: "https://devcenter.megam.io/res/gotalk-intro.png"
-description: How to launch travis-web in MegamAfrica
+description: How to launch travis-web in VirtEngine
 ---
 ### Introduction
 In software development, Travis-web is an open-source hosted, distributed continuous integration service used to build and test projects hosted at GitHub. Travis CI is configured by adding a file named .travis.yml, which is a YAML format text file, to the root directory of the GitHub repository.
 
-[![img](https://devcenter.megam.io/content/images/2016/05/DEPLOY-TO-MEGAM-AFRICA-BIG1-4.png)](https://console.megamafrica.com)
+[![img](https://devcenter.megam.io/content/images/2016/05/DEPLOY-TO-MEGAM-AFRICA-BIG1-4.png)](https://console.VirtEngine.com)
 
 
 ### Prerequisites
@@ -18,7 +18,7 @@ In software development, Travis-web is an open-source hosted, distributed contin
 
 * An account on GitHub, which is a Git repository host.
 
-* You have to create a valid credential access for https://console.megamafrica.com.
+* You have to create a valid credential access for https://console.VirtEngine.com.
 
 * You have to install openssh-server for ssh access.
 
@@ -38,9 +38,9 @@ from [here](https://github.com/verticeapps/node_travisweb.git)
 * The travisweb is forked into your git repository
 
 ### Step-2 create SSHKey and launch the app
-* Then go to your MegamAfrica Dashboard
+* Then go to your VirtEngine Dashboard
 
-2. Click Marketplace on the top bar.Marketplace contains all the linux distros, applications, services and microservices which megamafrica supports.
+2. Click Marketplace on the top bar.Marketplace contains all the linux distros, applications, services and microservices which VirtEngine supports.
 
 3. Click Nodejs Icon.A window will pop up with for SSHkey options. You can create new sshkey, use an existing sshkey or upload your own sshkeys too.
 
@@ -55,7 +55,7 @@ from [here](https://github.com/verticeapps/node_travisweb.git)
 * Now that you have launched your app, you might want to launch a service (database) and bind it
 
 ### Start script
-MegamAfrica will look for a start script named `start as follows.
+VirtEngine will look for a start script named `start as follows.
 
 	#!/bin/sh
  	sudo invoke-rc.d shellinabox stop
@@ -84,4 +84,4 @@ You can access your web page using https://IP_ADDRESS/4200
 These are the very simple steps to launch Nodejs using travis-web. Finally using github repository and launched the travis-web to run successfully.
 
 ### To deploy your App 
-[![img](https://devcenter.megam.io/content/images/2016/05/DEPLOY-TO-MEGAM-AFRICA-BIG1-4.png)](https://console.megamafrica.com)
+[![img](https://devcenter.megam.io/content/images/2016/05/DEPLOY-TO-MEGAM-AFRICA-BIG1-4.png)](https://console.VirtEngine.com)
