@@ -95,7 +95,7 @@ To follow this tutorial :
 * Use this command to check the data center name, and rack is set into your machine.
 
 		nodetool status.
-![](https://devcenter.megam.io/content/images/2016/07/cassandra.png)
+![](https://blog.virtengine.com/content/images/2016/07/cassandra.png)
 * Its show the status of the node.
 
         `UN` - define your node in up status.

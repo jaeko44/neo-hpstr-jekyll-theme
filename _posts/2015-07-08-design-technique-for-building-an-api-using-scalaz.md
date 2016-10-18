@@ -168,7 +168,7 @@ We are going to proceed further and explore calling our model a bunch of times a
 ### ValidationNel put to use
 
 Let us take a scenario where in our case when an user clicks the button **Marketplaces** we want to talk to the [gateway - REST API server](https://github.com/megamsys/megam_gateway.git)
-![](https://devcenter.megam.io/content/images/2015/06/megam_marketplaces.png)
+![](https://blog.virtengine.com/content/images/2015/06/megam_marketplaces.png)
 
 to display the Marketplaces screen
 ![](/content/images/2015/06/megam_marketplaces1.png)

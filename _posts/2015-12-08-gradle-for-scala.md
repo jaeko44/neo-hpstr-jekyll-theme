@@ -229,7 +229,7 @@ gradle test
 
 ```
 
-![Megam spec passes](https://devcenter.megam.io/content/images/2015/12/megam_spec_pass.png)
+![Megam spec passes](https://blog.virtengine.com/content/images/2015/12/megam_spec_pass.png)
 
 ### Publishing to bintray
 

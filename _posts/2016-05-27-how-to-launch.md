@@ -64,7 +64,7 @@ successfully launched the vm.
 
 You can access your web page using https://localhost:5984/
 
-![](https://devcenter.megam.io/content/images/2016/05/s2-2.jpg)
+![](https://blog.virtengine.com/content/images/2016/05/s2-2.jpg)
 
 ### Conclusion
 

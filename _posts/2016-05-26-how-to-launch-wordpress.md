@@ -92,7 +92,7 @@ If you want to run multiple WordPress installations in a single database, change
 
 Login with your user and password it will get to wordpress design page successfully.
 
-![](https://devcenter.megam.io/content/images/2016/05/wordpress.png)
+![](https://blog.virtengine.com/content/images/2016/05/wordpress.png)
 
 
 ##### Conclusion

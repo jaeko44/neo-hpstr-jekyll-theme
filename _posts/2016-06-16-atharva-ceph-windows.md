@@ -15,9 +15,9 @@ S3 Browser is a freeware Windows client for Amazon S3. Amazon S3 provides a simp
 **Atharva Storage** - MegamAfrica is a "Cloud object storage, low latency and (S3 - AWS Signature v2) compatible API  built on top of ceph - jewel.".
 
 Upon successful signin to https://console.megamafrica.com, look for the icon
-![](https://devcenter.megam.io/content/images/2016/06/storage-1.jpg)
+![](https://blog.virtengine.com/content/images/2016/06/storage-1.jpg)
  at the top right hand corner named `Storage`
-![](https://devcenter.megam.io/content/images/2016/06/atharva-1.jpg)
+![](https://blog.virtengine.com/content/images/2016/06/atharva-1.jpg)
 
 
 This tutorial will guide you in setting up a **S3 Browser windows client on your windows 7+/10 workstation** and connecting it to manage your atharva storage account in MegamAfrica.
@@ -77,7 +77,7 @@ You can see your `Access-key` and `Secret-key` from your `profile page` in Megam
 
 * Choose the one or multiple files to upload/choose an upload folder if you want to upload a whole folder or whole drive.
 
-![](https://devcenter.megam.io/content/images/2016/06/upload-folder-button.png)
+![](https://blog.virtengine.com/content/images/2016/06/upload-folder-button.png)
 
 *  Select the files you want to upload or select the folder to upload. The upload process will begin. You can track the progress on the Tasks tab.
 
