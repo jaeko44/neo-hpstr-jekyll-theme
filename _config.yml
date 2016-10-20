@@ -32,10 +32,10 @@ menu:
 
 # Owner/author information
 owner:
-  name:           Jonathan Philipos
-  site:           https://virtengine.com
-  avatar:         images/avatar.jpg
-  bio:            "I am Jonathan Philipos, founder of DET.io - we specialize in Virtualization & Computing.."
+  name:           VirtEngine by DET.io
+  site:           https://det.io
+  avatar:         images/avatar-cloud.png
+  bio:            "VirtEngine specializes in building Virtualization Software and powering Cloud Service Providers / Hosting Providers.."
   email:          jonathan@det.io
   # Twitter nick for use in Twitter cards and follow button.
   twitter: VirtEngine # if no twitter in this config, the twitter follow button will be removed
