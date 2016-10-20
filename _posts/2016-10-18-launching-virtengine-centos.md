@@ -1,12 +1,12 @@
 ---
 title: Installing VirtEngine on CentOS
 layout: post
-og_image_url: "https://blog.virtengine.com/images/bg-intro.png"
+og_image_url: "https://blog.virtengine.com/images/intro-install-virtengine.png"
 description: How to launch CouchDB in VirtEngine.com
 ---
 ## Introduction
 
-[![img](https://blog.virtengine.com/images/bg-intro.png)]
+![Install VirtEngine Virtualization Cloud Platform](https://blog.virtengine.com/images/intro-install-virtengine.png)
 
 Before we begin, lets install OpenJDK8 and cassandra.
 
