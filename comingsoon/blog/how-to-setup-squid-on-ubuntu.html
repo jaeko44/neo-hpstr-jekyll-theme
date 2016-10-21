@@ -1,0 +1,814 @@
+<!--
+* Website Development & Production by Dmitry Zapletin
+* Contact me at d(dot)zapletin(at)gmail(dot)com
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from virtengine.com/en/blog/how-to-setup-squid-on-ubuntu by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2016 11:24:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="../../favicon/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="../../favicon/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../../favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../../favicon/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../../favicon/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../../favicon/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../../favicon/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="../../favicon/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="../../favicon/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../../favicon/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="../../favicon/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="../../favicon/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="../../favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="https://virtengine.com/favicon/manifest.json">
+	<link rel="mask-icon" href="https://virtengine.com/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="https://virtengine.com/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-TileImage" content="../../favicon/mstile-144x144.png">
+	<meta name="msapplication-config" content="https://virtengine.com/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+    <title>Squid Proxy Server Installation and Configuration on Ubuntu — VirtEngine Data Center</title>
+
+    <meta property="og:title" content="Squid Proxy Server Installation and Configuration on Ubuntu — VirtEngine Data Center" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="../../uploads/blog/18.png" />
+	
+		<meta property="og:url" content="how-to-setup-squid-on-ubuntu.html" />
+	
+
+    
+        <meta name="description" content="The most frequently used network setting layout for office or company is the one requiring a common Internet-access gateway for all computers within the net. Proxy server is a convenient way to create such gateway. Squid software package functions as a proxy server for HTTP, FTP and even HTTPS protocols, in case competent and specialized configuration is provided." />
+        <meta property="og:description" content="The most frequently used network setting layout for office or company is the one requiring a common Internet-access gateway for all computers within the net. Proxy server is a convenient way to create such gateway. Squid software package functions as a proxy server for HTTP, FTP and even HTTPS protocols, in case competent and specialized configuration is provided." />
+    
+
+    
+
+    <script src="../../engine/view/assets/js/jquery-2.2.2.min.js"></script>
+
+    
+    <link href="../../engine/view/assets/css/bootstrap.css" rel="stylesheet">
+		<link href="../../engine/view/assets/css/yamm.css" rel="stylesheet">
+    <link href="../../engine/view/assets/css/font-awesome.min.css" rel="stylesheet">
+    
+    
+    <link href="../../engine/view/assets/css/general.css" rel="stylesheet">
+    <link href="../../engine/view/assets/css/main.css" rel="stylesheet">
+
+    
+    
+
+	<link rel="alternate" href="how-to-setup-squid-on-ubuntu.html" hreflang="en" />
+<link rel="alternate" href="https://virtengine.com/ru/blog/how-to-setup-squid-on-ubuntu" hreflang="ru" />
+
+
+	<meta name="google-site-verification" content="pTdt6owrr_cUQRDOj8oBy9RpF6FCi-NVqXQLPLzCHb4" />
+	<link href = "https://plus.google.com/+VirtEngineRu" rel = "publisher" />
+	
+</head>
+<body>
+
+<div class="cd-top"></div>
+
+<header class="navbar-wrapper">
+	<nav class="navbar yamm navbar-default" role="navigation">
+		<div class="container">
+			
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuMain" aria-expanded="false">
+					<span class="sr-only">Menu</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="btn btn-default hidden-sm hidden-md hidden-lg" href="https://secure.virtengine.com/clientarea">Log In</a>
+				<a class="navbar-brand" href="../index.html"></a>
+			</div>
+
+			
+			<div class="collapse navbar-collapse" id="menuMain">
+				<ul class="nav navbar-nav">
+
+					<li class="dropdown yamm-fw">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Products</a>
+						<ul class="dropdown-menu"><li><div class="container-fluid"><div class="row">
+										<div class="col-md-4 col-sm-6">
+											<a href="../products/vps.html" data-cat="8" class="category">Linux Virtual Private Servers<small>High-performance VPS/VDS on KVM virtualization</small></a><a href="../products/windows-vps.html" data-cat="11" class="category">Windows Virtual Private Servers<small>Create a ready to use virtual server on Windows in a few minutes!</small></a><a href="../products/dedicated.html" data-cat="9" class="category">Dedicated Servers<small>Powerful dedicated servers deliver high performance, reliability and security of your data</small></a>
+										</div>
+										<div class="col-md-4 bg-light hidden-xs hidden-sm">
+											<div class="products" id="cat8"><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=154" class="product">
+															Sandbox
+															<div class="pull-right text-right">
+																		<span class="label">
+																			3$
+																		</span>
+																	</div>
+															<small><nobr>1 vCore</nobr> &bull; <nobr>512MB</nobr> &bull; <nobr>10GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=151" class="product">
+															Hosting 1
+															<div class="pull-right text-right">
+																		<span class="label">
+																			6$
+																		</span>
+																	</div>
+															<small><nobr>2 vCores</nobr> &bull; <nobr>1GB</nobr> &bull; <nobr>20GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=152" class="product">
+															Hosting 2
+															<div class="pull-right text-right">
+																		<span class="label">
+																			10$
+																		</span>
+																	</div>
+															<small><nobr>2 vCores</nobr> &bull; <nobr>2GB</nobr> &bull; <nobr>40GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=155" class="product">
+															Compute 4 
+															<div class="pull-right text-right">
+																		<span class="label">
+																			20$
+																		</span>
+																	</div>
+															<small><nobr>4 vCores</nobr> &bull; <nobr>4GB</nobr> &bull; <nobr>60GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=156" class="product">
+															Compute 8
+															<div class="pull-right text-right">
+																		<span class="label">
+																			40$
+																		</span>
+																	</div>
+															<small><nobr>4 vCores</nobr> &bull; <nobr>8GB</nobr> &bull; <nobr>80GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=157" class="product">
+															Compute 16
+															<div class="pull-right text-right">
+																		<span class="label">
+																			80$
+																		</span>
+																	</div>
+															<small><nobr>8 vCores</nobr> &bull; <nobr>16GB</nobr> &bull; <nobr>160GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a></div><div class="products" id="cat11"><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=168" class="product">
+															Windows 2
+															<div class="pull-right text-right">
+																		<span class="label">
+																			20$
+																		</span>
+																	</div>
+															<small><nobr>2 vCores</nobr> &bull; <nobr>2GB</nobr> &bull; <nobr>40GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=169" class="product">
+															Windows 4
+															<div class="pull-right text-right">
+																		<span class="label">
+																			40$
+																		</span>
+																	</div>
+															<small><nobr>4 vCores</nobr> &bull; <nobr>4GB</nobr> &bull; <nobr>60GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=170" class="product">
+															Windows 8
+															<div class="pull-right text-right">
+																		<span class="label">
+																			80$
+																		</span>
+																	</div>
+															<small><nobr>4 vCores</nobr> &bull; <nobr>8GB</nobr> &bull; <nobr>80GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=171" class="product">
+															Windows 16
+															<div class="pull-right text-right">
+																		<span class="label">
+																			140$
+																		</span>
+																	</div>
+															<small><nobr>8 vCores</nobr> &bull; <nobr>16GB</nobr> &bull; <nobr>160GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a></div><div class="products" id="cat9"><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=54" class="product">
+															Light
+															<div class="pull-right text-right">
+																		<span class="label">
+																			49$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon X3430</nobr> &bull; <nobr>4c/8t 2.4/2.8Ghz</nobr> &bull; <nobr>8GB DDR3 </nobr> &bull; <nobr>1TB SATA</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=161" class="product">
+															Light 8
+															<div class="pull-right text-right">
+																		<span class="label">
+																			80$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon E5640</nobr> &bull; <nobr>4c/8t 2.66/2.93Ghz</nobr> &bull; <nobr>8GB DDR3</nobr> &bull; <nobr>1TB SATA</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=162" class="product">
+															Light 16
+															<div class="pull-right text-right">
+																		<span class="label">
+																			100$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon E5640</nobr> &bull; <nobr>4c/8t 2.66/2.93Ghz</nobr> &bull; <nobr>16GB DDR3</nobr> &bull; <nobr>1TB SATA x2</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=163" class="product">
+															Medium 16
+															<div class="pull-right text-right">
+																		<span class="label">
+																			120$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5520 x2</nobr> &bull; <nobr>8c/16t 2.26/2.48Ghz</nobr> &bull; <nobr>16GB DDR3</nobr> &bull; <nobr>2TB SAS</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=164" class="product">
+															Medium 32
+															<div class="pull-right text-right">
+																		<span class="label">
+																			150$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5520 x2</nobr> &bull; <nobr>8c/16t 2.26/2.48Ghz</nobr> &bull; <nobr>32GB DDR3</nobr> &bull; <nobr>2TB SAS x2 + RAID</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=158" class="product">
+															Heavy 32
+															<div class="pull-right text-right">
+																		<span class="label">
+																			210$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5640 x2</nobr> &bull; <nobr>12c/24t 2.2/2.8Ghz</nobr> &bull; <nobr>32GB DDR3</nobr> &bull; <nobr>2TB SAS x2 + RAID</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=159" class="product">
+															Heavy 64
+															<div class="pull-right text-right">
+																		<span class="label">
+																			260$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5640 x2</nobr> &bull; <nobr>12c/24t 2.2/2.8Ghz</nobr> &bull; <nobr>64GB DDR3</nobr> &bull; <nobr>2TB SAS x4 + RAID</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=160" class="product">
+															Heavy 128
+															<div class="pull-right text-right">
+																		<span class="label">
+																			300$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5640 x2</nobr> &bull; <nobr>12c/24t 2.2/2.8Ghz</nobr> &bull; <nobr>128GB DDR3</nobr> &bull; <nobr>2TB SAS x4 + RAID</nobr></small>
+														</a></div>
+										</div>
+										<div class="col-md-4 col-sm-6">
+											<div class="nav-header">Additional Services</div><a href="https://secure.virtengine.com/cart/dns-hosting" class="simple">
+												DNS Hosting
+											</a><a href="https://secure.virtengine.com/cart/ssl-certificates" class="simple">
+												SSL Certificates
+											</a><a href="https://secure.virtengine.com/cart/domain-name" class="simple">
+												Domain Names
+											</a>
+										</div>
+						</div></div></li></ul>
+					</li>
+
+					<li class="dropdown"><a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">Solutions</a><ul class="dropdown-menu"><li><a href="../startups.html">Startups</a></li><li><a href="../ecommerce.html">E-commerce</a></li><li><a href="../website-hosting.html">Website Hosting</a></li><li><a href="../enterprises.html">Enterprises</a></li></ul></li><li class="dropdown"><a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">Data Center</a><ul class="dropdown-menu"><li><a href="../infrastructure.html">Infrastructure</a></li><li><a href="../network.html">Network</a></li></ul></li>
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Company</a>
+						<ul class="dropdown-menu">
+							<li><a href="../about.html">About Us</a></li>
+							<li><a href="../blog.html">Blog</a></li>
+							<li><a href="../contacts.html">Contacts</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<div class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+					<div class="btn-group">
+						<button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="fa fa-angle-down"></span> ENG
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="how-to-setup-squid-on-ubuntu.html">English</a></li><li><a href="https://virtengine.com/ru/blog/how-to-setup-squid-on-ubuntu">Русский</a></li>
+						</ul>
+					</div>
+					<a href="https://secure.virtengine.com/clientarea" class="btn btn-default" role="button">Log In</a>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+</header>
+<script type="text/javascript" async src="../../../relap.io/api/v6/heade88e.js?token=6MC5FhyYAfwB5eDl"></script>
+
+<span itemscope itemtype="http://schema.org/BlogPosting">
+	<meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://virtengine.com/en/blog/how-to-setup-squid-on-ubuntu">
+	<section class="blog-post-lead">
+		<div class="container"><div class="col-md-8 col-md-offset-2">
+				<div class="cover" style="background-image: url(../../uploads/blog/18.png);" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
+					<meta itemprop="url" content="https://virtengine.com/uploads/blog/18.png">
+					<meta itemprop="width" content="600">
+					<meta itemprop="height" content="400">
+				</div>
+				<h2 itemprop="name headline">Squid Proxy Server Installation and Configuration on Ubuntu</h2>
+				<p class="text-muted text-center"><span class="date">August 29, 2016</span> <a href="#comments" class="scroll disqus-comment-count" data-disqus-identifier="18"></a></p>
+				<p class="lead text-center">The most frequently used network setting layout for office or company is the one requiring a common Internet-access gateway for all computers within the net. Proxy server is a convenient way to create such gateway. Squid software package functions as a proxy server for HTTP, FTP and even HTTPS protocols, in case competent and specialized configuration is provided.</p>
+			</div></div>
+	</section>
+	<section>
+		<div class="container">
+			<article class="col-md-8 col-md-offset-2 blog-post-text" itemprop="articleBody">
+					<p>Squid package is freely available under the GNU General Public License and has the following functions:</p>
+<ul>
+<li><span style="line-height: 1.42857;"><strong>Internet access control </strong> that includes access limitations for groups and single users, scheduled access, creation of ‘white’ or ‘black’ lists of resources – to control the access to entertaining web-sites and avoid undesirable penetrations into the network;</span></li>
+<li><span style="line-height: 1.42857;"><strong>Traffic control</strong> implies broad opportunities for individual settings including individual configurations for different types of traffic. As a result, server provides access to more clients without hardware overload. Also, it is possible to install an open wi-fi point that won’t affect network stability. In addition, it allows limiting the amount of traffic that single users or groups are given for work;</span></li>
+<li><span style="line-height: 1.42857;"><strong>Network resources usage monitoring. </strong> Squid and its plug-ins collect statistics that are helpful for local network optimization, load analysis, possible errors investigation and detection of attacks on company’s local network;</span></li>
+<li><span style="line-height: 1.42857;"><strong>Reverse caching </strong> provides opportunity to work in ‘reverse proxy’ or ‘accelerator’ mode which helps to decrease the server load by caching the most popular search queries.</span></li>
+</ul>
+<p>Squid can operate as a transparent proxy which means that users will have no clue that their queries have been processed by the proxy server. Due to this, there is no need to adjust each client machine for work in the network.</p>
+<h3>Local Network Configuration</h3>
+<p>Before you start Squid proxy server installation and configuration, take your time configuring the local network. The proxying server should be equipped with at least two network interfaces: one for Internet access and one for linking computers within the network. Note that all the settings and commands below exemplify the process on Ubuntu distribution.</p>
+<p>In order to change local network configuration or activate the settings from your provider that gives your server Internet access, you need to edit only one configuration file:</p>
+<pre><code>nano /etc/network/interfaces </code></pre>
+<p>You should make the following changes:</p>
+<pre><code>auto eth0
+    iface eth0 inet dhcp  #to automatically get settings from your provider via dhcp
+auto eth1
+    iface eth1 inet static
+        address 192.168.0.1 #ip
+        netmask 255.255.255.0 #subnet mask </code></pre>
+<p>To apply the changes you should restart the net with the command: </p>
+<pre><code>service networking restart</code></pre>
+<p>After you finish the setting, it is important to make sure that the interfaces are configured properly. To display data about network connections enter the command: </p>
+<pre><code>ifconfig</code></pre>
+<p>The data will be displayed as follows:</p>
+<pre><code>eth0      Link encap:Ethernet  HWaddr 00:16:3c:fc:93:a6
+          inet addr:185.22.174.75  Bcast:185.22.174.255  Mask:255.255.255.0
+          inet6 addr: 2a00:1838:36:1c3::7385/64 Scope:Global
+          inet6 addr: fe80::216:3cff:fefc:93a6/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:7576291 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:65851 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:628650171 (628.6 MB)  TX bytes:10778431 (10.7 MB)<br>
+eth1      Link encap:Ethernet  HWaddr 0a:19:bc:0d:00:9d
+          inet addr:192.168.0.1  Bcast:192.168.0.255  Mask:255.255.255.0
+          inet6 addr: fe80::819:bcff:fe0d:9d/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:12581 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:8484 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:1884987 (1.8 MB)  TX bytes:1123251 (1.1 MB) </code></pre>
+<p>From what we can see above, server has two network interfaces: <strong>eth0</strong> and <strong>eth1</strong>, IPs are  <strong>185.22.174.75</strong> and <strong>192.168.0.1</strong> respectively. Internet cable is connected to the eth0 adaptor and the local network computers are connected to the eth1 adaptor.</p>
+<h3>DHCP Configuration</h3>
+<p>At this stage you can specify the static IP from the local subnetwork on the local machine, for instance 192.168.0.2, specify our server (192.168.0.1) as the gateway and specify the DNS. After that your computer will connect to the local network.</p>
+<p>It is noteworthy that static IP system has several weak spots: each machine has to be configured before connecting to the local network, the same-IP conflict is possible, etc.</p>
+<p>To avoid such problems you need to set the automatic IP translation via the DHCP. With this technology all new computers in the network will get the necessary configurations automatically.</p>
+<p>To install the DHCP server enter the command: </p>
+<pre><code>sudo apt-get install isc-dhcp-server</code></pre>
+<p>By default a configuration file is located in <strong>/etc/dhcp/dhcpd.conf</strong>. Open the file in editing mode by entering the command: </p>
+<pre><code>nano /etc/dhcp/dhcpd.conf</code></pre>
+<p>In the most cases the following block of commands is enough for the minimal settings: </p>
+<pre><code>subnet 192.168.0.0 netmask 255.255.255.0 {#subnet 192.168.0.0/24
+  range 192.168.0.2 192.168.0.254; #given addresses range
+  option domain-name-servers 8.8.8.8;#dns
+  option domain-name "test.loc"; #domain name
+  option routers 192.168.0.1; #’recommended’ gateway
+  default-lease-time 604800; #standard period of IP leasing
+  max-lease-time 604800; #maximum period of IP leasing
+}</code></pre>
+<p>After you change the configuration file, it is necessary to restart the DHCP server to activate the new settings:</p>
+<pre><code>/etc/init.d/isc-dhcp-server restart</code></pre>
+<p>Now all the local network clients will receive the settings automatically as they connect to the network.</p>
+<h3>NAT Configuration</h3>
+<p>After the local network is configured, you need to establish the Internet access. For this purpose you should realize the Network Address Translation (NAT), due to which several computers can go on the Internet using one and the same IP.</p>
+<p>NAT is realized on the Ubuntu via network filter iptables that performs as a firewall at the same time. </p>
+<p>You should create a new empty configuration file for automatic iptables configurations loading:</p>
+<pre><code>sudo touch /etc/nat</code></pre>
+<p>And open it to edit:</p>
+<pre><code>nano /etc/nat</code></pre>
+<p>Configuration versions for firewall depend on network security policy in the company. These are the minimal configurations:</p>
+<pre><code> #!/bin/sh
+#sending packets on
+echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+#open access for internal network 
+iptables -A FORWARD -i tap0 -o eth0 -j ACCEPT
+#start NAT
+iptables -t nat -A POSTROUTING -o eth0 -s 192.168.0.1/24 -j MASQUERADE
+#allow receiving answers from the external network
+iptables -A FORWARD -i eth0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+#limit access to internal network
+iptables -A FORWARD -i eth0 -o tap0 -j REJECT</code></pre>
+<p>After saving the changes you should allow the execution to the file:</p>
+<pre><code>chmod +x /etc/nat</code></pre>
+<p>To set the automatic loading of the file when the server starts, open the <strong>interfaces</strong> file:</p>
+<pre><code>nano /etc/network/interfaces </code></pre>
+<p>and add a line at the bottom: </p>
+<pre><code>post-up /etc/nat</code></pre>
+<p>Then restart the server so that it automatically activates the settings:</p>
+<pre><code>reboot</code></pre>
+<h3>Squid Installation and Configuration </h3>
+<p>To install Squid enter the following command: </p>
+<pre><code>apt-get install squid3</code></pre>
+<p>The service starts automatically after installation. </p>
+<p>Moving to the configuration process, a configuration file is located in <strong>/etc/squid3/squid.conf</strong>. For a beginner user the file may seem enormous – it contains more than 700 lines, which is quite a number. The most part of them are commented out and describe different Squid operating modes.  </p>
+<p>To make work more convenient you may copy the configuration file into the same folder and rename it so that you could easily find the standard settings at any time:</p>
+<pre><code>cp /etc/squid3/squid.conf /etc/squid3/backup-squid.conf</code></pre>
+<p>If necessary you may check <a href="http://www.squid-cache.org/Doc/" target="_blank">the official documentation of the project</a>. </p>
+<p>Now you can delete all the commented out lines and notes and keep only active directives. There are not many by default:</p>
+<pre><code>acl SSL_ports port 443
+acl Safe_ports port 80 # http
+acl Safe_ports port 21 # ftp
+acl Safe_ports port 443 # https
+acl Safe_ports port 70 # gopher
+acl Safe_ports port 210 # wais
+acl Safe_ports port 1025-65535 # unregistered ports
+acl Safe_ports port 280 # http-mgmt
+acl Safe_ports port 488 # gss-http
+acl Safe_ports port 591 # filemaker
+acl Safe_ports port 777 # multiling http
+acl CONNECT method CONNECT
+http_access deny !Safe_ports
+http_access deny CONNECT !SSL_ports
+http_access allow localhost manager
+http_access deny manager
+http_access allow localhost
+http_access deny all
+http_port 3128
+coredump_dir /var/spool/squid3
+refresh_pattern ^ftp: 1440 20% 10080
+refresh_pattern ^gopher: 1440 0% 1440
+refresh_pattern -i (/cgi-bin/|\?) 0 0% 0
+refresh_pattern (Release|Packages(.gz)*)$ 0 20% 2880
+refresh_pattern . 0 20% 4320</code></pre>
+<p>The main configuration tool of Squid is <strong>Access Control List (ACL)</strong>. ACLs are the directives with the following syntax: </p>
+<p><code>acl   name     parameter    list_items</code></p>
+<p>Parameter denotes the list items’ type that server reads. An ACL with port parameter contains port numbers, and the one with scr parameter – IPs that send queries to the server. The full list is quite long, so we won’t cover all the points here. You may find it in the official documentation.</p>
+<p>Thus, the line:</p>
+<pre><code>acl Safe_ports port 80</code></pre>
+<p>adds a new value 80 to the Safe_ports list, containing port-type items.</p>
+<p>Another directive - http_access, has the following syntax:</p>
+<p><code>http_access   directive      name_acl</code></p>
+<p>and determines the rules for work with the acl’s items. For instance, the line: </p>
+<pre><code>http_access deny !Safe_ports</code></pre>
+<p>blocks all the ports not listed in Safe_ports.</p>
+<p>By default only server has access to Squid: </p>
+<pre><code>http_access allow localhost
+http_access deny all</code></pre>
+<p>If you would like to open access to local network clients, you should create a new access list with scr parameter:</p>
+<pre><code>acl localnet src 192.168.0.0/24</code></pre>
+<p>To allow access enter:</p>
+<pre><code>http_access allow localnet</code></pre>
+<p>Then specify the port where Squid works and enable the transparent mode:</p>
+<pre><code>http_port 192.168.0.1:3128 intercept  #parameter intercept enables the transparent mode</code></pre>
+<p>Now minimal setting for Squid configuration file is done and we can move to the next point – information security policy.</p>
+<p>You may use <code>src</code> parameter to control access of the users with static IPs:</p>
+<pre><code>acl  UserGroup   src    192.168.0.2-192.168.0.9 #group of users
+acl  SingleUser  src    192.168.0.10 #single user
+        http_access  allow  UserGrour  #allow access for a group
+        http_access  allow  SingleUser #allow access for an single user
+        http_access  deny   all  #deny access for all</code></pre>
+<p>To create a list of destination IPs that user needs to access you may use <code>dst</code> parameter: </p>
+<pre><code>acl  Net194   dst    194.67.0.0/16  #describe a subnet  194.67.0.0/16
+        http_access   deny   SingleUser   Net194 #deny access to it for a user </code></pre>
+<p>To specify the destination domain of a query you may use  <code>dstdomain</code> parameter:</p>
+<pre><code>acl  SitesBlocked  dstdomain  .example.ru  .sample.ru #list the domains
+        http_access   deny   UserGroup  SitesBlocked #deny access to them for a group of users</code></pre>
+<p>To specify the source domain you may use <code>srcdomain</code>parameter.</p>
+<p>If you need to use regular expressions in ACL, use  <code>srcdom_regex</code> and <code>dstdom_regex</code> parameters:</p>
+<pre><code>acl  SitesRegexFree     dstdom_regex    free #sites with ‘free’ in domain
+acl  SitesRegexComOrg  dstdom_regex  \.com$ \.org $ #sites of .com and .org domain zones 
+        http_access   deny   SingleUser   SitesRegexFree
+        http_access   deny   SingleUser  SitesRegexComOrg</code></pre>
+<p>You need  <code>-i</code> key to ignore symbol register in regular expressions:</p>
+<p><code>acl name    [-i]  url_regex  list_items</code></p>
+<p>And  <code>url_regex</code> parameter allows specifying a regular expression pattern for URL:</p>
+<pre><code> acl  MusicMP3  url_regex  -i  \.mp3$  #includes.mp3 music files</code></pre>
+<p>Another important parameter is  <code>port</code> which is used to specify port lists. It is useful if you need to deny access for an individual port that is applied by a program on your client’s machine, for example an online messenger. </p>
+<p>In case you need to set a time limit for your clients, use  <code>time</code> parameter:</p>
+<p><code>acl   name  time days    hh:mm-HH:MM</code></p>
+<p>Where days are: M – Monday, T – Tuesday, W – Wednesday, H – Thursday, F – Friday, A – Saturday, S – Sunday.</p>
+<p>It is noteworthy that the value of time interval beginning should always be smaller than the value of time interval end. For instance, it is possible to set 00:00-23:59, while the interval 20:00-09:00 has to be separated into 20:00-23:59 and 00:00-09:00. </p>
+<p>Time limits may be combined with other functions. It is possible to allow or deny access to particular websites, open and close ports, control access to IPs on schedule. For instance: </p>
+<pre><code>acl  WeekendTime  time  AS 10:00-15:00 #determine a time interval for weekend:
+http_access  allow  SingleUser  WeekendTime  MusicMP3 #allow access to mp3 files in a particular time interval for a single user 
+http_access  deny   SingleUser  MusicMP3 #deny access at any other time </code></pre>
+<p>To specify the information transfer protocol use  <code>proto</code> parameter:</p>
+<p><code>acl name_proto list</code></p>
+<p>You may use it to deny file transfer by ftp protocol:</p>
+<pre><code>acl   proto_ftp   proto   ftp
+http_access   deny   SingleUser  proto_ftp</code></pre>
+<h4>Speed Limit</h4>
+<p>Nowadays channels with throughput of 256 kbit/s and less are the thing of the past and one may mistakenly resume that it is useless to set speed limit for a network with a few users. Nevertheless, it is advisable to set the minimal rules for connection speed control for single users to avoid network overload and lack of resources for single users that appreciate good speed value. The following operations may cause sticking points:</p>
+<ul>
+<li><span style="line-height: 1.42857;">automatic backup of data from company’s server and other large-volume transfer processes that server carries out on schedule;</span></li>
+<li><span style="line-height: 1.42857;">transfer operations of files for private and professional needs, for instance, BitTorrent protocol is able to drain available network resources;</span></li>
+<li><span style="line-height: 1.42857;">technical errors in computers and programs and malicious software activity;</span></li>
+<li><span style="line-height: 1.42857;">network attacks on single computers within the net.</span></li>
+</ul>
+<p>Squid proxy server allows introducing speed limit policy with the help of pooling mechanisms. Pool may be represented as a container permanently filling with water to the brim and clients pour this water to their glasses through the individual taps. </p>
+<p>Pools are regulated by three directives:  <code>delay_class</code>, <code>delay_parameters</code>, <code>delay_access</code>. </p>
+<p>The amount of pools is set by delay_pools:</p>
+<p><code>delay_pools  amount_of_declared_pools</code></p>
+<p>You need to create several pools:</p>
+<pre><code>delay_pools 2 #2 pools in total with numbers 1 and 2 respectively</code></pre>
+<p>There are three categories of pools:</p>
+<ul>
+<li><span style="line-height: 1.42857;">Single tap limits water flow for the whole network;</span></li>
+<li><span style="line-height: 1.42857;">The flow is limited by one tap that branches into single user taps (for each IP  in the net);</span></li>
+<li><span style="line-height: 1.42857;">•	The flow is limited by one tap that branches into group taps (subnet) and further into single user taps (for single IPs).</span></li>
+</ul>
+<p>Pool’s class is determined by  <code>delay_class</code> directive:</p>
+<p><code>delay_class  pool_number  pool_class</code></p>
+<p>To specify pool’s class enter:</p>
+<pre><code>delay_class  1  1 #pool ¹1 limits speed for all users in its scope</code></pre>
+<p>Pool’s parameters are determined by  <code>delay_parameters</code> directive:</p>
+<p><code>delay_parameters  pool_number   parameters</code></p>
+<p>Parameters’ recording format depends on the chosen pool class:</p>
+<pre><code>delay_parameters 1  byte_for_whole_network #for class 1
+delay_parameters 1  for_whole_network_and_a_client  #for class 2
+delay_parameters 1  for_whole_network_a_subnetwork_and_a_client   #for class 3</code></pre>
+<p>Pool ¹1 is attributed to class 1, we set its data transfer rate at 512 kbit/s:</p>
+<pre><code>delay_parameters 1 64000/64000  #512 kbit = 64 kbyte = 64000 byte</code></pre>
+<p> Parameter is recorded according to the following rules: firstly, speed limit is specified, secondly - the ultimate value that activates the limit. Thus, 64000/64000 in the example below means that after client spends first 64 kbit for the query, speed is limited to 512 kbit/s. It is better, though, to set the second value bigger than the first one, for example, the configuration: </p>
+<pre><code>delay_parameters 1 64000/256000  </code></pre>
+<p>allows user to get the first 256 kbyte at maximum rate and then limits the bandwidth to 512 kbit/s.</p>
+<p>To cancel speed limit put -1, like in the example: </p>
+<pre><code>delay_parameters 1 -1 #unlimited access rate for pool ¹1 </code></pre>
+<p>Now you are able to extend the pool to other network clients using  <code>delay_access</code> directive:</p>
+<p><code>delay_access  pool_number  action   name_acl</code></p>
+<p>‘Action’ parameter has two options:  <code>allow</code> and  <code>deny</code>. It means that you may specify which clients are allowed to use the pool and which are not.</p>
+<p>For example, the configuration:</p>
+<pre><code>delay_access      1  deny    UserGroup
+delay_access      1  allow   SingleUser</code></pre>
+<p>allows SingleUser use the pool and denies access to it for UserGroup.</p>
+<p>Then we use pool ¹2 for the group of users:</p>
+<pre><code>delay_class  2  2 #pool ¹2 allows tuning bandwidth for the whole group of users and set limits for each single user </code></pre>
+<p>Now we describe the limits:</p>
+<pre><code>delay_parameters 2 512000/512000 64000/128000  #8 Mbit/s is the bandwidth limit for the group, the first 128 Kbyte are downloaded at this speed, then speed is limited to 512 Kbit/s</code></pre>
+<p>And finally, we apply the limits for pool ¹2:</p>
+<pre><code>delay_access      1  allow  UserGroup #extends to the group of users UserGroup
+delay_access      1  deny   SingleUser  #but doesn’t affect SingleUser</code></pre>
+<h4>Caching Configuration</h4>
+<p>Squid proxy server supports two types of caching – RAM caching and hardware caching. While configuring you should keep in mind that caching may either accelerate query processing or slow it down, in case configuration parameters are wrong. Another important point is that caching results in additional load on server, e.g. excessive cache in RAM is able to paralyze sever causing lack of RAM.</p>
+<p>Squid standard configuration provides RAM cache only with memory usage of 256 Mbyte. You may increase cache volume and set maximum volume of a cached object using the following directives:</p>
+<pre><code>cache_mem 1024 MB #volume of the memory available for casing
+maximum_object_size_in_memory 512 KB #maximum volume of a cached object </code></pre>
+<p>Also, one should take into account that cache is reset every time sever restarts or turns off, so the results of configuration change will be perceptible only over time. </p>
+<p>HDD cache usage is controlled by  <code>cache_dir</code>directive: </p>
+<p><code>cache_dir storage_type path_to_storage volume  L1 L2</code></p>
+<pre><code>cache_dir ufs /var/squid_cache 1024 16 256 </code></pre>
+<p>Cache volume on hardware is counted in Mbytes. In the example below cache with maximum volume of 1 Gbyte is stored in  <strong>/var/squid_cache</strong>. ufs storage type is standard. Parameters 16 and 256 denote the number of first and second level directories, these volumes are standard, too. </p>
+<p>You may also specify the cached object maximum volume:</p>
+<pre><code>maximum_object_size 2 MB</code></pre>
+<h4>Logging Configuration</h4>
+<p>Squid has a powerful detailed logging system to control traffic processed by proxy server. There are three logs:</p>
+<ul>
+<li><span style="line-height: 1.42857;"><strong>access.log</strong> for clients’ queries;</span></li>
+<li><span style="line-height: 1.42857;"><strong>store.log</strong> for actions with cache;</span></li>
+<li><span style="line-height: 1.42857;"><strong>cache.log</strong> for error messages connected to Squid.</span></li>
+</ul>
+<p>The most frequently used one is access.log. We will change its path in configuration:</p>
+<pre><code>access_log daemon:/etc/squid3/logs/access.log squid</code></pre>
+<p>In the example below you may find ‘squid’ parameter – it determines log-file format. It can be changed for ‘common’ if you need to process a log with third party programs, however this format doesn’t display all information that log contains by default. Apart from the standard formats, it is possible to create a new one using logformat directive. The information about the directive is available in product’s documentation.</p>
+<p><code>cache_log</code> and  <code>cache_store_log</code> directives allow specifying paths to cache.log and store.log respectively. It isn’t necessary to specify the format:</p>
+<pre><code>cache_log daemon:/etc/squid3/logs/cache.log 
+cache_store_log daemon:/etc/squid3/logs/store.log </code></pre>
+<p>Moreover, it is possible to configure different levels of logging, the depth of debugging is controlled by  <code>debug_options</code>directive. It has two main parameters: section and debugging depth: </p>
+<pre><code>debug_options ALL,1 #’ALL’ section, debugging depth 1</code></pre>
+<p>It is advisable not to change ALL for other options (or to choose a specific option carefully). The level of logging may vary between 1 and 9, where the higher level is, the more detailed logging becomes and the more logs appear. As a rule, levels higher than the 5th are used rarely as they record too much unnecessary information.</p>
+<p>In order to make creation of log files and their put them in order easily, you may use a rotation number parameter:</p>
+<pre><code>logfile_rotate 31</code></pre>
+<p>In the example below 31 denotes that when a new log file is created, the previous one is given an extension from 0 to 30 and is closed for recording. To create a new log file use the command:</p>
+<pre><code>squid -k rotate</code></pre>
+<p>Thus, if you add a log file generation task into cron, you will have an ordered report about the traffic that was processed by your proxy server in the previous month.</p>
+<p>In case log volume increases even with the lowest logging level, one should use other methods like automatic log compressing or transferring them to the separate storage. Also, one may vary rotation number and frequency depending on the situation. Another solutions imply storing less logs or creating new logs more frequently and keeping the previous logs in archive. There are dozens of superstructures and third party programs that simplify operating log files on Squid proxy server.</p>
+<p>We leave other parameters unchanged and check configuration file with the command:</p>
+<pre><code>squid3 -k check</code></pre>
+<p>This command checks configuration file for errors. If it doesn’t display any errors – there is none. </p>
+<p>Now we apply the new parameters:</p>
+<pre><code>service squid3 reload</code></pre>
+<p>After the proxy server configuration is done, we can redirect the network’s traffic to it by opening /etc/nat file:</p>
+<pre><code>nano /etc/nat</code></pre>
+<p>and adding the following line at the bottom:</p>
+<pre><code>#redirect http-traffic to the proxy server
+iptables -t nat -A PREROUTING -i eth1 ! -d 192.168.0.0/24 -p tcp -m multiport --dport 80,8080 -j DNAT --to 192.168.0.1:3128</code></pre>
+<p>After that we restart the server to apply the new configurations automatically:</p>
+<pre><code>reboot</code></pre>
+<p>Thus, despite the long list of configuration parameters for Squid, the minimal set is enough to begin. Using Squid proxy server you will fast and easily implement group and single user access to the Internet, monitor their activity and collect statistics on channel usage.</p>
+			</article>
+			<div class="col-md-2 contents"><ul class="nav"></ul></div>
+		</div>
+	</section>
+
+	<section class="bg-light" id="subscribe"><div class="container"><div class="col-md-8 col-md-offset-2">
+		<h4 class="text-center m-b-lg">Subscribe For Our Newsletter<br><small class="text-muted">to get the latest updates of our blog!</small></h4>
+		<div class="row m-b-lg"><form>
+			<div class="col-md-3">
+				<input type="text" id="ss-name" class="form-control input-lg" placeholder="Name">
+			</div>
+			<div class="col-md-6">
+				<input type="email" id="ss-email" class="form-control input-lg" placeholder="EMAIL">
+			</div>
+			<div class="col-md-3">
+				<a role="button" class="btn btn-primary btn-lg btn-block" onclick="subscribe();">Subscribe!</a>
+			</div>
+		</form></div>
+		<script id="4xzjUpJSshHrx6Wl"> if (window.relap) window.relap.ar('4xzjUpJSshHrx6Wl'); </script>
+	</div></div></section>
+
+	<section id="comments"><a name="comments"></a>
+		<div class="container"><div class="col-md-8 col-md-offset-2">
+				<div id="disqus_thread"></div>
+				<script>
+					var disqus_config = function () {
+						//this.page.url = 'https://virtengine.com/en/blog/how-to-setup-squid-on-ubuntu';
+						this.page.identifier = '18';
+						this.language = "en";
+					};
+					(function() {
+						var d = document, s = d.createElement('script');
+						s.src = '../../../VirtEngine.disqus.com/embed.js';
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+					})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+		</div></div>
+	</section>
+</span>
+
+<link rel="stylesheet" href="../../../cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/zenburn.min.css">
+<script src="../../../cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+	var addthis_config = {
+		data_ga_property: 'UA-71487029-1',
+		data_ga_social: true
+	};
+	var addthis_share = {
+		url: 'https://virtengine.com/en/blog/how-to-setup-squid-on-ubuntu'
+	};
+</script>
+<script type="text/javascript" src="../../../s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56b06e396d172bf3" async="async"></script>
+
+
+<script>
+	(function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+		t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+	})(window, document, '_gscq','script','../../../widgets.getsitecontrol.com/50133/script.js');
+</script>
+
+<script id="dsq-count-scr" src="../../../VirtEngine.disqus.com/count.js" async></script>
+
+<script>
+	function subscribe() {
+		if ($('#ss-name').val() == '' || $('#ss-email').val() == '') {
+			swal('Ooops...', 'You have to fill the form!','error');
+			return false;
+		}
+		$.post( "subscribe.html", { 'name': $('#ss-name').val(), 'email': $('#ss-email').val() }, function( data ) {
+			if (data.result.status == 'subscribed') {
+				swal("Thank you!", "You have been successfully subscribed!", "success");
+				$('#ss-name').val('');
+				$('#ss-email').val('');
+			} else if (data.result.title == 'Member Exists')
+				swal("Ooops...", "You are already subscribed!", "error");
+			else
+				swal("Smth Bad...", data.result.detail, "error");
+		}, 'json');
+	}
+
+	// menu
+	jQuery(document).ready(function($){
+		$('article h3, article h4').addClass('hm');
+		var headers = $('article .hm');
+		if (headers == undefined || headers.length < 5) return;
+
+		var contents = $('.contents > ul.nav');
+		var ch, chs;
+
+		headers.each(function( index ) {
+			$(this).attr('id', 'ch'+index);
+			if ($(this).is('h3')) {
+				if (ch != undefined) contents.append(ch);
+				ch = $('<li><a href="#ch'+index+'" class="scroll">'+$(this).text()+'</a></li>');
+			}
+			if ($(this).is('h4')) {
+				if (ch == undefined) return;
+				chs = ch.find('ul');
+				if (chs.length < 1) {
+					ch.append('<ul class="nav"></ul>');
+					chs = ch.find('ul');
+				}
+				chs.append('<li><a href="#ch'+index+'" class="scroll">'+$(this).text()+'</a></li>');
+			}
+		});
+		if (ch != undefined) contents.append(ch);
+
+		$('body').css('position','relative').scrollspy({ target: '.contents' });
+		$('.contents > ul').affix({
+			offset: {
+				top: 1050,
+				bottom: function () { return $('#subscribe').outerHeight(true) + $('#comments').outerHeight(true) + $('footer').outerHeight(true) + 50; }
+			}
+		});
+	});
+</script>
+<footer>
+	<div class="container">
+		<div class="col-md-4 col-sm-12 company">
+			<div class="f_logo"></div>
+
+			<div class="copyright">License for telematic services №127595<br>License for data transmission services №127596<br>&copy; OOO «Fishnet Communications», 2010-2016</div>
+
+			<div class="text-muted m-t-sm"  style="font-size:25px;">
+				<i class="fa fa-cc-paypal" title="PayPal"></i>
+				<i class="fa fa-cc-visa" title="Visa"></i>
+				<i class="fa fa-cc-mastercard" title="Mastercard"></i>
+				<img title="WebMoney" alt="WebMoney" style="margin-top: -4px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAWCAYAAABOm/V6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABNmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarY6xSsNQFEDPi6LiUCsEcXB4kygotupgxqQtRRCs1SHJ1qShSmkSXl7VfoSjWwcXd7/AyVFwUPwC/0Bx6uAQIYODCJ7p3MPlcsGo2HWnYZRhEGvVbjrS9Xw5+8QMUwDQCbPUbrUOAOIkjvjB5ysC4HnTrjsN/sZ8mCoNTIDtbpSFICpA/0KnGsQYMIN+qkHcAaY6addAPAClXu4vQCnI/Q0oKdfzQXwAZs/1fDDmADPIfQUwdXSpAWpJOlJnvVMtq5ZlSbubBJE8HmU6GmRyPw4TlSaqo6MukP8HwGK+2G46cq1qWXvr/DOu58vc3o8QgFh6LFpBOFTn3yqMnd/n4sZ4GQ5vYXpStN0ruNmAheuirVahvAX34y/Axk/96FpPYgAAOjNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICAgICAgICAgICB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIKICAgICAgICAgICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgICAgICAgICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICAgICAgICAgICB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIgogICAgICAgICAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyI+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+QWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpPC94bXA6Q3JlYXRvclRvb2w+CiAgICAgICAgIDx4bXA6Q3JlYXRlRGF0ZT4yMDE2LTA4LTI5VDE3OjI1OjE0KzAzOjAwPC94bXA6Q3JlYXRlRGF0ZT4KICAgICAgICAgPHhtcDpNZXRhZGF0YURhdGU+MjAxNi0wOC0yOVQxNzoyNToxNCswMzowMDwveG1wOk1ldGFkYXRhRGF0ZT4KICAgICAgICAgPHhtcDpNb2RpZnlEYXRlPjIwMTYtMDgtMjlUMTc6MjU6MTQrMDM6MDA8L3htcDpNb2RpZnlEYXRlPgogICAgICAgICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOmU1ZjM2OGJjLWZjNmMtZGE0YS1hNGEyLWRlZTIyOGFmMDBhODwveG1wTU06SW5zdGFuY2VJRD4KICAgICAgICAgPHhtcE1NOkRvY3VtZW50SUQ+YWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjVjYTIxODNmLTZkZjQtMTFlNi04MTI1LWY2YTU0MzI5YWNjNDwveG1wTU06RG9jdW1lbnRJRD4KICAgICAgICAgPHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD54bXAuZGlkOmFlNGU1MDgxLWZjNjktZDQ0NC04MmI4LWE1NjM0YjQ1MjM4NDwveG1wTU06T3JpZ2luYWxEb2N1bWVudElEPgogICAgICAgICA8eG1wTU06SGlzdG9yeT4KICAgICAgICAgICAgPHJkZjpTZXE+CiAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6YWN0aW9uPmNyZWF0ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDphZTRlNTA4MS1mYzY5LWQ0NDQtODJiOC1hNTYzNGI0NTIzODQ8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMTYtMDgtMjlUMTc6MjU6MTQrMDM6MDA8L3N0RXZ0OndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChXaW5kb3dzKTwvc3RFdnQ6c29mdHdhcmVBZ2VudD4KICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6YWN0aW9uPnNhdmVkPC9zdEV2dDphY3Rpb24+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDppbnN0YW5jZUlEPnhtcC5paWQ6ZTVmMzY4YmMtZmM2Yy1kYTRhLWE0YTItZGVlMjI4YWYwMGE4PC9zdEV2dDppbnN0YW5jZUlEPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6d2hlbj4yMDE2LTA4LTI5VDE3OjI1OjE0KzAzOjAwPC9zdEV2dDp3aGVuPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6c29mdHdhcmVBZ2VudD5BZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoV2luZG93cyk8L3N0RXZ0OnNvZnR3YXJlQWdlbnQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpjaGFuZ2VkPi88L3N0RXZ0OmNoYW5nZWQ+CiAgICAgICAgICAgICAgIDwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgIDwveG1wTU06SGlzdG9yeT4KICAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9wbmc8L2RjOmZvcm1hdD4KICAgICAgICAgPHBob3Rvc2hvcDpDb2xvck1vZGU+MzwvcGhvdG9zaG9wOkNvbG9yTW9kZT4KICAgICAgICAgPHBob3Rvc2hvcDpJQ0NQcm9maWxlPkFkb2JlIFJHQiAoMTk5OCk8L3Bob3Rvc2hvcDpJQ0NQcm9maWxlPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICAgICA8dGlmZjpYUmVzb2x1dGlvbj43MjAwMDAvMTAwMDA8L3RpZmY6WFJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOllSZXNvbHV0aW9uPjcyMDAwMC8xMDAwMDwvdGlmZjpZUmVzb2x1dGlvbj4KICAgICAgICAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MjwvdGlmZjpSZXNvbHV0aW9uVW5pdD4KICAgICAgICAgPGV4aWY6Q29sb3JTcGFjZT42NTUzNTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MzM8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MjI8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0idyI/PuRVonoAAAAgY0hSTQAAeiUA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">
+			</div>
+		</div>
+
+		<div class="col-md-2 hidden-xs hidden-sm">
+			<h4>Products</h4>
+			<ul>
+				<li><a href="../products/vps.html">Linux Virtual Private Servers</a></li><li><a href="../products/windows-vps.html">Windows Virtual Private Servers</a></li><li><a href="../products/dedicated.html">Dedicated Servers</a></li><li><a href="https://secure.virtengine.com/cart/dns-hosting">DNS Hosting</a></li><li><a href="https://secure.virtengine.com/cart/ssl-certificates">SSL Certificates</a></li><li><a href="https://secure.virtengine.com/cart/domain-name">Domain Names</a></li>
+			</ul>
+		</div>
+
+		<div class="col-md-2 hidden-xs hidden-sm"><h4>Solutions</h4><ul><li><a href="../startups.html">Startups</a></li><li><a href="../ecommerce.html">E-commerce</a></li><li><a href="../website-hosting.html">Website Hosting</a></li><li><a href="../enterprises.html">Enterprises</a></li></ul></div><div class="col-md-2 hidden-xs hidden-sm"><h4>Data Center</h4><ul><li><a href="../infrastructure.html">Infrastructure</a></li><li><a href="../network.html">Network</a></li></ul></div>
+
+		<div class="col-md-2 hidden-xs hidden-sm">
+			<h4>Company</h4>
+			<ul>
+				<li><a href="../about.html">About Us</a></li>
+				<li><a href="../blog.html">Blog</a></li>
+				<li><a href="../contacts.html">Contacts</a></li>
+			</ul>
+
+			<div class="m-t-md social">
+				
+				<a href="https://vk.com/VirtEngine" target="_blank" style="color:#507299;" title="Follow on VK"><i class="fa fa-vk fa-lg"></i></a>
+				<a href="https://twitter.com/VirtEngine" target="_blank" style="color:#1da1f2;" title="Follow on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+				<a href="https://plus.google.com/+VirtEngineRu" target="_blank" style="color:#db4437;" title="Follow on Google+"><i class="fa fa-google-plus fa-lg"></i></a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="../../engine/view/assets/js/bootstrap.min.js"></script>
+
+<script src="../../engine/view/assets/js/common.js"></script>
+
+<script src="../../engine/view/assets/plugins/swal/sweetalert.min.js"></script>
+<link href="../../engine/view/assets/plugins/swal/sweetalert.css" rel="stylesheet">
+
+
+
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-71487029-1');
+	  ga('require', 'ecommerce');
+	  ga('require', 'linkid');
+	  ga('send', 'pageview');
+	  setTimeout(function(){ga('send', 'event', 'New Visitor', location.pathname);}, 15000);	
+	
+	</script>
+	
+	
+	
+	<script type="text/javascript">
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter34261005 = new Ya.Metrika({
+						id:34261005,
+						clickmap:true,
+						trackLinks:true,
+						accurateTrackBounce:true,
+						webvisor:true,
+						trackHash:true,
+						ecommerce:"yaEc"
+					});
+				} catch(e) { }
+			});
+	
+			var n = d.getElementsByTagName("script")[0],
+				s = d.createElement("script"),
+				f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = "../../../mc.yandex.ru/metrika/watch.js";
+	
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/34261005" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	
+
+	
+	<script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=OJ*Dv5ujI4AtPA8Kl7SB09CDum4xn82Wrb9Ld5BBtIy41R1g*UGVOOOecH5mZDIXcDUomI57xNc5rJqa6rez4QESdcfuAcLQUvxS4krio*Xw3er1dgJt36**Df5bvUjfGikst8ZD6Ff7CZ8bEXA2Uipto5d*nVwQKcy*FD9rgPQ-';</script>
+	
+</body>
+
+<!-- Mirrored from virtengine.com/en/blog/how-to-setup-squid-on-ubuntu by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2016 11:24:25 GMT -->
+</html>

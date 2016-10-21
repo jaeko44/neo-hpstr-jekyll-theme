@@ -1,0 +1,900 @@
+<!--
+* Website Development & Production by Dmitry Zapletin
+* Contact me at d(dot)zapletin(at)gmail(dot)com
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from virtengine.com/en/products/vps by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2016 11:23:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="../../favicon/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="../../favicon/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../../favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../../favicon/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../../favicon/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../../favicon/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../../favicon/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="../../favicon/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="../../favicon/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../../favicon/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="../../favicon/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="../../favicon/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="../../favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="https://virtengine.com/favicon/manifest.json">
+	<link rel="mask-icon" href="https://virtengine.com/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="https://virtengine.com/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-TileImage" content="../../favicon/mstile-144x144.png">
+	<meta name="msapplication-config" content="https://virtengine.com/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+    <title>Linux Virtual Private Servers — VirtEngine Data Center</title>
+
+    <meta property="og:title" content="Linux Virtual Private Servers — VirtEngine Data Center" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="../../engine/view/assets/img/social.jpg" />
+	
+		<meta property="og:url" content="vps.html" />
+	
+
+    
+        <meta name="description" content="Deploy a virtual private server in minutes! High-performance VPS/VDS on KVM virtualization, wide range of preinstalled applications and operating systems." />
+        <meta property="og:description" content="Deploy a virtual private server in minutes! High-performance VPS/VDS on KVM virtualization, wide range of preinstalled applications and operating systems." />
+    
+
+    
+
+    <script src="../../engine/view/assets/js/jquery-2.2.2.min.js"></script>
+
+    
+    <link href="../../engine/view/assets/css/bootstrap.css" rel="stylesheet">
+		<link href="../../engine/view/assets/css/yamm.css" rel="stylesheet">
+    <link href="../../engine/view/assets/css/font-awesome.min.css" rel="stylesheet">
+    
+    
+    <link href="../../engine/view/assets/css/general.css" rel="stylesheet">
+    <link href="../../engine/view/assets/css/main.css" rel="stylesheet">
+
+    
+    
+
+	<link rel="alternate" href="vps.html" hreflang="en" />
+<link rel="alternate" href="https://virtengine.com/ru/products/vps" hreflang="ru" />
+
+
+	<meta name="google-site-verification" content="pTdt6owrr_cUQRDOj8oBy9RpF6FCi-NVqXQLPLzCHb4" />
+	<link href = "https://plus.google.com/+VirtEngineRu" rel = "publisher" />
+	
+</head>
+<body>
+
+<div class="cd-top"></div>
+
+<header class="navbar-wrapper">
+	<nav class="navbar yamm navbar-default" role="navigation">
+		<div class="container">
+			
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuMain" aria-expanded="false">
+					<span class="sr-only">Menu</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="btn btn-default hidden-sm hidden-md hidden-lg" href="https://secure.virtengine.com/clientarea">Log In</a>
+				<a class="navbar-brand" href="../index.html"></a>
+			</div>
+
+			
+			<div class="collapse navbar-collapse" id="menuMain">
+				<ul class="nav navbar-nav">
+
+					<li class="dropdown yamm-fw">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Products</a>
+						<ul class="dropdown-menu"><li><div class="container-fluid"><div class="row">
+										<div class="col-md-4 col-sm-6">
+											<a href="vps.html" data-cat="8" class="category">Linux Virtual Private Servers<small>High-performance VPS/VDS on KVM virtualization</small></a><a href="windows-vps.html" data-cat="11" class="category">Windows Virtual Private Servers<small>Create a ready to use virtual server on Windows in a few minutes!</small></a><a href="dedicated.html" data-cat="9" class="category">Dedicated Servers<small>Powerful dedicated servers deliver high performance, reliability and security of your data</small></a>
+										</div>
+										<div class="col-md-4 bg-light hidden-xs hidden-sm">
+											<div class="products" id="cat8"><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=154" class="product">
+															Sandbox
+															<div class="pull-right text-right">
+																		<span class="label">
+																			3$
+																		</span>
+																	</div>
+															<small><nobr>1 vCore</nobr> &bull; <nobr>512MB</nobr> &bull; <nobr>10GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=151" class="product">
+															Hosting 1
+															<div class="pull-right text-right">
+																		<span class="label">
+																			6$
+																		</span>
+																	</div>
+															<small><nobr>2 vCores</nobr> &bull; <nobr>1GB</nobr> &bull; <nobr>20GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=152" class="product">
+															Hosting 2
+															<div class="pull-right text-right">
+																		<span class="label">
+																			10$
+																		</span>
+																	</div>
+															<small><nobr>2 vCores</nobr> &bull; <nobr>2GB</nobr> &bull; <nobr>40GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=155" class="product">
+															Compute 4 
+															<div class="pull-right text-right">
+																		<span class="label">
+																			20$
+																		</span>
+																	</div>
+															<small><nobr>4 vCores</nobr> &bull; <nobr>4GB</nobr> &bull; <nobr>60GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=156" class="product">
+															Compute 8
+															<div class="pull-right text-right">
+																		<span class="label">
+																			40$
+																		</span>
+																	</div>
+															<small><nobr>4 vCores</nobr> &bull; <nobr>8GB</nobr> &bull; <nobr>80GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=157" class="product">
+															Compute 16
+															<div class="pull-right text-right">
+																		<span class="label">
+																			80$
+																		</span>
+																	</div>
+															<small><nobr>8 vCores</nobr> &bull; <nobr>16GB</nobr> &bull; <nobr>160GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a></div><div class="products" id="cat11"><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=168" class="product">
+															Windows 2
+															<div class="pull-right text-right">
+																		<span class="label">
+																			20$
+																		</span>
+																	</div>
+															<small><nobr>2 vCores</nobr> &bull; <nobr>2GB</nobr> &bull; <nobr>40GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=169" class="product">
+															Windows 4
+															<div class="pull-right text-right">
+																		<span class="label">
+																			40$
+																		</span>
+																	</div>
+															<small><nobr>4 vCores</nobr> &bull; <nobr>4GB</nobr> &bull; <nobr>60GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=170" class="product">
+															Windows 8
+															<div class="pull-right text-right">
+																		<span class="label">
+																			80$
+																		</span>
+																	</div>
+															<small><nobr>4 vCores</nobr> &bull; <nobr>8GB</nobr> &bull; <nobr>80GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=171" class="product">
+															Windows 16
+															<div class="pull-right text-right">
+																		<span class="label">
+																			140$
+																		</span>
+																	</div>
+															<small><nobr>8 vCores</nobr> &bull; <nobr>16GB</nobr> &bull; <nobr>160GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a></div><div class="products" id="cat9"><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=54" class="product">
+															Light
+															<div class="pull-right text-right">
+																		<span class="label">
+																			49$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon X3430</nobr> &bull; <nobr>4c/8t 2.4/2.8Ghz</nobr> &bull; <nobr>8GB DDR3 </nobr> &bull; <nobr>1TB SATA</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=161" class="product">
+															Light 8
+															<div class="pull-right text-right">
+																		<span class="label">
+																			80$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon E5640</nobr> &bull; <nobr>4c/8t 2.66/2.93Ghz</nobr> &bull; <nobr>8GB DDR3</nobr> &bull; <nobr>1TB SATA</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=162" class="product">
+															Light 16
+															<div class="pull-right text-right">
+																		<span class="label">
+																			100$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon E5640</nobr> &bull; <nobr>4c/8t 2.66/2.93Ghz</nobr> &bull; <nobr>16GB DDR3</nobr> &bull; <nobr>1TB SATA x2</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=163" class="product">
+															Medium 16
+															<div class="pull-right text-right">
+																		<span class="label">
+																			120$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5520 x2</nobr> &bull; <nobr>8c/16t 2.26/2.48Ghz</nobr> &bull; <nobr>16GB DDR3</nobr> &bull; <nobr>2TB SAS</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=164" class="product">
+															Medium 32
+															<div class="pull-right text-right">
+																		<span class="label">
+																			150$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5520 x2</nobr> &bull; <nobr>8c/16t 2.26/2.48Ghz</nobr> &bull; <nobr>32GB DDR3</nobr> &bull; <nobr>2TB SAS x2 + RAID</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=158" class="product">
+															Heavy 32
+															<div class="pull-right text-right">
+																		<span class="label">
+																			210$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5640 x2</nobr> &bull; <nobr>12c/24t 2.2/2.8Ghz</nobr> &bull; <nobr>32GB DDR3</nobr> &bull; <nobr>2TB SAS x2 + RAID</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=159" class="product">
+															Heavy 64
+															<div class="pull-right text-right">
+																		<span class="label">
+																			260$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5640 x2</nobr> &bull; <nobr>12c/24t 2.2/2.8Ghz</nobr> &bull; <nobr>64GB DDR3</nobr> &bull; <nobr>2TB SAS x4 + RAID</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=160" class="product">
+															Heavy 128
+															<div class="pull-right text-right">
+																		<span class="label">
+																			300$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5640 x2</nobr> &bull; <nobr>12c/24t 2.2/2.8Ghz</nobr> &bull; <nobr>128GB DDR3</nobr> &bull; <nobr>2TB SAS x4 + RAID</nobr></small>
+														</a></div>
+										</div>
+										<div class="col-md-4 col-sm-6">
+											<div class="nav-header">Additional Services</div><a href="https://secure.virtengine.com/cart/dns-hosting" class="simple">
+												DNS Hosting
+											</a><a href="https://secure.virtengine.com/cart/ssl-certificates" class="simple">
+												SSL Certificates
+											</a><a href="https://secure.virtengine.com/cart/domain-name" class="simple">
+												Domain Names
+											</a>
+										</div>
+						</div></div></li></ul>
+					</li>
+
+					<li class="dropdown"><a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">Solutions</a><ul class="dropdown-menu"><li><a href="../startups.html">Startups</a></li><li><a href="../ecommerce.html">E-commerce</a></li><li><a href="../website-hosting.html">Website Hosting</a></li><li><a href="../enterprises.html">Enterprises</a></li></ul></li><li class="dropdown"><a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">Data Center</a><ul class="dropdown-menu"><li><a href="../infrastructure.html">Infrastructure</a></li><li><a href="../network.html">Network</a></li></ul></li>
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Company</a>
+						<ul class="dropdown-menu">
+							<li><a href="../about.html">About Us</a></li>
+							<li><a href="../blog.html">Blog</a></li>
+							<li><a href="../contacts.html">Contacts</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<div class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+					<div class="btn-group">
+						<button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="fa fa-angle-down"></span> ENG
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="vps.html">English</a></li><li><a href="https://virtengine.com/ru/products/vps">Русский</a></li>
+						</ul>
+					</div>
+					<a href="https://secure.virtengine.com/clientarea" class="btn btn-default" role="button">Log In</a>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+</header>
+
+<section id="products">
+	<div class="container">
+		<h1 class="m-b-md">Linux Virtual Private Servers</h1>
+		<p class="lead">High-performance VPS/VDS on KVM virtualization in St. Petersburg, Russia</p>
+
+		<div class="nav-pills-responsive">
+			<ul class="nav nav-pills text-center price-filter" role="tablist">
+				<li class="placeholder">
+					<a href="javascript:void(0);return false;">Monthly</a> 
+				</li>
+				<li role="presentation" class="active m"><a href="javascript:showPrice('m');">Monthly</a></li>
+				<li role="presentation" class="q"><a href="javascript:showPrice('q');">Quarterly</a></li>
+				<li role="presentation" class="s"><a href="javascript:showPrice('s');">Semi-Annually</a></li>
+				<li role="presentation" class="a"><a href="javascript:showPrice('a');">Annually</a></li>
+			</ul>
+		</div>
+
+		
+
+			<div class="jcarousel"><ul>
+					<li><div class="product" itemscope itemtype="http://schema.org/Product">
+							<h4 itemprop="name">Sandbox</h4>
+							<table itemprop="description"><tr><td><img src="../../engine/view/assets/img/24-processor.png" title="CPU" alt="CPU"> CPU</td><td><strong>1 vCore</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-ram.png" title="RAM" alt="RAM"> RAM</td><td><strong>512MB</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-storage.png" title="Storage" alt="Storage"> Storage</td><td><strong>10GB</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-traffic.png" title="Traffic" alt="Traffic"> Traffic</td><td><strong>Unlimited</strong></td></tr></table>
+							<div itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+								<meta itemprop="priceCurrency" content="USD">
+								<meta itemprop="lowPrice" content="2.5">
+								<div class="price m" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="3">3<sup>0</sup></span>
+								<link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>monthly</div>
+							</div><div class="price q" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="8">8<sup>0</sup></span>
+								<sub class='label label-success'>-5%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>quarterly</div>
+							</div><div class="price s" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="15">15<sup>0</sup></span>
+								<sub class='label label-success'>-10%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>semi-annually</div>
+							</div><div class="price a" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="30">30<sup>0</sup></span>
+								<sub class='label label-success'>-15%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>annually</div>
+							</div>
+							</div>
+							<a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=154" class="btn btn-lg btn-primary">Order Now!</a>
+						</div></li><li><div class="product" itemscope itemtype="http://schema.org/Product">
+							<h4 itemprop="name">Hosting 1</h4>
+							<table itemprop="description"><tr><td><img src="../../engine/view/assets/img/24-processor.png" title="CPU" alt="CPU"> CPU</td><td><strong>2 vCores</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-ram.png" title="RAM" alt="RAM"> RAM</td><td><strong>1GB</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-storage.png" title="Storage" alt="Storage"> Storage</td><td><strong>20GB</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-traffic.png" title="Traffic" alt="Traffic"> Traffic</td><td><strong>Unlimited</strong></td></tr></table>
+							<div itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+								<meta itemprop="priceCurrency" content="USD">
+								<meta itemprop="lowPrice" content="5">
+								<div class="price m" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="6">6<sup>0</sup></span>
+								<link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>monthly</div>
+							</div><div class="price q" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="17">17<sup>0</sup></span>
+								<sub class='label label-success'>-5%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>quarterly</div>
+							</div><div class="price s" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="32">32<sup>0</sup></span>
+								<sub class='label label-success'>-10%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>semi-annually</div>
+							</div><div class="price a" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="60">60<sup>0</sup></span>
+								<sub class='label label-success'>-15%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>annually</div>
+							</div>
+							</div>
+							<a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=151" class="btn btn-lg btn-primary">Order Now!</a>
+						</div></li><li><div class="product special" itemscope itemtype="http://schema.org/Product">
+							<h4 itemprop="name">Hosting 2</h4>
+							<table itemprop="description"><tr><td><img src="../../engine/view/assets/img/24-processor.png" title="CPU" alt="CPU"> CPU</td><td><strong>2 vCores</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-ram.png" title="RAM" alt="RAM"> RAM</td><td><strong>2GB</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-storage.png" title="Storage" alt="Storage"> Storage</td><td><strong>40GB</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-traffic.png" title="Traffic" alt="Traffic"> Traffic</td><td><strong>Unlimited</strong></td></tr></table>
+							<div itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+								<meta itemprop="priceCurrency" content="USD">
+								<meta itemprop="lowPrice" content="8.33">
+								<div class="price m" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="10">10<sup>0</sup></span>
+								<link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>monthly</div>
+							</div><div class="price q" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="28">28<sup>0</sup></span>
+								<sub class='label label-success'>-5%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>quarterly</div>
+							</div><div class="price s" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="53">53<sup>0</sup></span>
+								<sub class='label label-success'>-10%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>semi-annually</div>
+							</div><div class="price a" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="100">100<sup>0</sup></span>
+								<sub class='label label-success'>-15%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>annually</div>
+							</div>
+							</div>
+							<a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=152" class="btn btn-lg btn-success">Order Now!</a>
+						</div></li><li><div class="product" itemscope itemtype="http://schema.org/Product">
+							<h4 itemprop="name">Compute 4 </h4>
+							<table itemprop="description"><tr><td><img src="../../engine/view/assets/img/24-processor.png" title="CPU" alt="CPU"> CPU</td><td><strong>4 vCores</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-ram.png" title="RAM" alt="RAM"> RAM</td><td><strong>4GB</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-storage.png" title="Storage" alt="Storage"> Storage</td><td><strong>60GB</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-traffic.png" title="Traffic" alt="Traffic"> Traffic</td><td><strong>Unlimited</strong></td></tr></table>
+							<div itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+								<meta itemprop="priceCurrency" content="USD">
+								<meta itemprop="lowPrice" content="16.67">
+								<div class="price m" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="20">20<sup>0</sup></span>
+								<link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>monthly</div>
+							</div><div class="price q" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="57">57<sup>0</sup></span>
+								<sub class='label label-success'>-5%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>quarterly</div>
+							</div><div class="price s" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="105">105<sup>0</sup></span>
+								<sub class='label label-success'>-10%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>semi-annually</div>
+							</div><div class="price a" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="200">200<sup>0</sup></span>
+								<sub class='label label-success'>-15%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>annually</div>
+							</div>
+							</div>
+							<a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=155" class="btn btn-lg btn-primary">Order Now!</a>
+						</div></li><li><div class="product" itemscope itemtype="http://schema.org/Product">
+							<h4 itemprop="name">Compute 8</h4>
+							<table itemprop="description"><tr><td><img src="../../engine/view/assets/img/24-processor.png" title="CPU" alt="CPU"> CPU</td><td><strong>4 vCores</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-ram.png" title="RAM" alt="RAM"> RAM</td><td><strong>8GB</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-storage.png" title="Storage" alt="Storage"> Storage</td><td><strong>80GB</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-traffic.png" title="Traffic" alt="Traffic"> Traffic</td><td><strong>Unlimited</strong></td></tr></table>
+							<div itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+								<meta itemprop="priceCurrency" content="USD">
+								<meta itemprop="lowPrice" content="33.33">
+								<div class="price m" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="40">40<sup>0</sup></span>
+								<link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>monthly</div>
+							</div><div class="price q" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="114">114<sup>0</sup></span>
+								<sub class='label label-success'>-5%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>quarterly</div>
+							</div><div class="price s" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="215">215<sup>0</sup></span>
+								<sub class='label label-success'>-10%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>semi-annually</div>
+							</div><div class="price a" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="400">400<sup>0</sup></span>
+								<sub class='label label-success'>-15%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>annually</div>
+							</div>
+							</div>
+							<a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=156" class="btn btn-lg btn-primary">Order Now!</a>
+						</div></li><li><div class="product" itemscope itemtype="http://schema.org/Product">
+							<h4 itemprop="name">Compute 16</h4>
+							<table itemprop="description"><tr><td><img src="../../engine/view/assets/img/24-processor.png" title="CPU" alt="CPU"> CPU</td><td><strong>8 vCores</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-ram.png" title="RAM" alt="RAM"> RAM</td><td><strong>16GB</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-storage.png" title="Storage" alt="Storage"> Storage</td><td><strong>160GB</strong></td></tr><tr><td><img src="../../engine/view/assets/img/24-traffic.png" title="Traffic" alt="Traffic"> Traffic</td><td><strong>Unlimited</strong></td></tr></table>
+							<div itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+								<meta itemprop="priceCurrency" content="USD">
+								<meta itemprop="lowPrice" content="66.67">
+								<div class="price m" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="80">80<sup>0</sup></span>
+								<link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>monthly</div>
+							</div><div class="price q" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="228">228<sup>0</sup></span>
+								<sub class='label label-success'>-5%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>quarterly</div>
+							</div><div class="price s" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="420">420<sup>0</sup></span>
+								<sub class='label label-success'>-10%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>semi-annually</div>
+							</div><div class="price a" style="display:none;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								<small>$</small><span itemprop="price" content="800">800<sup>0</sup></span>
+								<sub class='label label-success'>-15%</sub><link itemprop="availability" href="http://schema.org/InStock"/>
+								<div>annually</div>
+							</div>
+							</div>
+							<a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=157" class="btn btn-lg btn-primary">Order Now!</a>
+						</div></li>
+				</ul></div>
+
+			<div class="slider-wrapper">
+				<div class="left" onClick="$('#slider').slider( 'value', $('#slider').slider('value') - 1 );"><li class="fa fa-arrow-left"></li></div>
+				<div class="right" onClick="$('#slider').slider( 'value', $('#slider').slider('value') + 1 );"><li class="fa fa-arrow-right"></li></div>
+				<div id="slider"></div>
+			</div>
+
+		
+
+		
+
+
+		
+
+	</div>
+</section>
+
+<section class="small"><div class="container">
+<div class="row vertical-align">
+  <div class="col-md-6 text-center hidden-xs hidden-sm">
+	<img src="../../uploads/images/unlim.png">
+  </div>
+  <div class="col-md-5">
+	<h3 class="m-b-md">Unlimited traffic</h3>
+	<p class="lead">Every virtual private server has a connection with a capacity of 100 Mbit/s without any traffic limits</p>
+  </div>
+</div>
+<div class="row vertical-align">
+  <div class="col-md-5 col-md-offset-1">
+	<h3 class="m-b-md">Never lose your data</h3>
+	<p class="lead">The data storage system built on the RAID 10 architecture combines fault tolerance and performance</p>
+  </div>
+  <div class="col-md-5 text-center hidden-xs hidden-sm">
+	<img src="../../uploads/images/raid.png">
+  </div>
+</div>
+</div></section>
+
+<section><div class="container">
+<h3 class="text-center m-b-sm"><strong>One-Click Install</strong></h3>
+<h4 class="text-center m-b-lg">Wide Range of Applications and Operating Systems</h4>
+<div class="row">
+  <div class="col-md-5">	
+	<div class="row">
+	  <div class="col-md-3 col-xs-4 logo">
+		<img src="../../engine/view/assets/img/droplets/debian.png">Debian			
+	  </div>			
+	  <div class="col-md-3 col-xs-4 logo">
+		<img src="../../engine/view/assets/img/droplets/ubuntu.png">Ubuntu
+	  </div>			
+	  <div class="col-md-3 col-xs-4 logo">	
+		<img src="../../engine/view/assets/img/droplets/fedora.png">Fedora	
+	  </div>
+	  <div class="col-md-3 col-xs-4 logo">	
+		<img src="../../engine/view/assets/img/droplets/centos.jpg">CentOS	
+	  </div>
+	</div>
+	<p class="text-center m-t-lg"><a href="windows-vps.html">Need Windows OS?</a></p>
+  </div>	
+  <div class="col-md-6 col-md-offset-1">
+	<div class="row">
+	  <div class="col-md-3 col-xs-4 logo">
+		<img src="../../engine/view/assets/img/droplets/wordpress.png">WordPress
+	  </div>
+	  <div class="col-md-3 col-xs-4 logo">
+		<img src="../../engine/view/assets/img/droplets/joomla.png">Joomla
+	  </div>
+	  <div class="col-md-3 col-xs-4 logo">
+		<img src="../../engine/view/assets/img/droplets/drupal.png">Drupal
+	  </div>
+	  <div class="col-md-3 col-xs-4 logo">
+		<img src="../../engine/view/assets/img/droplets/owncloud.png">OwnCloud
+	  </div>
+	  <div class="col-md-3 col-xs-4 logo">
+		<img src="../../engine/view/assets/img/droplets/magento.png">Magento
+	  </div>
+	  <div class="col-md-3 col-xs-4 logo">
+		<img src="../../engine/view/assets/img/droplets/opencart.png">OpenCart
+	  </div>
+	  <div class="col-md-3 col-xs-4 logo">
+		<img src="../../engine/view/assets/img/droplets/bitrix.png">1C-Bitrix
+	  </div>
+	  <div class="col-md-3 col-xs-4 logo">	
+		<img src="../../engine/view/assets/img/droplets/lamp.png">LAMP
+	  </div>
+	  <div class="col-md-3 col-xs-4 logo">
+		<img src="../../engine/view/assets/img/droplets/lnmp.png">LNMP
+	  </div>
+	  <div class="col-md-3 col-xs-4 logo">
+		<img src="../../engine/view/assets/img/droplets/vestacp.png">Vesta CP	
+	  </div>			
+	  <div class="col-md-3 col-xs-4 logo">
+		<img src="../../engine/view/assets/img/droplets/cpanel.png">CPanel
+	  </div>
+	</div>		
+	<small class="text-muted m-t-md" style="display: block;">* The list of available applications depends on the plan</small>	
+  </div>
+</div>
+</div></section>
+
+
+	<section class="bg-light features">
+		<h4 class="text-center">All Plans Include</h4>
+		
+		<div class="container">
+			<div class="col-md-4">
+				<ul>
+					<li>KVM virtualization</li><li>Unlimited Traffic</li><li>One IPv4 + IPv6 subnet /64</li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<ul>
+					<li>Reverse DNS Support</li><li>DNS-Parking</li><li>HTML5 VNC</li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<ul>
+					<li>Client's ISO</li><li>SolusVM API</li><li>24/7/365 Technical Support</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+
+<section id="signup">
+	<div class="container">
+		<div class="col-md-6 hidden-sm">
+			<img src="../../engine/view/assets/img/custom.png" class="img-responsive center-block">
+		</div>
+		<div class="col-md-5 col-md-offset-1">
+			<h3 class="m-b-md"><strong>Deploy a <nobr>Virtual Private Server</nobr></strong><br><small>In Less Than 5 Minutes!</small></h3>
+
+			<form action="https://virtengine.com/en/products/signup" method="post" id="frmFastSignUp">
+				<input type="text" name="firstname" id="fs_name" class="form-control input-lg" placeholder="Your Name">
+				<input type="email" name="email" id="fs_email" class="form-control input-lg m-t-sm" placeholder="Email">
+				<input type="submit" class="btn btn-primary btn-lg btn-block m-t-sm" value="Sign Me Up!">
+			</form>
+
+			<div class="text-muted m-t-sm"><small>By signing up, you agree to the <a href="https://secure.virtengine.com/index.php?/knowledgebase/article/8/tos/">Terms of Service</a></small></div>
+		</div>
+	</div>
+</section>
+
+
+<section class="small text-center">
+	<h4 class="no-margin">Not happy with our plans? <a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=153" class="btn btn-default">Configure your own!</a></h4>
+</section>
+
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="feature">
+					<img src="../../engine/view/assets/img/256-uptime.png" align="center">
+					<strong>Uptime 99.9% Guarantee</strong>
+					<span>If uptime falls below 99.9% - we will refund your full service cost for the last month.</span>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="feature">
+					<img src="../../engine/view/assets/img/256-tier2.png" align="center">
+					<strong>Tier II Data Center</strong>
+					<span>«VirtEngine» data center corresponds to the Tier II level by classification of Uptime Institute.</span>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="feature">
+					<img src="../../engine/view/assets/img/256-speed.png" align="center">
+					<strong>Reliable Network</strong>
+					<span>The total capacity of external channels reaches 70 Gbit/s.</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+	<section>
+		<div class="container">
+			<h3 class="text-center">Your Questions Answered</h3>
+			<div class="row">
+				<div class="col-md-4"><div class="faq">
+					<h5>What kind of virtualization do you use?</h5>
+					<span>We use KVM virtualization. This type of virtualization ensures that all allocated resources are fully at your disposal.</span>
+				</div></div><div class="col-md-4"><div class="faq">
+					<h5>Can I get a trial period?</h5>
+					<span>Yes, we offer a three days trial period. Just make an order, do not pay for it and open a support ticket for requesting the test. Be sure to include your order number.</span>
+				</div></div><div class="col-md-4"><div class="faq">
+					<h5>Where are your servers physically located?</h5>
+					<span>Our servers are located in Saint Petersburg, Russia.</span>
+				</div></div></div><div class="row"><div class="col-md-4"><div class="faq">
+					<h5>How is bandwidth usage measured?</h5>
+					<span>Traffic is unlimited! Each server has a connection with a capacity of 100 Mbit/s without traffic limits.</span>
+				</div></div><div class="col-md-4"><div class="faq">
+					<h5>How can I test the speed or response time (ping) of your servers?</h5>
+					<span>You can find our IP addresses and test files for download on the page lg.virtengine.com</span>
+				</div></div><div class="col-md-4"><div class="faq">
+					<h5>Is it possible to install my own OS?</h5>
+					<span>Yes. With KVM it is possible to mount OS installation media (CD/DVD/ISO image) and make it visible as a VPS local CD/DVD ROM. After that the installation will proceed as usual.</span>
+				</div></div></div><div class="row"><div class="col-md-4"><div class="faq">
+					<h5>Do you offer IPv6 support?</h5>
+					<span>Yes. Every virtual machine comes with one primary IPv6 address and IPv6 subnet /64. </span>
+				</div></div><div class="col-md-4"><div class="faq">
+					<h5>Do you support multiple IPv4 addresses per VPS?</h5>
+					<span>No. Every virtual machine comes with one primary IPv4 address.</span>
+				</div></div><div class="col-md-4"><div class="faq">
+					<h5>Do you allow editing of reverse DNS records?</h5>
+					<span>Yes, we allow custom reverse DNS entries for your virtual machine IPs. You can update reverse DNS information directly from your control panel.</span>
+				</div></div></div><div class="row">
+			</div>
+			<hr class="m-t-lg m-b-lg">
+			<h4 class="text-center m-b-md">Still Have Questions?</h4>
+			<div class="text-center">
+				<a href="https://secure.virtengine.com/knowledgebase" class="btn btn-default btn-lg">Browse Knowledgebase</a>
+				<a href="../contacts.html" class="btn btn-lg">Contact Us</a>
+			</div>
+		</div>
+	</section>
+
+
+
+	<section>
+		<div class="container">
+			<h2 class="no-margin">Please don't be shy and<br><a href="#signup" class="btn btn-primary scroll">Sign Up!</a></h2>
+		</div>
+	</section>
+
+
+<script>
+	function showPrice(p) {
+		$('.price').hide();
+		$('.price.'+p).show();
+		$('.price-filter li').removeClass('active').parent().find('.'+p).addClass('active');
+	}
+
+	$('#frmFastSignUp').on('submit',function(event){
+		if (
+			$('#fs_name').val() == '' || $('#fs_email').val() == ''
+		)
+		{
+			swal('Hey!', 'Just the two fields! Fill \'em in!', 'error');
+			event.preventDefault();
+			return false;
+		}
+	});
+
+	$(function() {
+		var slided = true;
+
+		$( "#slider" ).slider({
+			min: 0,
+			max: 2,
+			slide: function( event, ui ) {
+				if (slided)
+					$('.jcarousel').jcarousel('scroll', ui.value);
+				else
+					setTimeout(function() { $('.jcarousel').jcarousel('scroll', ui.value) }, 300);
+			},
+			change: function( event, ui ) {
+				$('.jcarousel').jcarousel('scroll', ui.value);
+			}
+		});
+
+		$('.jcarousel')
+			.on('jcarousel:create jcarousel:reload', function() {
+				var element = $(this),
+					width = element.innerWidth();
+				var max = 1;
+
+				if (width > 970) {
+					width = width / 4;
+					max = 4;
+				} else if (width > 750) {
+					width = width / 3;
+					max = 3;
+				} else if (width > 600) {
+					width = width / 2;
+					max = 2;
+				}
+
+				if ($( "#slider" ).slider('instance') !== undefined) {
+					max = element.jcarousel('items').length - max;
+					$( "#slider" ).slider( "option", "max", max );
+					if (max < 1)
+						$( ".slider-wrapper" ).hide();
+					else
+						$( ".slider-wrapper" ).show();
+				}
+
+				element.jcarousel('items').css('width', width + 'px');
+			})
+			.jcarousel({
+				// Configuration goes here
+				animation: {
+					duration: 300,
+					queue: false,
+					start: function() {
+						slided = false;
+					},
+					complete: function() {
+						slided = true;
+					}
+				}
+			});
+
+		$(".jcarousel").touchwipe({
+			wipeLeft: function() {
+				$(".jcarousel").jcarousel("scroll", "+=1");
+			},
+			wipeRight: function() {
+				$(".jcarousel").jcarousel("scroll", "-=1");
+			},
+			preventDefaultEvents: false
+		});
+
+		setTimeout(function() {
+			$('.jcarousel').jcarousel('scroll', $('.jcarousel').jcarousel('items').length - 1, true, function() {
+				$('.jcarousel').jcarousel('scroll', 0);
+			});
+		}, 1000);
+	});
+</script>
+
+<script src="../../engine/view/assets/plugins/jcarousel/jquery.jcarousel.min.js"></script>
+<link href="../../engine/view/assets/plugins/jcarousel/jcarousel.css" rel="stylesheet">
+
+<script src="../../engine/view/assets/plugins/jquery.touchwipe.min.js"></script>
+
+<script src="../../engine/view/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="../../engine/view/assets/plugins/jquery-ui/jquery-ui.min.css">
+<footer>
+	<div class="container">
+		<div class="col-md-4 col-sm-12 company">
+			<div class="f_logo"></div>
+
+			<div class="copyright">License for telematic services №127595<br>License for data transmission services №127596<br>&copy; OOO «Fishnet Communications», 2010-2016</div>
+
+			<div class="text-muted m-t-sm"  style="font-size:25px;">
+				<i class="fa fa-cc-paypal" title="PayPal"></i>
+				<i class="fa fa-cc-visa" title="Visa"></i>
+				<i class="fa fa-cc-mastercard" title="Mastercard"></i>
+				<img title="WebMoney" alt="WebMoney" style="margin-top: -4px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAWCAYAAABOm/V6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABNmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarY6xSsNQFEDPi6LiUCsEcXB4kygotupgxqQtRRCs1SHJ1qShSmkSXl7VfoSjWwcXd7/AyVFwUPwC/0Bx6uAQIYODCJ7p3MPlcsGo2HWnYZRhEGvVbjrS9Xw5+8QMUwDQCbPUbrUOAOIkjvjB5ysC4HnTrjsN/sZ8mCoNTIDtbpSFICpA/0KnGsQYMIN+qkHcAaY6addAPAClXu4vQCnI/Q0oKdfzQXwAZs/1fDDmADPIfQUwdXSpAWpJOlJnvVMtq5ZlSbubBJE8HmU6GmRyPw4TlSaqo6MukP8HwGK+2G46cq1qWXvr/DOu58vc3o8QgFh6LFpBOFTn3yqMnd/n4sZ4GQ5vYXpStN0ruNmAheuirVahvAX34y/Axk/96FpPYgAAOjNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICAgICAgICAgICB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIKICAgICAgICAgICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgICAgICAgICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICAgICAgICAgICB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIgogICAgICAgICAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyI+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+QWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpPC94bXA6Q3JlYXRvclRvb2w+CiAgICAgICAgIDx4bXA6Q3JlYXRlRGF0ZT4yMDE2LTA4LTI5VDE3OjI1OjE0KzAzOjAwPC94bXA6Q3JlYXRlRGF0ZT4KICAgICAgICAgPHhtcDpNZXRhZGF0YURhdGU+MjAxNi0wOC0yOVQxNzoyNToxNCswMzowMDwveG1wOk1ldGFkYXRhRGF0ZT4KICAgICAgICAgPHhtcDpNb2RpZnlEYXRlPjIwMTYtMDgtMjlUMTc6MjU6MTQrMDM6MDA8L3htcDpNb2RpZnlEYXRlPgogICAgICAgICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOmU1ZjM2OGJjLWZjNmMtZGE0YS1hNGEyLWRlZTIyOGFmMDBhODwveG1wTU06SW5zdGFuY2VJRD4KICAgICAgICAgPHhtcE1NOkRvY3VtZW50SUQ+YWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjVjYTIxODNmLTZkZjQtMTFlNi04MTI1LWY2YTU0MzI5YWNjNDwveG1wTU06RG9jdW1lbnRJRD4KICAgICAgICAgPHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD54bXAuZGlkOmFlNGU1MDgxLWZjNjktZDQ0NC04MmI4LWE1NjM0YjQ1MjM4NDwveG1wTU06T3JpZ2luYWxEb2N1bWVudElEPgogICAgICAgICA8eG1wTU06SGlzdG9yeT4KICAgICAgICAgICAgPHJkZjpTZXE+CiAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6YWN0aW9uPmNyZWF0ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDphZTRlNTA4MS1mYzY5LWQ0NDQtODJiOC1hNTYzNGI0NTIzODQ8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMTYtMDgtMjlUMTc6MjU6MTQrMDM6MDA8L3N0RXZ0OndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChXaW5kb3dzKTwvc3RFdnQ6c29mdHdhcmVBZ2VudD4KICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6YWN0aW9uPnNhdmVkPC9zdEV2dDphY3Rpb24+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDppbnN0YW5jZUlEPnhtcC5paWQ6ZTVmMzY4YmMtZmM2Yy1kYTRhLWE0YTItZGVlMjI4YWYwMGE4PC9zdEV2dDppbnN0YW5jZUlEPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6d2hlbj4yMDE2LTA4LTI5VDE3OjI1OjE0KzAzOjAwPC9zdEV2dDp3aGVuPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6c29mdHdhcmVBZ2VudD5BZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoV2luZG93cyk8L3N0RXZ0OnNvZnR3YXJlQWdlbnQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpjaGFuZ2VkPi88L3N0RXZ0OmNoYW5nZWQ+CiAgICAgICAgICAgICAgIDwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgIDwveG1wTU06SGlzdG9yeT4KICAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9wbmc8L2RjOmZvcm1hdD4KICAgICAgICAgPHBob3Rvc2hvcDpDb2xvck1vZGU+MzwvcGhvdG9zaG9wOkNvbG9yTW9kZT4KICAgICAgICAgPHBob3Rvc2hvcDpJQ0NQcm9maWxlPkFkb2JlIFJHQiAoMTk5OCk8L3Bob3Rvc2hvcDpJQ0NQcm9maWxlPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICAgICA8dGlmZjpYUmVzb2x1dGlvbj43MjAwMDAvMTAwMDA8L3RpZmY6WFJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOllSZXNvbHV0aW9uPjcyMDAwMC8xMDAwMDwvdGlmZjpZUmVzb2x1dGlvbj4KICAgICAgICAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MjwvdGlmZjpSZXNvbHV0aW9uVW5pdD4KICAgICAgICAgPGV4aWY6Q29sb3JTcGFjZT42NTUzNTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MzM8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MjI8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0idyI/PuRVonoAAAAgY0hSTQAAeiUA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">
+			</div>
+		</div>
+
+		<div class="col-md-2 hidden-xs hidden-sm">
+			<h4>Products</h4>
+			<ul>
+				<li><a href="vps.html">Linux Virtual Private Servers</a></li><li><a href="windows-vps.html">Windows Virtual Private Servers</a></li><li><a href="dedicated.html">Dedicated Servers</a></li><li><a href="https://secure.virtengine.com/cart/dns-hosting">DNS Hosting</a></li><li><a href="https://secure.virtengine.com/cart/ssl-certificates">SSL Certificates</a></li><li><a href="https://secure.virtengine.com/cart/domain-name">Domain Names</a></li>
+			</ul>
+		</div>
+
+		<div class="col-md-2 hidden-xs hidden-sm"><h4>Solutions</h4><ul><li><a href="../startups.html">Startups</a></li><li><a href="../ecommerce.html">E-commerce</a></li><li><a href="../website-hosting.html">Website Hosting</a></li><li><a href="../enterprises.html">Enterprises</a></li></ul></div><div class="col-md-2 hidden-xs hidden-sm"><h4>Data Center</h4><ul><li><a href="../infrastructure.html">Infrastructure</a></li><li><a href="../network.html">Network</a></li></ul></div>
+
+		<div class="col-md-2 hidden-xs hidden-sm">
+			<h4>Company</h4>
+			<ul>
+				<li><a href="../about.html">About Us</a></li>
+				<li><a href="../blog.html">Blog</a></li>
+				<li><a href="../contacts.html">Contacts</a></li>
+			</ul>
+
+			<div class="m-t-md social">
+				
+				<a href="https://vk.com/VirtEngine" target="_blank" style="color:#507299;" title="Follow on VK"><i class="fa fa-vk fa-lg"></i></a>
+				<a href="https://twitter.com/VirtEngine" target="_blank" style="color:#1da1f2;" title="Follow on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+				<a href="https://plus.google.com/+VirtEngineRu" target="_blank" style="color:#db4437;" title="Follow on Google+"><i class="fa fa-google-plus fa-lg"></i></a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="../../engine/view/assets/js/bootstrap.min.js"></script>
+
+<script src="../../engine/view/assets/js/common.js"></script>
+
+<script src="../../engine/view/assets/plugins/swal/sweetalert.min.js"></script>
+<link href="../../engine/view/assets/plugins/swal/sweetalert.css" rel="stylesheet">
+
+
+
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-71487029-1');
+	  ga('require', 'ecommerce');
+	  ga('require', 'linkid');
+	  ga('send', 'pageview');
+	  setTimeout(function(){ga('send', 'event', 'New Visitor', location.pathname);}, 15000);	
+	
+	</script>
+	
+	
+	
+	<script type="text/javascript">
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter34261005 = new Ya.Metrika({
+						id:34261005,
+						clickmap:true,
+						trackLinks:true,
+						accurateTrackBounce:true,
+						webvisor:true,
+						trackHash:true,
+						ecommerce:"yaEc"
+					});
+				} catch(e) { }
+			});
+	
+			var n = d.getElementsByTagName("script")[0],
+				s = d.createElement("script"),
+				f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = "../../../mc.yandex.ru/metrika/watch.js";
+	
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/34261005" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	
+
+	
+	<script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=OJ*Dv5ujI4AtPA8Kl7SB09CDum4xn82Wrb9Ld5BBtIy41R1g*UGVOOOecH5mZDIXcDUomI57xNc5rJqa6rez4QESdcfuAcLQUvxS4krio*Xw3er1dgJt36**Df5bvUjfGikst8ZD6Ff7CZ8bEXA2Uipto5d*nVwQKcy*FD9rgPQ-';</script>
+	
+</body>
+
+<!-- Mirrored from virtengine.com/en/products/vps by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2016 11:23:21 GMT -->
+</html>
