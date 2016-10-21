@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
@@ -59,13 +58,9 @@
 	})(window,document,'script','https://u.heatmap.it/log.js');
 	</script>
   </head>
-
-<!--Change the body class to alter colour scheme, options are: blue, wine, NOTE: data-demo-colour is for demo only & can be removed -->
-<!--Change the body class to match the product being displayed, options are: ipad-portrait, ipad-mini, iphone-portrait -->
-
 <body class="ipad-portrait" data-demo-colour="blue">
   <div id="pagewrapper">
-<header class="navbar-wrapper">
+    <header class="navbar-wrapper">
 			<nav class="yamm navbar-default" role="navigation">
 				<div class="container">
 
@@ -73,9 +68,15 @@
             <a class="navbar-brand" href="index.html">
 							<img class="logo" src="img/logo.png" alt="" class="logo-wide">
 						</a>
-            <button type="submit" id="getNotified" class="btn tf-btn btn-default">get notified</button>
 					</div>
 				</div>
+          <ul id="navigation">
+              <li class="home"><a href="/"><span>Home</span></a></li>
+              <li class="about"><a href="#"><span>About</span></a></li>
+              <li class="search"><a href=""><span>Documentation</span></a></li>
+              <li class="photos"><a href=""><span>Blog</span></a></li>
+              <li class="contact"><a href=""><span>Contact</span></a></li>
+          </ul>
 			</nav>
 		</header>
     <div class="jumbotron section1">
@@ -105,8 +106,6 @@
           </div>
       </div>
     </div>
-
-
     <!-- Content area -->
     <div id="content">
       <div class="container">
@@ -183,7 +182,29 @@
 
   <!--Scripts -->
   <script src="js/jquery.js"></script>
+  <script type="text/javascript">
+    $(function() {
+        var d=300;
+        $('#navigation a').each(function(){
+            $(this).stop().animate({
+                'marginTop':'-80px'
+            },d+=150);
+        });
 
+        $('#navigation > li').hover(
+        function () {
+            $('a',$(this)).stop().animate({
+                'marginTop':'-2px'
+            },200);
+        },
+        function () {
+            $('a',$(this)).stop().animate({
+                'marginTop':'-80px'
+            },200);
+        }
+    );
+    });
+</script>
   <!-- @todo: remove unused Javascript for better performance -->
 	<script src="js/text.js"></script>
   <script src="js/bootstrap-transition.js"></script>
