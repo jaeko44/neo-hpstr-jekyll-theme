@@ -1,0 +1,984 @@
+<!--
+* Website Development & Production by Dmitry Zapletin
+* Contact me at d(dot)zapletin(at)gmail(dot)com
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from virtengine.com/en/blog/how-to-setup-lnmp-on-ubuntu by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2016 11:24:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="../../favicon/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="../../favicon/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../../favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../../favicon/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../../favicon/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../../favicon/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../../favicon/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="../../favicon/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="../../favicon/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../../favicon/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="../../favicon/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="../../favicon/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="../../favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="https://virtengine.com/favicon/manifest.json">
+	<link rel="mask-icon" href="https://virtengine.com/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="https://virtengine.com/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-TileImage" content="../../favicon/mstile-144x144.png">
+	<meta name="msapplication-config" content="https://virtengine.com/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+    <title>Nginx (LNMP) Installation on Ubuntu — VirtEngine Data Center</title>
+
+    <meta property="og:title" content="Nginx (LNMP) Installation on Ubuntu — VirtEngine Data Center" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="../../uploads/blog/17.png" />
+	
+		<meta property="og:url" content="how-to-setup-lnmp-on-ubuntu.html" />
+	
+
+    
+        <meta name="description" content="In 2002, the Russian programmer Igor Sysoev began the development of HTTP-server Nginx because of a need in a new software for high-loaded web-sites. At present, besides a usual web-server, Nginx is used as a reverse or mail proxy server as well as TCP/UDP proxy server for solving common tasks. Nginx is set up and works effectively on all the basic Unix-like OS including Linux." />
+        <meta property="og:description" content="In 2002, the Russian programmer Igor Sysoev began the development of HTTP-server Nginx because of a need in a new software for high-loaded web-sites. At present, besides a usual web-server, Nginx is used as a reverse or mail proxy server as well as TCP/UDP proxy server for solving common tasks. Nginx is set up and works effectively on all the basic Unix-like OS including Linux." />
+    
+
+    
+
+    <script src="../../engine/view/assets/js/jquery-2.2.2.min.js"></script>
+
+    
+    <link href="../../engine/view/assets/css/bootstrap.css" rel="stylesheet">
+		<link href="../../engine/view/assets/css/yamm.css" rel="stylesheet">
+    <link href="../../engine/view/assets/css/font-awesome.min.css" rel="stylesheet">
+    
+    
+    <link href="../../engine/view/assets/css/general.css" rel="stylesheet">
+    <link href="../../engine/view/assets/css/main.css" rel="stylesheet">
+
+    
+    
+
+	<link rel="alternate" href="how-to-setup-lnmp-on-ubuntu.html" hreflang="en" />
+<link rel="alternate" href="https://virtengine.com/ru/blog/how-to-setup-lnmp-on-ubuntu" hreflang="ru" />
+
+
+	<meta name="google-site-verification" content="pTdt6owrr_cUQRDOj8oBy9RpF6FCi-NVqXQLPLzCHb4" />
+	<link href = "https://plus.google.com/+VirtEngineRu" rel = "publisher" />
+	
+</head>
+<body>
+
+<div class="cd-top"></div>
+
+<header class="navbar-wrapper">
+	<nav class="navbar yamm navbar-default" role="navigation">
+		<div class="container">
+			
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuMain" aria-expanded="false">
+					<span class="sr-only">Menu</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="btn btn-default hidden-sm hidden-md hidden-lg" href="https://secure.virtengine.com/clientarea">Log In</a>
+				<a class="navbar-brand" href="../index.html"></a>
+			</div>
+
+			
+			<div class="collapse navbar-collapse" id="menuMain">
+				<ul class="nav navbar-nav">
+
+					<li class="dropdown yamm-fw">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Products</a>
+						<ul class="dropdown-menu"><li><div class="container-fluid"><div class="row">
+										<div class="col-md-4 col-sm-6">
+											<a href="../products/vps.html" data-cat="8" class="category">Linux Virtual Private Servers<small>High-performance VPS/VDS on KVM virtualization</small></a><a href="../products/windows-vps.html" data-cat="11" class="category">Windows Virtual Private Servers<small>Create a ready to use virtual server on Windows in a few minutes!</small></a><a href="../products/dedicated.html" data-cat="9" class="category">Dedicated Servers<small>Powerful dedicated servers deliver high performance, reliability and security of your data</small></a>
+										</div>
+										<div class="col-md-4 bg-light hidden-xs hidden-sm">
+											<div class="products" id="cat8"><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=154" class="product">
+															Sandbox
+															<div class="pull-right text-right">
+																		<span class="label">
+																			3$
+																		</span>
+																	</div>
+															<small><nobr>1 vCore</nobr> &bull; <nobr>512MB</nobr> &bull; <nobr>10GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=151" class="product">
+															Hosting 1
+															<div class="pull-right text-right">
+																		<span class="label">
+																			6$
+																		</span>
+																	</div>
+															<small><nobr>2 vCores</nobr> &bull; <nobr>1GB</nobr> &bull; <nobr>20GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=152" class="product">
+															Hosting 2
+															<div class="pull-right text-right">
+																		<span class="label">
+																			10$
+																		</span>
+																	</div>
+															<small><nobr>2 vCores</nobr> &bull; <nobr>2GB</nobr> &bull; <nobr>40GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=155" class="product">
+															Compute 4 
+															<div class="pull-right text-right">
+																		<span class="label">
+																			20$
+																		</span>
+																	</div>
+															<small><nobr>4 vCores</nobr> &bull; <nobr>4GB</nobr> &bull; <nobr>60GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=156" class="product">
+															Compute 8
+															<div class="pull-right text-right">
+																		<span class="label">
+																			40$
+																		</span>
+																	</div>
+															<small><nobr>4 vCores</nobr> &bull; <nobr>8GB</nobr> &bull; <nobr>80GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=157" class="product">
+															Compute 16
+															<div class="pull-right text-right">
+																		<span class="label">
+																			80$
+																		</span>
+																	</div>
+															<small><nobr>8 vCores</nobr> &bull; <nobr>16GB</nobr> &bull; <nobr>160GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a></div><div class="products" id="cat11"><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=168" class="product">
+															Windows 2
+															<div class="pull-right text-right">
+																		<span class="label">
+																			20$
+																		</span>
+																	</div>
+															<small><nobr>2 vCores</nobr> &bull; <nobr>2GB</nobr> &bull; <nobr>40GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=169" class="product">
+															Windows 4
+															<div class="pull-right text-right">
+																		<span class="label">
+																			40$
+																		</span>
+																	</div>
+															<small><nobr>4 vCores</nobr> &bull; <nobr>4GB</nobr> &bull; <nobr>60GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=170" class="product">
+															Windows 8
+															<div class="pull-right text-right">
+																		<span class="label">
+																			80$
+																		</span>
+																	</div>
+															<small><nobr>4 vCores</nobr> &bull; <nobr>8GB</nobr> &bull; <nobr>80GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=171" class="product">
+															Windows 16
+															<div class="pull-right text-right">
+																		<span class="label">
+																			140$
+																		</span>
+																	</div>
+															<small><nobr>8 vCores</nobr> &bull; <nobr>16GB</nobr> &bull; <nobr>160GB</nobr> &bull; <nobr>Unlimited</nobr></small>
+														</a></div><div class="products" id="cat9"><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=54" class="product">
+															Light
+															<div class="pull-right text-right">
+																		<span class="label">
+																			49$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon X3430</nobr> &bull; <nobr>4c/8t 2.4/2.8Ghz</nobr> &bull; <nobr>8GB DDR3 </nobr> &bull; <nobr>1TB SATA</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=161" class="product">
+															Light 8
+															<div class="pull-right text-right">
+																		<span class="label">
+																			80$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon E5640</nobr> &bull; <nobr>4c/8t 2.66/2.93Ghz</nobr> &bull; <nobr>8GB DDR3</nobr> &bull; <nobr>1TB SATA</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=162" class="product">
+															Light 16
+															<div class="pull-right text-right">
+																		<span class="label">
+																			100$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon E5640</nobr> &bull; <nobr>4c/8t 2.66/2.93Ghz</nobr> &bull; <nobr>16GB DDR3</nobr> &bull; <nobr>1TB SATA x2</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=163" class="product">
+															Medium 16
+															<div class="pull-right text-right">
+																		<span class="label">
+																			120$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5520 x2</nobr> &bull; <nobr>8c/16t 2.26/2.48Ghz</nobr> &bull; <nobr>16GB DDR3</nobr> &bull; <nobr>2TB SAS</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=164" class="product">
+															Medium 32
+															<div class="pull-right text-right">
+																		<span class="label">
+																			150$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5520 x2</nobr> &bull; <nobr>8c/16t 2.26/2.48Ghz</nobr> &bull; <nobr>32GB DDR3</nobr> &bull; <nobr>2TB SAS x2 + RAID</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=158" class="product">
+															Heavy 32
+															<div class="pull-right text-right">
+																		<span class="label">
+																			210$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5640 x2</nobr> &bull; <nobr>12c/24t 2.2/2.8Ghz</nobr> &bull; <nobr>32GB DDR3</nobr> &bull; <nobr>2TB SAS x2 + RAID</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=159" class="product">
+															Heavy 64
+															<div class="pull-right text-right">
+																		<span class="label">
+																			260$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5640 x2</nobr> &bull; <nobr>12c/24t 2.2/2.8Ghz</nobr> &bull; <nobr>64GB DDR3</nobr> &bull; <nobr>2TB SAS x4 + RAID</nobr></small>
+														</a><a href="https://secure.virtengine.com/?cmd=cart&amp;action=add&amp;id=160" class="product">
+															Heavy 128
+															<div class="pull-right text-right">
+																		<span class="label">
+																			300$
+																		</span>
+																	</div>
+															<small><nobr>Intel Xeon L5640 x2</nobr> &bull; <nobr>12c/24t 2.2/2.8Ghz</nobr> &bull; <nobr>128GB DDR3</nobr> &bull; <nobr>2TB SAS x4 + RAID</nobr></small>
+														</a></div>
+										</div>
+										<div class="col-md-4 col-sm-6">
+											<div class="nav-header">Additional Services</div><a href="https://secure.virtengine.com/cart/dns-hosting" class="simple">
+												DNS Hosting
+											</a><a href="https://secure.virtengine.com/cart/ssl-certificates" class="simple">
+												SSL Certificates
+											</a><a href="https://secure.virtengine.com/cart/domain-name" class="simple">
+												Domain Names
+											</a>
+										</div>
+						</div></div></li></ul>
+					</li>
+
+					<li class="dropdown"><a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">Solutions</a><ul class="dropdown-menu"><li><a href="../startups.html">Startups</a></li><li><a href="../ecommerce.html">E-commerce</a></li><li><a href="../website-hosting.html">Website Hosting</a></li><li><a href="../enterprises.html">Enterprises</a></li></ul></li><li class="dropdown"><a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">Data Center</a><ul class="dropdown-menu"><li><a href="../infrastructure.html">Infrastructure</a></li><li><a href="../network.html">Network</a></li></ul></li>
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Company</a>
+						<ul class="dropdown-menu">
+							<li><a href="../about.html">About Us</a></li>
+							<li><a href="../blog.html">Blog</a></li>
+							<li><a href="../contacts.html">Contacts</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<div class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+					<div class="btn-group">
+						<button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="fa fa-angle-down"></span> ENG
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="how-to-setup-lnmp-on-ubuntu.html">English</a></li><li><a href="https://virtengine.com/ru/blog/how-to-setup-lnmp-on-ubuntu">Русский</a></li>
+						</ul>
+					</div>
+					<a href="https://secure.virtengine.com/clientarea" class="btn btn-default" role="button">Log In</a>
+				</div>
+
+			</div>
+		</div>
+	</nav>
+</header>
+<script type="text/javascript" async src="../../../relap.io/api/v6/heade88e.js?token=6MC5FhyYAfwB5eDl"></script>
+
+<span itemscope itemtype="http://schema.org/BlogPosting">
+	<meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://virtengine.com/en/blog/how-to-setup-lnmp-on-ubuntu">
+	<section class="blog-post-lead">
+		<div class="container"><div class="col-md-8 col-md-offset-2">
+				<div class="cover" style="background-image: url(../../uploads/blog/17.png);" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
+					<meta itemprop="url" content="https://virtengine.com/uploads/blog/17.png">
+					<meta itemprop="width" content="600">
+					<meta itemprop="height" content="400">
+				</div>
+				<h2 itemprop="name headline">Nginx (LNMP) Installation on Ubuntu</h2>
+				<p class="text-muted text-center"><span class="date">August 04, 2016</span> <a href="#comments" class="scroll disqus-comment-count" data-disqus-identifier="17"></a></p>
+				<p class="lead text-center">In 2002, the Russian programmer Igor Sysoev began the development of HTTP-server Nginx because of a need in a new software for high-loaded web-sites. At present, besides a usual web-server, Nginx is used as a reverse or mail proxy server as well as TCP/UDP proxy server for solving common tasks. Nginx is set up and works effectively on all the basic Unix-like OS including Linux.</p>
+			</div></div>
+	</section>
+	<section>
+		<div class="container">
+			<article class="col-md-8 col-md-offset-2 blog-post-text" itemprop="articleBody">
+					<p>In June 2016, the Netcraft company analysed the responses from more than one billion sites and reported that Nginx proxied or serviced 27,9% of them. The advantages of Nginx were justly appreciated by such big companies as Vkontakte, Rambler, Yandex and Mail.ru.</p>
+<p>At the beginning of his career, the developer of Nginx used Apache servers for the Rambler Company’s needs. Sysoev tried to optimize Apache according to the requirements of big and fast developing sites. He, for instance, created the patch compressing (controlling) the server’s responses. In most cases, it failed to eliminate Apache’s shortcomings. Thus work on Nginx was started.</p>
+<p>So, what was the problem with Apache? Apache creates separate threads for each event, so it is inappropriate to solve C10K problem. While processing of a great number of connections, web-server starts overloading compute capacities, which leads to disturbances. Nginx uses, in its turn, non-blocking asynchronous event processing algorithms and copes stable with processing of more than 10 000 working processes simultaneously. Thus projects based on Nginx suffer from problems caused by overload much less than similar solutions on Apache.</p>
+<h3>Apache and Nginx: Demonstrable Comparison</h3>
+<p>To consider the difference between Apache and Nginx more comprehensively we conduct a speed testing of server work while solving several common tasks.</p>
+<p>A handy single-threaded program Apache Benchmark (AB) was written for Apache work tests. The program can be used for testing of any HTTP web-server including Nginx. Install Apache Benchmark using the command:</p>
+<pre><code>sudo apt-get install apache2-utils</code></pre>
+<p>AB utility has the following syntax:</p>
+<p><code>ab [options] [http[s]://]hostname[:port]/path</code></p>
+<p>Regularly used options are number of concurrent requests (threads) -c and general number of requests -n, for instance:</p>
+<pre><code>ab -c 10 -n 100 http://example.com/</code></pre>
+<p>-100 requests in 10 threads.</p>
+<p>By means of Apache Benchmark comparative tests of Apache web-server processing speed and Nginx+PHP-FPM binding were carried out for three different scripts:</p>
+<p>1. <strong>index.html</strong> - a static webpage: </p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+&lt;p&gt;Hello i am main!&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p> 2. A simple php-script  <strong>phpinfo.php</strong> outputting the information about php settings on a server:</p>
+<pre><code>&lt;?php phpinfo(); ?&gt;</code></pre>
+<p>3. A “hard” php-script  <strong>speedtest.php</strong>that executes an algorithm of prime numbers "naive search" additionally complicated with an algorithm working through complex numbers for artificial increase in load on server compute capacities:</p>
+<pre><code>&lt;?php
+class Complex {
+    public $real = 0;
+    private $imag = 0;
+    public function __construct($real, $imag = null) {
+        $this-&gt;real = (float)$real;
+    }
+    public function __toString() {
+        return sprintf("(%d+%dj)", $this-&gt;real, $this-&gt;imag);
+    }
+}
+ 
+$start = microtime(TRUE);
+$primeNumbers = array();
+$output = '';
+ 
+for ($i = 2; $i &lt; 100000; $i++) {
+    $divisible = false;
+    $in = new Complex($i);
+    foreach($primeNumbers as $number) {
+        if ($in-&gt;real % $number-&gt;real == 0) {
+            $divisible = true;
+            break;
+        }
+    }
+    if ($divisible == false){
+        $primeNumbers[] = $in;
+        $output .= $in;
+    }
+}
+?&gt;</code></pre>
+<p>Test results are produced in the table in a format <strong>number of requests per second / processing time for one request</strong>:</p>
+<table class="table table-bordered">
+<tbody>
+<tr style="height: 32px;">
+<th style="width: 40%; height: 32px;">File</th>
+<th style="width: 41.9258%; height: 32px;">Nginx</th>
+<th style="width: 19.8609%; height: 32px;">Apache</th>
+</tr>
+<tr style="height: 32px;">
+<td style="width: 40%; height: 32px;"><strong>index.html</strong></td>
+<td style="width: 41.9258%; height: 32px;">4373.21 / 45.733 мс</td>
+<td style="width: 19.8609%; height: 32px;">3582.10 / 55.833 мс</td>
+</tr>
+<tr style="height: 32px;">
+<td style="width: 40%; height: 32px;"><strong>phpinfo.php</strong></td>
+<td style="width: 41.9258%; height: 32px;">3424.28 / 58.406 мс</td>
+<td style="width: 19.8609%; height: 32px;">1253.39 / 79.784 мс</td>
+</tr>
+<tr style="height: 32px;">
+<td style="width: 40%; height: 32px;"><strong>speedtest.php</strong></td>
+<td style="width: 41.9258%; height: 32px;">0.19 / 8925.181 мс</td>
+<td style="width: 19.8609%; height: 32px;">0.25 / 7863.261 мс</td>
+</tr>
+</tbody>
+</table>
+<p>The difference in speed of a client’s requests processing is related to web-site architecture. Apache starts a separate thread for each new connection whereas Nginx processes a new connection as an event inside of an already started worker. Also, the difference is explained by the fact that Nginx sends php-scripts to PHP-FPM server while processing of them, which also takes certain period of time, whereas Apache processes dynamic content individually. As a result, Nginx copes much better with static content and simple scripts, while Apache processes faster resource-intensive scripts, where philosophy “one client – one process” allows securing better productivity.</p>
+<h3>Nginx and PHP-FPM Installation</h3>
+<p>First of all, install Nginx packet from the repository:</p>
+<pre><code>sudo apt-get install nginx</code></pre>
+<p>To check server working efficiency you should visit its IP-address. The Nginx welcome page should appear on a screen.</p>
+<p><img src="../../uploads/images/blog/nginx.png" alt="" width="1729" height="325"></p>
+<p>Effectiveness of Nginx work can be considerably enhanced by means of competent setting. The difference between standard and adjusted configuration is especially visible during heavy loads.</p>
+<h4>Nginx Configuration</h4>
+<p>The main Nginx configuration file is located at <strong>/etc/nginx/nginx.conf</strong>. Its full content should roughly look in the following way:</p>
+<pre><code>user www-data;
+worker_processes 4;
+pid /run/nginx.pid;
+ 
+events {
+         worker_connections 768;
+         # multi_accept on;
+}
+ 
+http {
+ 
+         ##
+         # Basic Settings
+         ##
+ 
+         sendfile on;
+         tcp_nopush on;
+         tcp_nodelay on;
+         keepalive_timeout 65;
+         types_hash_max_size 2048;
+         # server_tokens off;
+ 
+         # server_names_hash_bucket_size 64;
+         # server_name_in_redirect off;
+ 
+         include /etc/nginx/mime.types;
+         default_type application/octet-stream;
+ 
+         ##
+         # Logging Settings
+         ##
+ 
+         access_log /var/log/nginx/access.log;
+         error_log /var/log/nginx/error.log;
+ 
+         ##
+         # Gzip Settings
+         ##
+ 
+         gzip on;
+         gzip_disable "msie6";
+ 
+         # gzip_vary on;
+         # gzip_proxied any;
+         # gzip_comp_level 6;
+         # gzip_buffers 16 8k;
+         # gzip_http_version 1.1;
+         # gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+ 
+         ##
+         # nginx-naxsi config
+         ##
+         # Uncomment it if you installed nginx-naxsi
+         ##
+ 
+         #include /etc/nginx/naxsi_core.rules;
+ 
+         ##
+         # nginx-passenger config
+         ##
+         # Uncomment it if you installed nginx-passenger
+         ##
+        
+         #passenger_root /usr;
+         #passenger_ruby /usr/bin/ruby;
+ 
+         ##
+         # Virtual Host Configs
+         ##
+ 
+         include /etc/nginx/conf.d/*.conf;
+         include /etc/nginx/sites-enabled/*;
+}
+ 
+ 
+#mail {
+#       # See sample authentication script at:
+#       # http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
+#
+#       # auth_http localhost/auth.php;
+#       # pop3_capabilities "TOP" "USER";
+#       # imap_capabilities "IMAP4rev1" "UIDPLUS";
+#
+#       server {
+#                 listen     localhost:110;
+#                 protocol   pop3;
+#                 proxy      on;
+#       }
+#
+#       server {
+#                 listen     localhost:143;
+#                 protocol   imap;
+#                 proxy      on;
+#       }
+#}</code></pre>
+<p>To set up Nginx correctly, it is important to understand functions of main commands. Mostly, setting values are selected optimal or set to autoconfiguration, but manual change of some commands can lead to visible betterment of speed and quality of site work.</p>
+<p><code>worker_processes</code><span style="line-height: 1.42857;"> is responsible for a number of working processes. It is desirable to set an </span><code>auto</code><span style="line-height: 1.42857;"> value in new versions to determine automatically an optimal amount.</span></p>
+<p><code>worker_connections</code><span style="line-height: 1.42857;"> </span><span style="line-height: 1.42857;"> establishes an ultimate number of simultaneously possible connections. Their number can be calculated roughly by the formula <strong>1 / &lt;time of task execution, sec.&gt;</strong>. Generally, the standard value 1024 is optimal and is edited according to the results of server load analysis.</span></p>
+<p><code>multi_accept</code><span style="line-height: 1.42857;"> </span><span style="line-height: 1.42857;"> after its activation a working process will immediately accept all new connections at a time.</span></p>
+<p><code>sendfile</code><span style="line-height: 1.42857;"> </span><span style="line-height: 1.42857;"> activates the sending data method sendfile, which is more effective than a standard one.</span></p>
+<h5>Caching</h5>
+<p>These parameters can have a significant influence on work speed of web-applications. If files caching is configured properly, you can get maximum processing speed of a web-server, consuming an acceptable amount of resources.</p>
+<p><code>open_file_cache</code> is responsible for a maximal number of files that can be kept in a cache (if the cache is overfilled, the least essential elements are deleted) and presets a time interval (60 seconds by default), at the end of which a file without any accesses is deleted.</p>
+<p><code>open_file_cache_valid</code> regulates the checking period of information about a file in a cache. Optimally, you should fix a bit bigger value than in the parameter <strong>inactive</strong> of <code>open_file_cache max</code> directive so that after each checking all unused files will be certainly deleted.</p>
+<p><code>open_file_cache_min_uses</code> determines the number of accesses to a file required for the file to be placed in a cache or to be deleted from it.</p>
+<p><code>open_file_cache_errors</code> forbids or allows caching of file searching errors.</p>
+<h5>Compression</h5>
+<p>Another important point in setting speed of web-server work is Gzip compression. This option is useful to save traffic and speed up web-pages download for users with low-speed Internet connection. It should be mentioned, however, that <strong>compression procedure causes by itself additional load to CPU</strong> and under overloading on a server can provoke reverse effect – the number of processed request will decrease because of compute capacity lack.</p>
+<p>To activate compression with standard parameters, the following lines are needed to be uncommented:</p>
+<pre><code>gzip on;
+gzip_disable "msie6";
+gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/javascript;</code></pre>
+<p>In this configuration Nginx will regularly compress all the files, a type of which is specified in <code>gzip_types</code>.</p>
+<h5>Applying Modifications</h5>
+<p>After any modifications in Nginx configuration files have been done, use the command to apply new settings:</p>
+<pre><code>service nginx reload </code></pre>
+<h4>Virtual Hosts Configuration</h4>
+<p>Virtual hosts settings files are in the folder <strong>/etc/nginx/sites-available</strong>. Initially, there is a <strong>default</strong> file of standard settings providing the server work “out of the box”:</p>
+<pre><code># You may add here your
+# server {
+#       ...
+# }
+# statements for each of your virtual hosts to this file
+ 
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# http://wiki.nginx.org/Pitfalls
+# http://wiki.nginx.org/QuickStart
+# http://wiki.nginx.org/Configuration
+#
+# Generally, you will want to move this file somewhere, and start with a clean
+# file but keep this around for reference. Or just disable in sites-enabled.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+ 
+server {
+         listen 80 default_server;
+         listen [::]:80 default_server ipv6only=on;
+ 
+    root /usr/share/nginx/html;
+         index index.html index.htm;
+ 
+         # Make site accessible from http://localhost/
+         server_name localhost;
+ 
+         location / {
+                   # First attempt to serve request as file, then
+                   # as directory, then fall back to displaying a 404.
+                   try_files $uri $uri/ =404;
+                   # Uncomment to enable naxsi on this location
+                   # include /etc/nginx/naxsi.rules
+         }
+ 
+         # Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests
+         #location /RequestDenied {
+         #       proxy_pass http://127.0.0.1:8080;   
+         #}
+ 
+         #error_page 404 /404.html;
+ 
+         # redirect server error pages to the static page /50x.html
+         #
+         #error_page 500 502 503 504 /50x.html;
+         #location = /50x.html {
+         #       root /usr/share/nginx/html;
+         #}
+ 
+         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+         #
+         #location ~ \.php$ {
+         #       fastcgi_split_path_info ^(.+\.php)(/.+)$;
+         #       # NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+         #
+         #       # With php5-cgi alone:
+         #       fastcgi_pass 127.0.0.1:9000;
+         #       # With php5-fpm:
+         #       fastcgi_pass unix:/var/run/php5-fpm.sock;
+         #       fastcgi_index index.php;
+         #       include fastcgi_params;
+         #}
+ 
+         # deny access to .htaccess files, if Apache's document root
+         # concurs with nginx's one
+         #
+         #location ~ /\.ht {
+         #       deny all;
+         #}
+}
+ 
+ 
+# another virtual host using mix of IP-, name-, and port-based configuration
+#
+#server {
+#       listen 8000;
+#       listen somename:8080;
+#       server_name somename alias another.alias;
+#       root html;
+#       index index.html index.htm;
+#
+#       location / {
+#                 try_files $uri $uri/ =404;
+#       }
+#}
+ 
+ 
+# HTTPS server
+#
+#server {
+#       listen 443;
+#       server_name localhost;
+#
+#       root html;
+#       index index.html index.htm;
+#
+#       ssl on;
+#       ssl_certificate cert.pem;
+#       ssl_certificate_key cert.key;
+#
+#       ssl_session_timeout 5m;
+#
+#       ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+#       ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
+#       ssl_prefer_server_ciphers on;
+#
+#       location / {
+#                 try_files $uri $uri/ =404;
+#       }
+#}</code></pre>
+<p>To create a new virtual host let's copy the <strong>default</strong> file to the same folder and rename it to <strong>example</strong>:</p>
+<pre><code>cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example</code></pre>
+<h5>Enabling Virtual Hosts</h5>
+<p>A folder sites-available contains files with configurations for all the web-server virtual hosts, so after creating a new host it should be enabled. To do this you need to create a link to this file in the folder sites-enabled by the command:</p>
+<pre><code>sudo ln -s /etc/nginx/sites-available/example /etc/nginx/sites-enabled/</code></pre>
+<p>Then edit the main directives’ values, defining the new host work:</p>
+<pre><code>nano /etc/nginx/sites-available/example</code></pre>
+<p>A <code>listen</code> directive determines an address and a port for IP or a path for UNIX-socket, where the server will accept requests.</p>
+<pre><code>listen 127.0.0.1:80 [default_server];</code></pre>
+<p>You can specify either the address and the port or only address or only port. Also, the directive has a parameter <code>default_server</code> (was simply called default before version 0.8.1), which allows to make a default site from a virtual host. In this case, all the requests not related to other virtual hosts or coming directly on the server IP-address will be forwarded to it. This option is included by default in a standard <strong>default</strong> host settings, so in order to avoid a mistake (the default server must be the only one) you need to remove this parameter from a <strong>default</strong> setting file or disable the standard configured server by deleting a link to it from the folder <strong>sites-enabled</strong>. All the directive’s parameters are optional.</p>
+<p>A <code>root</code> directive is responsible for a root site directory. Make a separate directory for a test example host using the command:</p>
+<pre><code>mkdir /usr/share/nginx/example</code></pre>
+<p>And then install it as a root one, changing a directive value in the setting file:</p>
+<pre><code>root /usr/share/nginx/example;</code></pre>
+<p>An <code>index</code> directive defines the files which will be searched by nginx in the root site directory and used as an index. The directive should be added with an <code>index.php</code> value:</p>
+<pre><code>index  index.html index.htm index.php;</code></pre>
+<p>You should pay attention to the fact that if in the directory there are two index files at the same time, the one that goes first will be used.</p>
+<p>A <code>server_name</code> directive defines a site’s domain name:</p>
+<pre><code>server_name example.com www.example.com *.example.com;</code></pre>
+<p>Besides defining the main domain name it is possible also to set up the procedure of automatic creation of sub-domains depending on a site structure. To do this you should change a value of the <code>root</code> directive:</p>
+<pre><code>root /usr/share/nginx/example /$subdomain;</code></pre>
+<p>and then add the following condition:</p>
+<pre><code>    set $subdomain "";
+    if ($host ~* ^([a-z0-9-\.]+)\.example.com$) {
+        set $subdomain $1;
+    }
+    if ($host ~* ^www.example.com$) {
+        set $subdomain "";
+    }</code></pre>
+<p>This condition alters a root folder for such a type of URL like <strong>subdomain.example.com</strong> to a type like <strong>/usr/share/nginx/example/subdomain</strong>. Due to it the content of the folder created in the root site directory will be available at <strong>folder_name.example.com</strong>.</p>
+<p>At the end ask Nginx to read again the configuration file to finish setting and apply new parameters:</p>
+<pre><code>service nginx reload</code></pre>
+<h5>Checking Domain and Subdomains Work</h5>
+<p>1. If you used a non-existent domain (example.com, for instance) to access the site, you will have to edit a <strong>hosts</strong>file for all the requests coming from your local computer to example.com to be forwarded to your server instead of a really existing site example.com. This file is located at <strong>/etc/hosts</strong> for unix-systems and at <strong>%SystemRoot%\system32\drivers\etc\hosts</strong> for modern versions of Windows. To forward from the main domain add to it the line:</p>
+<pre><code>&lt;server_ip_address&gt; example.com</code></pre>
+<p>and the lines to demonstrate an access from several subdomains:</p>
+<pre><code>&lt;server_ip_address&gt; first.example.com
+&lt;server_ip_address&gt; second.example.com</code></pre>
+<p>The mechanism of hosts file work does not support masks, so all the subdomains, with which work is planned, should be listed in the file line by line.</p>
+<p>If you used a really existing domain instead of a test one, skip this paragraph and set up DNS-records at a domain registrar.</p>
+<p>2. In the root site directory create an index file <strong>index.html</strong> for the main domain:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Hello, I am the main domain!&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>and a folder <strong>first</strong>, into which we put the index file for the subdomain:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Hello, World, I am the first!&lt;p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>And now, when you enter <strong>example.com</strong> in a browser’s address bar, you will see contents of the root directory index-file:</p>
+<p><img src="../../uploads/images/blog/i-am-main.png" alt="" width="761" height="169"></p>
+<p>The content of the folder <strong>first</strong> will be available at <strong>first.example.com</strong>:</p>
+<p><img src="../../uploads/images/blog/i-am-first.png" alt="" width="708" height="256"></p>
+<p>And when you go to second.example.com, the web-server will automatically show you a standard 404-page because there is no <strong>second</strong> directory in the root site directory.</p>
+<h4>PHP-FPM Configuration</h4>
+<p>Initially, Nginx is unable to execute dynamic scripts. Thus, if we put a .php file into a folder of a standard configured virtual host and try to access it at <strong>//localhost/myfile.php</strong>, this file will be downloaded, but it will be impossible to execute it. For correct execution of files with dynamic contents you need to connect Nginx with a backend-processor <strong>php-fpm</strong>.</p>
+<p>To install PHP-FPM use the command:</p>
+<pre><code>sudo apt-get install php5-fpm</code></pre>
+<p>The service starts automatically at the end of the installation.</p>
+<p>To connect php processor with the virtual host set before uncomment in a settings <strong>example</strong> file the lines relating to php-fpm and delete unnecessary ones bringing <code>location ~ \.php$</code> unit to the following form:</p>
+<pre><code>    location ~ \.php$ { 
+        fastcgi_split_path_info ^(.+\.php)(/.+)$; 
+        fastcgi_pass     127.0.0.1:9000; 
+        fastcgi_index index.php; 
+        include fastcgi_params; 
+    }</code></pre>
+<p>Restart the web-server to apply new settings:</p>
+<pre><code>service nginx reload</code></pre>
+<p>Then you can create a phpinfo.php file for php work testing with the following content:</p>
+<pre><code>&lt;?php phpinfo(); ?&gt;</code></pre>
+<p>and put it into the root directory of example host and standard <strong>default</strong> host (its default root directory is <strong>/usr/share/nginx/html</strong>) to compare results.</p>
+<p>When you try to open phpinfo.php at the <strong>default</strong> host, file downloading begins:</p>
+<p><img src="../../uploads/images/blog/download-start.png" alt="" width="1918" height="1023"></p>
+<p>Whereas at the <strong>example</strong> host with properly connected php-fpm the file will be correctly executed:</p>
+<p><img src="../../uploads/images/blog/phpinfo.png" alt="" width="1738" height="931"></p>
+<h3>MySQL Installation</h3>
+<p>MySQL database server is installed by the command</p>
+<pre><code>sudo apt-get install mysql-server php5-mysql</code></pre>
+<p>During the installation it is necessary to set a password for the MySQL root user.</p>
+<p><img src="../../uploads/images/blog/mysql.png" alt="" width="1161" height="416"></p>
+<p>During the installation answer in the affirmative to all the questions.</p>
+<p>Then phpmyadmin is installed by the command:</p>
+<pre><code>sudo apt-get install phpmyadmin</code></pre>
+<p>During the installation you will be offered to choose a web-server, with which MySQL will work; there will be no Nginx option by default, so in this menu you will need to press the TAB-key and OK button choosing none of options from the list.</p>
+<p>To the floating question asking whether we want to use the standard config dbconfig-common answer in the affirmative and put in the password thought out earlier for the MySQL root user.</p>
+<p>After installation, create a link in the root directory of the earlier set virtual example host in order to the web-server could find correctly phpmyadmin files and work with them:</p>
+<pre><code>sudo ln -s /usr/share/phpmyadmin /usr/share/nginx/example</code></pre>
+<p>Further you should activate the module <strong>mcrypt</strong>, which is needed to work with phpmyadmin, and restart PHP-FPM using the commands:</p>
+<pre><code>sudo php5enmod mcrypt
+sudo service php5-fpm restart</code></pre>
+<p>MySQL server is installed successfully, phpmyadmin is available at the virtual example host’s address.</p>
+<p>If you need phpmyadmin to be connected with any more virtual host, you should create one more link to phpmyadmin files in that directory which is written in a line of a virtual host root file – the directory, where files of this host are, for example, the <strong>/usr/share/nginx/html</strong> directory for a standard configured virtual <strong>default</strong> host. For phpmyadmin work the virtual host should be obligatory connected with PHP-FPM or any other backend-server.</p>
+<p>After that you can go by the address of the configured virtual host and find the phpmyadmin login page at <strong>&lt;адрес_хоста&gt;/phpmyadmin/</strong>.</p>
+<p><img src="../../uploads/images/blog/phpmyadmin.png" alt="" width="1729" height="705"></p>
+<h3>Translation of mod_rewrite Rules into Nginx Configuration</h3>
+<p>Most of mod_rewrite rules can be easily transferred into Nginx with the help of automatic converters, but they not always guarantee a correct result, and in such cases manual translation helps. A main tool for the implementation of mod_rewrite counterpart in Nginx is ngx_http_rewrite_module module directives:</p>
+<ul>
+<li><span style="line-height: 1.42857;"> </span><code>rewrite regular_expression replacement [indicator]</code><span style="line-height: 1.42857;"> is  a main module’s directive; if a request URL corresponds to a specified regular expression, is changes accordingly to a replace string. An indicator has several values (it is allowed to specify several indicators at a time), the most used of which is </span><code>last</code><span style="line-height: 1.42857;"> – after replacement, a processing of a current URL ends completely and then a new unit <code>location</code>, is sought, which a modified URL matches;</span></li>
+<li><code>if (condition) { ... }</code><span style="line-height: 1.42857;"> </span><span style="line-height: 1.42857;"> </span><span style="line-height: 1.42857;"> is a usual if-operation allowing to create branching in the replacement rules;</span></li>
+<li><span style="line-height: 1.42857;"><code>break</code> and <code>return</code> are used for interrupting a processing of a current request, the return directive allows a client to get back an error code or URL.</span></li>
+</ul>
+<p>These directives can be used both in the main configuration file nginx.conf for influencing on all the requests to all the virtual hosts and in setting files of separate hosts. They can be installed in <code>server</code> units for specifying some general replacement rules or in <code>location</code> units for processing of only particular URL by a specified mask.</p>
+<p>As a rule, most of the instructions from .htaccess are transferred into configuration files without essential structural changes. For instance, the configuration:</p>
+<pre><code>RewriteEngine On
+RewriteRule ^([^/]*)/$ ?city=$1 [L]
+RewriteRule ^([a-z\-]+)\/([a-z\-]+)?$ /index.php?city=$1&amp;page=$2 [L]
+RewriteRule ^users/profile/id(.*) /index.php?city=users&amp;page=profile&amp;id=$1 [NC,L]</code></pre>
+<p>will be transferred like this:</p>
+<pre><code>rewrite ^/([^/]*)/$ /?city=$1 last;
+rewrite ^/([a-z\-]+)\/([a-z\-]+)?$ /index.php?city=$1&amp;page=$2 last;
+rewrite ^/users/profile/id(.*) /index.php?city=users&amp;page=profile&amp;id=$1 last;</code></pre>
+<h3>Conclusion</h3>
+<p>The LNMP bundle has been installed and is ready for work. Further there can be steps of more detailed setting up an entire web-server and virtual hosts for specific tasks, CMS installation, organization of site and database protection from unauthorized access, setting file storage and e-mail server and a lot of other interesting tasks. More detailed information about setting is available in the official <a href="http://nginx.org/ru/docs/" target="_blank">Nginx</a> and <a href="https://dev.mysql.com/doc/" target="_blank">MySQL</a> documentation.</p>
+			</article>
+			<div class="col-md-2 contents"><ul class="nav"></ul></div>
+		</div>
+	</section>
+
+	<section class="bg-light" id="subscribe"><div class="container"><div class="col-md-8 col-md-offset-2">
+		<h4 class="text-center m-b-lg">Subscribe For Our Newsletter<br><small class="text-muted">to get the latest updates of our blog!</small></h4>
+		<div class="row m-b-lg"><form>
+			<div class="col-md-3">
+				<input type="text" id="ss-name" class="form-control input-lg" placeholder="Name">
+			</div>
+			<div class="col-md-6">
+				<input type="email" id="ss-email" class="form-control input-lg" placeholder="EMAIL">
+			</div>
+			<div class="col-md-3">
+				<a role="button" class="btn btn-primary btn-lg btn-block" onclick="subscribe();">Subscribe!</a>
+			</div>
+		</form></div>
+		<script id="4xzjUpJSshHrx6Wl"> if (window.relap) window.relap.ar('4xzjUpJSshHrx6Wl'); </script>
+	</div></div></section>
+
+	<section id="comments"><a name="comments"></a>
+		<div class="container"><div class="col-md-8 col-md-offset-2">
+				<div id="disqus_thread"></div>
+				<script>
+					var disqus_config = function () {
+						//this.page.url = 'https://virtengine.com/en/blog/how-to-setup-lnmp-on-ubuntu';
+						this.page.identifier = '17';
+						this.language = "en";
+					};
+					(function() {
+						var d = document, s = d.createElement('script');
+						s.src = '../../../VirtEngine.disqus.com/embed.js';
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+					})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+		</div></div>
+	</section>
+</span>
+
+<link rel="stylesheet" href="../../../cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/zenburn.min.css">
+<script src="../../../cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+	var addthis_config = {
+		data_ga_property: 'UA-71487029-1',
+		data_ga_social: true
+	};
+	var addthis_share = {
+		url: 'https://virtengine.com/en/blog/how-to-setup-lnmp-on-ubuntu'
+	};
+</script>
+<script type="text/javascript" src="../../../s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56b06e396d172bf3" async="async"></script>
+
+
+<script>
+	(function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+		t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+	})(window, document, '_gscq','script','../../../widgets.getsitecontrol.com/50133/script.js');
+</script>
+
+<script id="dsq-count-scr" src="../../../VirtEngine.disqus.com/count.js" async></script>
+
+<script>
+	function subscribe() {
+		if ($('#ss-name').val() == '' || $('#ss-email').val() == '') {
+			swal('Ooops...', 'You have to fill the form!','error');
+			return false;
+		}
+		$.post( "subscribe.html", { 'name': $('#ss-name').val(), 'email': $('#ss-email').val() }, function( data ) {
+			if (data.result.status == 'subscribed') {
+				swal("Thank you!", "You have been successfully subscribed!", "success");
+				$('#ss-name').val('');
+				$('#ss-email').val('');
+			} else if (data.result.title == 'Member Exists')
+				swal("Ooops...", "You are already subscribed!", "error");
+			else
+				swal("Smth Bad...", data.result.detail, "error");
+		}, 'json');
+	}
+
+	// menu
+	jQuery(document).ready(function($){
+		$('article h3, article h4').addClass('hm');
+		var headers = $('article .hm');
+		if (headers == undefined || headers.length < 5) return;
+
+		var contents = $('.contents > ul.nav');
+		var ch, chs;
+
+		headers.each(function( index ) {
+			$(this).attr('id', 'ch'+index);
+			if ($(this).is('h3')) {
+				if (ch != undefined) contents.append(ch);
+				ch = $('<li><a href="#ch'+index+'" class="scroll">'+$(this).text()+'</a></li>');
+			}
+			if ($(this).is('h4')) {
+				if (ch == undefined) return;
+				chs = ch.find('ul');
+				if (chs.length < 1) {
+					ch.append('<ul class="nav"></ul>');
+					chs = ch.find('ul');
+				}
+				chs.append('<li><a href="#ch'+index+'" class="scroll">'+$(this).text()+'</a></li>');
+			}
+		});
+		if (ch != undefined) contents.append(ch);
+
+		$('body').css('position','relative').scrollspy({ target: '.contents' });
+		$('.contents > ul').affix({
+			offset: {
+				top: 1050,
+				bottom: function () { return $('#subscribe').outerHeight(true) + $('#comments').outerHeight(true) + $('footer').outerHeight(true) + 50; }
+			}
+		});
+	});
+</script>
+<footer>
+	<div class="container">
+		<div class="col-md-4 col-sm-12 company">
+			<div class="f_logo"></div>
+
+			<div class="copyright">License for telematic services №127595<br>License for data transmission services №127596<br>&copy; OOO «Fishnet Communications», 2010-2016</div>
+
+			<div class="text-muted m-t-sm"  style="font-size:25px;">
+				<i class="fa fa-cc-paypal" title="PayPal"></i>
+				<i class="fa fa-cc-visa" title="Visa"></i>
+				<i class="fa fa-cc-mastercard" title="Mastercard"></i>
+				<img title="WebMoney" alt="WebMoney" style="margin-top: -4px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAWCAYAAABOm/V6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABNmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarY6xSsNQFEDPi6LiUCsEcXB4kygotupgxqQtRRCs1SHJ1qShSmkSXl7VfoSjWwcXd7/AyVFwUPwC/0Bx6uAQIYODCJ7p3MPlcsGo2HWnYZRhEGvVbjrS9Xw5+8QMUwDQCbPUbrUOAOIkjvjB5ysC4HnTrjsN/sZ8mCoNTIDtbpSFICpA/0KnGsQYMIN+qkHcAaY6addAPAClXu4vQCnI/Q0oKdfzQXwAZs/1fDDmADPIfQUwdXSpAWpJOlJnvVMtq5ZlSbubBJE8HmU6GmRyPw4TlSaqo6MukP8HwGK+2G46cq1qWXvr/DOu58vc3o8QgFh6LFpBOFTn3yqMnd/n4sZ4GQ5vYXpStN0ruNmAheuirVahvAX34y/Axk/96FpPYgAAOjNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICAgICAgICAgICB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIKICAgICAgICAgICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgICAgICAgICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICAgICAgICAgICB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIgogICAgICAgICAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyI+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+QWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpPC94bXA6Q3JlYXRvclRvb2w+CiAgICAgICAgIDx4bXA6Q3JlYXRlRGF0ZT4yMDE2LTA4LTI5VDE3OjI1OjE0KzAzOjAwPC94bXA6Q3JlYXRlRGF0ZT4KICAgICAgICAgPHhtcDpNZXRhZGF0YURhdGU+MjAxNi0wOC0yOVQxNzoyNToxNCswMzowMDwveG1wOk1ldGFkYXRhRGF0ZT4KICAgICAgICAgPHhtcDpNb2RpZnlEYXRlPjIwMTYtMDgtMjlUMTc6MjU6MTQrMDM6MDA8L3htcDpNb2RpZnlEYXRlPgogICAgICAgICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOmU1ZjM2OGJjLWZjNmMtZGE0YS1hNGEyLWRlZTIyOGFmMDBhODwveG1wTU06SW5zdGFuY2VJRD4KICAgICAgICAgPHhtcE1NOkRvY3VtZW50SUQ+YWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjVjYTIxODNmLTZkZjQtMTFlNi04MTI1LWY2YTU0MzI5YWNjNDwveG1wTU06RG9jdW1lbnRJRD4KICAgICAgICAgPHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD54bXAuZGlkOmFlNGU1MDgxLWZjNjktZDQ0NC04MmI4LWE1NjM0YjQ1MjM4NDwveG1wTU06T3JpZ2luYWxEb2N1bWVudElEPgogICAgICAgICA8eG1wTU06SGlzdG9yeT4KICAgICAgICAgICAgPHJkZjpTZXE+CiAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6YWN0aW9uPmNyZWF0ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDphZTRlNTA4MS1mYzY5LWQ0NDQtODJiOC1hNTYzNGI0NTIzODQ8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMTYtMDgtMjlUMTc6MjU6MTQrMDM6MDA8L3N0RXZ0OndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChXaW5kb3dzKTwvc3RFdnQ6c29mdHdhcmVBZ2VudD4KICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6YWN0aW9uPnNhdmVkPC9zdEV2dDphY3Rpb24+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDppbnN0YW5jZUlEPnhtcC5paWQ6ZTVmMzY4YmMtZmM2Yy1kYTRhLWE0YTItZGVlMjI4YWYwMGE4PC9zdEV2dDppbnN0YW5jZUlEPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6d2hlbj4yMDE2LTA4LTI5VDE3OjI1OjE0KzAzOjAwPC9zdEV2dDp3aGVuPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6c29mdHdhcmVBZ2VudD5BZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoV2luZG93cyk8L3N0RXZ0OnNvZnR3YXJlQWdlbnQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpjaGFuZ2VkPi88L3N0RXZ0OmNoYW5nZWQ+CiAgICAgICAgICAgICAgIDwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgIDwveG1wTU06SGlzdG9yeT4KICAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9wbmc8L2RjOmZvcm1hdD4KICAgICAgICAgPHBob3Rvc2hvcDpDb2xvck1vZGU+MzwvcGhvdG9zaG9wOkNvbG9yTW9kZT4KICAgICAgICAgPHBob3Rvc2hvcDpJQ0NQcm9maWxlPkFkb2JlIFJHQiAoMTk5OCk8L3Bob3Rvc2hvcDpJQ0NQcm9maWxlPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICAgICA8dGlmZjpYUmVzb2x1dGlvbj43MjAwMDAvMTAwMDA8L3RpZmY6WFJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOllSZXNvbHV0aW9uPjcyMDAwMC8xMDAwMDwvdGlmZjpZUmVzb2x1dGlvbj4KICAgICAgICAgPHRpZmY6UmVzb2x1dGlvblVuaXQ+MjwvdGlmZjpSZXNvbHV0aW9uVW5pdD4KICAgICAgICAgPGV4aWY6Q29sb3JTcGFjZT42NTUzNTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MzM8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MjI8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0idyI/PuRVonoAAAAgY0hSTQAAeiUA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">
+			</div>
+		</div>
+
+		<div class="col-md-2 hidden-xs hidden-sm">
+			<h4>Products</h4>
+			<ul>
+				<li><a href="../products/vps.html">Linux Virtual Private Servers</a></li><li><a href="../products/windows-vps.html">Windows Virtual Private Servers</a></li><li><a href="../products/dedicated.html">Dedicated Servers</a></li><li><a href="https://secure.virtengine.com/cart/dns-hosting">DNS Hosting</a></li><li><a href="https://secure.virtengine.com/cart/ssl-certificates">SSL Certificates</a></li><li><a href="https://secure.virtengine.com/cart/domain-name">Domain Names</a></li>
+			</ul>
+		</div>
+
+		<div class="col-md-2 hidden-xs hidden-sm"><h4>Solutions</h4><ul><li><a href="../startups.html">Startups</a></li><li><a href="../ecommerce.html">E-commerce</a></li><li><a href="../website-hosting.html">Website Hosting</a></li><li><a href="../enterprises.html">Enterprises</a></li></ul></div><div class="col-md-2 hidden-xs hidden-sm"><h4>Data Center</h4><ul><li><a href="../infrastructure.html">Infrastructure</a></li><li><a href="../network.html">Network</a></li></ul></div>
+
+		<div class="col-md-2 hidden-xs hidden-sm">
+			<h4>Company</h4>
+			<ul>
+				<li><a href="../about.html">About Us</a></li>
+				<li><a href="../blog.html">Blog</a></li>
+				<li><a href="../contacts.html">Contacts</a></li>
+			</ul>
+
+			<div class="m-t-md social">
+				
+				<a href="https://vk.com/VirtEngine" target="_blank" style="color:#507299;" title="Follow on VK"><i class="fa fa-vk fa-lg"></i></a>
+				<a href="https://twitter.com/VirtEngine" target="_blank" style="color:#1da1f2;" title="Follow on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+				<a href="https://plus.google.com/+VirtEngineRu" target="_blank" style="color:#db4437;" title="Follow on Google+"><i class="fa fa-google-plus fa-lg"></i></a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="../../engine/view/assets/js/bootstrap.min.js"></script>
+
+<script src="../../engine/view/assets/js/common.js"></script>
+
+<script src="../../engine/view/assets/plugins/swal/sweetalert.min.js"></script>
+<link href="../../engine/view/assets/plugins/swal/sweetalert.css" rel="stylesheet">
+
+
+
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-71487029-1');
+	  ga('require', 'ecommerce');
+	  ga('require', 'linkid');
+	  ga('send', 'pageview');
+	  setTimeout(function(){ga('send', 'event', 'New Visitor', location.pathname);}, 15000);	
+	
+	</script>
+	
+	
+	
+	<script type="text/javascript">
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter34261005 = new Ya.Metrika({
+						id:34261005,
+						clickmap:true,
+						trackLinks:true,
+						accurateTrackBounce:true,
+						webvisor:true,
+						trackHash:true,
+						ecommerce:"yaEc"
+					});
+				} catch(e) { }
+			});
+	
+			var n = d.getElementsByTagName("script")[0],
+				s = d.createElement("script"),
+				f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = "../../../mc.yandex.ru/metrika/watch.js";
+	
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/34261005" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	
+
+	
+	<script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=OJ*Dv5ujI4AtPA8Kl7SB09CDum4xn82Wrb9Ld5BBtIy41R1g*UGVOOOecH5mZDIXcDUomI57xNc5rJqa6rez4QESdcfuAcLQUvxS4krio*Xw3er1dgJt36**Df5bvUjfGikst8ZD6Ff7CZ8bEXA2Uipto5d*nVwQKcy*FD9rgPQ-';</script>
+	
+</body>
+
+<!-- Mirrored from virtengine.com/en/blog/how-to-setup-lnmp-on-ubuntu by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2016 11:24:28 GMT -->
+</html>
