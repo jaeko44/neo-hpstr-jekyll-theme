@@ -2,7 +2,7 @@
 title: Meet VirtEngine at HostingCon India 2016!
 layout: post
 og_image_url: "https://blog.virtengine.com/images/intro-hostingcon-2016.png"
-description: Virtualization platform VirtEngine will be exhibiting in HostingCon India 2016!
+description: Virtualization platform VirtEngine will be exhibiting in HostingCon India 2016! 
 ---
 ## Introduction
 
