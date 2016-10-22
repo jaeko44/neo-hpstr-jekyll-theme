@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html class="">
+<head>
+<title></title>
+<style>
+body {
+	margin: 0;
+}
+html {
+	box-sizing: border-box;
+}
+img {
+	border: 0;
+	vertical-align: top;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+* {
+	max-height: 1000000px;
+}
+a {
+	background-color: transparent;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+	display: block;
+}
+.container, .pagination, #header .holder {
+	padding: 0 10px;
+	margin: 0 auto;
+}
+/* @media all and (min-width:768px) */
+.container, .pagination, #header .holder {
+	max-width: 1130px;
+}
+/* @media all and (min-width:768px) */
+.tabset {
+	display: table;
+}
+.clearfix::after, .container::after, .pagination::after, #header .holder::after, .tabset::after, .service-list::after, .project-holder::after, .blog-list::after, .contact-form .holder::after, .innovation .block::after, .resource-list::after, .post::after, .footer-nav-list::after, .footer-bar::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.section {
+	padding: 30px 0;
+}
+/* @media all and (min-width:768px) */
+.section {
+	padding: 58px 0 50px;
+}
+#wrapper {
+	overflow: hidden;
+	position: relative;
+}
+body {
+	color: #898989;
+	background: #fff;
+	font: 14px/1.2 Roboto, "Times New Roman", Times, Baskerville, Georgia, serif;
+	min-width: 320px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+body {
+	line-height: 20px;
+}
+/* @media all and (min-width:768px) */
+body {
+	font-size: 15px;
+	line-height: 21px;
+}
+html {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+.pagination, .social-network, .tabset, .logo-list, .question-list, .navbar, .navbar > li > ul, .nav-drop ul, .search-form .drop ul, .language ul, .footer-nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.tabset {
+	width: 100%;
+	height: 1%;
+	background: #f1f9fc;
+	text-align: center;
+	display: none;
+	border: 1px solid #dde6e9;
+}
+.tab-block {
+	margin-bottom: 15px;
+}
+/* @media all and (min-width:768px) */
+.tab-block {
+	position: absolute;
+	top: 0px;
+	right: auto;
+	bottom: auto;
+	left: 0px;
+	-webkit-transition: opacity, 1s, ease-in-out;
+	transition: opacity, 1s, ease-in-out;
+	margin-bottom: 0px;
+	opacity: 0;
+}
+/* @media all and (min-width:768px) */
+.tab-block.active {
+	display: block;
+	opacity: 1;
+	position: relative;
+}
+:last-child.tab-block {
+	margin-bottom: 0px;
+}
+a {
+	color: #39f;
+}
+.tab-opener {
+	-webkit-transition: border-color, .3s, ease-in-out;
+	transition: border-color, .3s, ease-in-out;
+	background: #f1f9fc;
+	color: #1c1c1c;
+	text-decoration: none;
+	font-weight: 300;
+	display: block;
+	padding: 10px 10px 10px 50px;
+	position: relative;
+	border-radius: 3px;
+}
+/* @media all and (min-width:768px) */
+.tab-opener {
+	display: none;
+}
+.tab-slide {
+	padding-top: 20px;
+}
+/* @media all and (min-width:1024px) */
+.tab-slide {
+	padding-top: 89px;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .h {
+	font-family: inherit;
+	font-weight: bold;
+	margin: 0 0 .5em;
+	color: inherit;
+}
+h2, .h2 {
+	font-size: 17px;
+}
+.section h2 {
+	line-height: 21px;
+	text-transform: uppercase;
+	font-weight: 500;
+	padding-bottom: 14px;
+	margin-bottom: 6px;
+	position: relative;
+}
+.section h2::after {
+	width: 50px;
+	height: 3px;
+	position: absolute;
+	top: auto;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background: #39f;
+	content: "";
+}
+.solution .tab-block h2 {
+	text-align: left;
+}
+.solution .tab-block h2::after {
+	right: auto;
+}
+.section .slogan {
+	font-size: 24px;
+	line-height: 28px;
+	color: #39f;
+	font-style: normal;
+	font-weight: 300;
+	display: block;
+	margin-bottom: 25px;
+}
+/* @media all and (min-width:1024px) */
+.section .slogan {
+	font-size: 27px;
+	line-height: 37px;
+	margin-bottom: 29px;
+}
+.solution .tab-block .slogan {
+	text-align: left;
+}
+p {
+	margin: 0 0 1em;
+}
+.tab-block p {
+	margin-bottom: 10px;
+}
+.btn {
+	font-size: 17px;
+	line-height: 21px;
+	display: inline-block;
+	vertical-align: top;
+	-webkit-transition: color, .3s, ease-in-out, background, .3s, ease-in-out;
+	transition: color, .3s, ease-in-out, background, .3s, ease-in-out;
+	width: 100%;
+	text-decoration: none;
+	text-align: center;
+	padding: 10px 7px;
+	border: 1px solid transparent;
+	border-radius: 3px !important;
+}
+.btn-primary {
+	background: #39f;
+	color: #fff;
+	border-color: #39f;
+}
+/* @media all and (min-width:1024px) */
+.btn {
+	font-size: 21px;
+	line-height: 25px;
+}
+.tab-block .btn {
+	max-width: 175px;
+}
+/* @media all and (min-width:1024px) */
+.tab-block .btn {
+	max-width: 193px;
+	margin-top: 38px;
+}
+.tab-opener .img-holder {
+	position: absolute;
+	top: 50%;
+	right: auto;
+	bottom: auto;
+	left: 5px;
+	max-width: 40px;
+	margin-right: 10px;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.tab-opener .img-holder img {
+	width: 100%;
+	height: auto;
+}
+.tab-block .image-holder {
+	display: none;
+}
+/* @media all and (min-width:768px) */
+.tab-block .image-holder {
+	width: 25%;
+	display: block;
+	float: right;
+}
+/* @media all and (min-width:1024px) */
+.tab-block .image-holder {
+	width: 34.8%;
+	margin-left: 90px;
+}
+.tab-block .description {
+	overflow: hidden;
+}
+.image-holder img {
+	max-width: 100%;
+	height: auto;
+}
+.tab-block.active .tab-opener, .tab-opener:hover {
+	background: #ededed;
+}
+.tabset li {
+	width: 20%;
+	height: 1%;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 7px;
+	position: relative;
+}
+.tabset li + li::before {
+	width: 2px;
+	height: 22px;
+	position: absolute;
+	top: 0px;
+	right: auto;
+	bottom: 0px;
+	left: -1px;
+	background: #dde6e9;
+	content: "";
+	margin: auto;
+}
+.tabset a {
+	display: inline-block;
+	vertical-align: middle;
+	white-space: nowrap;
+	text-align: center;
+	height: 100%;
+	color: #1c1c1c;
+	text-decoration: none;
+	position: relative;
+}
+.tabset a::after {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	width: 0px;
+	min-height: 100%;
+}
+.tabset a::before {
+	width: 100%;
+	height: 4px;
+	-webkit-transition: background, .3s, ease-in-out;
+	transition: background, .3s, ease-in-out;
+	position: absolute;
+	top: calc(100% - 4px);
+	content: "";
+	left: 0px;
+}
+.tabset a > * {
+	white-space: normal;
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 99%;
+}
+.tabset .holder {
+	max-width: 100%;
+	width: 100%;
+	padding: 10px 0;
+}
+/* @media all and (min-width:1024px) */
+.tabset .holder {
+	padding: 12px 0;
+}
+.tabset .img-holder {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+	margin-right: 7px;
+	width: 30px;
+}
+/* @media all and (min-width:1024px) */
+.tabset .img-holder {
+	width: 40px;
+}
+.tabset .text {
+	display: inline-block;
+	vertical-align: middle;
+	width: calc(100% - 42px);
+	text-align: left;
+}
+/* @media all and (min-width:1024px) */
+.tabset .text {
+	width: calc(100% - 52px);
+}
+.tabset .img-holder img {
+	max-width: 100%;
+	height: auto;
+}
+.tabset .active a::before {
+	background: #39f;
+}
+</style>
+</head>
+<body><div id="wrapper"><main id="main" role="main"><section class="section solution"><div class="container"><div class="tab-section">
+                    <ul class="tabset js-custom-tabset">
+                        <li class="active">
+                            <a class="same-height-left same-height-right" style="height: 59px;" href="#SAS">
+									<span class="holder">
+										<span class="img-holder"><img width="40" height="35" alt="image description" src="/images/ico-sas.png"></span>
+										<span class="text">Software as a Service</span>
+									</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="same-height-left same-height-right" style="height: 59px;" href="#PAS">
+									<span class="holder">
+										<span class="img-holder"><img width="41" height="32" alt="image description" src="/images/ico-pas.png"></span>
+										<span class="text">Platform-as-a-Service</span>
+									</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="same-height-left same-height-right" style="height: 59px;" href="#application-hosting">
+									<span class="holder">
+										<span class="img-holder"><img width="32" height="26" alt="image description" src="/images/ico-hosting.png"></span>
+										<span class="text">Application hosting</span>
+									</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="same-height-left same-height-right" style="height: 59px;" href="#load-balancer">
+									<span class="holder">
+										<span class="img-holder"><img width="27" height="27" alt="image description" src="/images/ico-lan.png"></span>
+										<span class="text">Load balancers</span>
+									</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="same-height-left same-height-right" style="height: 59px;" href="#website-hosting">
+									<span class="holder">
+										<span class="img-holder"><img width="32" height="28" alt="image description" src="/images/ico-web-hosting.png"></span>
+										<span class="text">Hybrid clouds</span>
+									</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-block active" id="SAS">
+                            <a class="tab-opener" href="#SAS"><span class="img-holder"><img width="40" height="35" alt="image description" src="/images/ico-sas.png"></span>Software as a Service</a>
+                            <div class="tab-slide">
+                                <h2>Software as a Service</h2>
+                                <em class="slogan">Enables developers to build and run applications entirely in the cloud</em>
+                                <p>Deploy your software as a service on the private cloud.  Reduce the maintenance overhead and the need to manage a custom instance per application. Simply configure your build tools to automatically deploy to our tailored environment and you're ready to go.</p>
+                                <a class="btn btn-primary" href="https://www.hyperconnezion.com#contact-anchor">Get Started</a>
+                            </div>
+                        </div>
+                        <div class="tab-block" id="PAS">
+                            <a class="tab-opener" href="#PAS"><span class="img-holder"><img width="41" height="32" alt="image description" src="/images/ico-pas.png"></span>Platform-as-a-Service</a>
+                            <div class="tab-slide">
+                                <h2>Platform-as-a-Service</h2>
+                                <em class="slogan">Provide different teams a common environment</em>
+                                <p>Do you have many different teams or departments that need a set of different services? They all have their own website, set of adopted tools and best practices and it's hard to unite it all. No fear. Use our private cloud to deploy a common application server platform. This way all the teams can be catered for and the solution can scale out infinitely with ease. We can support containers, fully virtualized instances, specific databases or any other custom needs.</p>
+                                <a class="btn btn-primary" href="https://www.hyperconnezion.com#contact-anchor">Get Started</a>
+                            </div>
+                        </div>
+                        <div class="tab-block" id="application-hosting">
+                            <a class="tab-opener" href="#application-hosting"><span class="img-holder"><img width="32" height="26" alt="image description" src="/images/ico-hosting.png"></span>Application hosting</a>
+                            <div class="tab-slide">
+                                <div class="image-holder">
+                                    <img width="378" height="393" alt="image description" src="/images/img08.png">
+                                </div>
+                                <div class="description">
+                                    <h2>Application hosting</h2>
+                                    <em class="slogan">Let us manage your applications</em>
+                                    <p>We can provide more than private cloud computing resources. Our expert team can help manage your applications, further reducing your burden. Let us know your requirements and/or business problems and we'll investigate the best solutions for you. We'll make sure your application runs optimally and is always secure.</p>
+                                    <a class="btn btn-primary" href="https://www.hyperconnezion.com#contact-anchor">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-block" id="load-balancer">
+                            <a class="tab-opener" href="#load-balancer"><span class="img-holder"><img width="27" height="27" alt="image description" src="/images/ico-lan.png"></span>Load balancers</a>
+                            <div class="tab-slide">
+                                <h2>Load balancers</h2>
+                                <em class="slogan">Handle large usage spikes</em>
+                                <p>We can provide hardware, software or hybrid load balancers to help scale your applications and split the load. If there's a deadline you need to meet, a product launch or a company wide meeting just configure additional cloud instances and attach it to the load balancer. We'll make sure you're covered for every scenario so your company can function the most efficiently.</p>
+                                <a class="btn btn-primary" href="https://www.hyperconnezion.com#contact-anchor">Get Started</a>
+                            </div>
+                        </div>
+                        <div class="tab-block" id="website-hosting">
+                            <a class="tab-opener" href="#website-hosting"><span class="img-holder"><img width="32" height="28" alt="image description" src="/images/ico-web-hosting.png"></span>Hybrid clouds</a>
+                            <div class="tab-slide">
+                                <h2>Hybrid clouds</h2>
+                                <em class="slogan">Enables developers to build and run applications entirely in the cloud</em>
+                                <p>For cases when you need your resources public, we can provide an hybrid cloud setup. Leave your important applications secure in the private zone and only expose a selected subset, such as your main website. Hybrid clouds are ideal when you need to interact with vendors, suppliers, partners and others as part of the ecosystem. Give them the ability to access your private resources on special request on demand.</p>
+                                <a class="btn btn-primary" href="#">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div></div></section></main></div></body>
+</html>
