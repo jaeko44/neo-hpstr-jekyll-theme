@@ -768,17 +768,17 @@ ul#navigation li a span{
     text-shadow: 0 -1px 1px #fff;
 }
 ul#navigation .home a{
-    background-image: url(../images/home_70px_7.png);
+    background-image: url(../images/home_64px.png);
 }
 ul#navigation .about a      {
-    background-image: url(../images/info_70px.png);
+    background-image: url(../images/info_64px.png);
 }
 ul#navigation .documentation a      {
-    background-image: url(../images/news_70px.png);
+    background-image: url(../images/documentation_64px.png);
 }
 ul#navigation .blog a      {
-    background-image: url(../images/blog_70px.png);
+    background-image: url(../images/blog_64px.png);
 }
 ul#navigation .contact a    {
-    background-image: url(../images/message_70px.png);
+    background-image: url(../images/message_64px.png);
 }
