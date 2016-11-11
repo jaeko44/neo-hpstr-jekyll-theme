@@ -194,6 +194,15 @@ h5 {
     background-color: #59c7fb;
     color: #fff
 }
+
+.m-t-30 {
+    margin-top: 30px;
+}
+.centeredButton {
+    width: 194px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
 .btn-primary:hover {
     border: 1px solid #34aadc;
     background-color: #34aadc;
